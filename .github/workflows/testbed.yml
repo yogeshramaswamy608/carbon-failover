@@ -1,0 +1,28 @@
+name: testbed
+# Section 9 test bed: three kind clusters, Envoy, netem. A push to data-prep runs the pilot (1 repeat).
+on:
+  workflow_dispatch:
+    inputs:
+      repeats: {description: "repeats per cell", default: "1"}
+  push:
+    branches: ["data-prep"]
+    paths: ["testbed/**", ".github/workflows/testbed.yml"]
+permissions:
+  contents: read
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Runner
+        run: nproc; free -g; docker version --format '{{.Server.Version}}'
+      - name: kind
+        run: |
+          curl -sSLo kind https://kind.sigs.k8s.io/dl/v0.24.0/kind-linux-amd64
+          chmod +x kind && sudo mv kind /usr/local/bin/kind && kind version
+      - name: Test bed
+        run: python3 testbed/run.py "${{ github.event.inputs.repeats || '1' }}" testbed_results.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: testbed_results, path: testbed_results.json}
