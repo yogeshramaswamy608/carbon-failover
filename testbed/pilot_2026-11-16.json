@@ -1,0 +1,50 @@
+[
+ {
+  "dest": "near",
+  "headroom": "full",
+  "repeat": 0,
+  "requests": 8278,
+  "baseline_p50_ms": 1.3570785522460938,
+  "detection_s": 7.741602659225464,
+  "steering_s": 0.0,
+  "scaleup_s": 0.0,
+  "recovery_s": 7.699992656707764,
+  "dest_p50_ms": 11.059761047363281
+ },
+ {
+  "dest": "near",
+  "headroom": "half",
+  "repeat": 0,
+  "requests": 8562,
+  "baseline_p50_ms": 1.2812614440917969,
+  "detection_s": 7.850867748260498,
+  "steering_s": 0.0,
+  "scaleup_s": 2.760329246520996,
+  "recovery_s": 7.799992561340332,
+  "dest_p50_ms": 11.338353157043457
+ },
+ {
+  "dest": "far",
+  "headroom": "full",
+  "repeat": 0,
+  "requests": 8302,
+  "baseline_p50_ms": 1.5561580657958984,
+  "detection_s": 7.819404125213623,
+  "steering_s": 0.0,
+  "scaleup_s": 0.0,
+  "recovery_s": 7.799992561340332,
+  "dest_p50_ms": 41.735291481018066
+ },
+ {
+  "dest": "far",
+  "headroom": "half",
+  "repeat": 0,
+  "requests": 8527,
+  "baseline_p50_ms": 1.4789104461669922,
+  "detection_s": 7.802630186080933,
+  "steering_s": 0.0,
+  "scaleup_s": 2.4581072330474854,
+  "recovery_s": 7.799992561340332,
+  "dest_p50_ms": 41.762590408325195
+ }
+]
