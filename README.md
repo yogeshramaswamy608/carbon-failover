@@ -6,7 +6,7 @@ The study asks where traffic should go when a cloud region fails, if carbon is o
 
 ## Status
 
-The study design is written in `docs/preregistration.md` (version 1, Sun Nov 15, 2026), with the outage coding rules in `docs/event_codebook.md`. It is frozen after one independent review, by the commit that adds `prereg_hashes.txt` with the SHA-256 of both files. Any change after the freeze is listed in `docs/deviations.md`. No result has been produced yet.
+The study design is written in `docs/preregistration.md` (version 1, Sun Nov 15, 2026), with the outage coding rules in `docs/event_codebook.md` and the coding instruction in `docs/coding_prompt.md`. It is frozen after one independent review, by the commit that adds `prereg_hashes.txt` with the SHA-256 of those three files and `src/cfo/factors.py`; the same files are deposited on Zenodo that day. Any change after the freeze is listed in `docs/deviations.md`. No result has been produced yet.
 
 ## Data pipeline
 
@@ -23,4 +23,4 @@ Code: Apache License 2.0 (`LICENSE`). Data created for this study: Creative Comm
 
 ## Assistance
 
-A language model from Anthropic (Claude Opus 5.5) drafted the design text and the code under the author's direction. The author runs and checks every experiment and owns every claim.
+The author approved the data sources and the test bed, codes the blind sample of the outage coding, reads the results and the paper before submission, and is responsible for every claim. Claude models from Anthropic drafted the design and the text, write and run the code and the test bed, and code the outage events; `docs/ai_use.md` lists each use.

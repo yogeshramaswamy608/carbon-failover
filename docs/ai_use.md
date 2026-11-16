@@ -1,0 +1,11 @@
+# Use of AI models in this study
+
+Each use of a language model, with the model, its version, the dates and the work. New uses are added as they happen. Each commit also names its AI co-author.
+
+| Dates | Model | Work |
+|---|---|---|
+| Wed Nov 4 to Sun Nov 15, 2026 | Claude Opus 5.5 (Anthropic) | Drafted the study design, `docs/preregistration.md`, `docs/event_codebook.md`, `docs/coding_prompt.md`, and wrote the code in `src/cfo` and `scripts`. |
+| Thu Nov 5, 2026 | Claude Fable 5.1 (Anthropic) | Reviewed the data sources and the test bed before the author approved them. |
+| Sun Nov 15, 2026 | Claude Opus 5.5 (Anthropic), a separate session | One independent review of the design before the freeze; its findings were applied. |
+
+The author approved the data sources and the test bed of the design, codes the blind sample of the outage coding, reads the results and the paper before submission, and is responsible for every claim.

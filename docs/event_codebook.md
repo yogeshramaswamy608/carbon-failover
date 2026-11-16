@@ -14,6 +14,7 @@ Code only what the report states. A field the report does not support is left em
 |---|---|---|
 | `corpus_no` | integer | From the corpus. |
 | `provider` | aws, azure, gcp | From the corpus source. |
+| `published_utc` | ISO 8601 date in UTC | The report's own publication date. When the report shows none, the end plus 14 days, flagged in `notes`. |
 | `scope` | zonal, regional, multi_region, global, unclear | Section 3. |
 | `regions` | provider region codes, separated by ";" | Every region the report names as impaired, normalized under section 4. |
 | `zones` | zone codes, separated by ";" | Only when the report names zones. |
@@ -51,10 +52,14 @@ Time zones: Google Cloud incident reports give times in US/Pacific; AWS reports 
 
 The end is the moment the report says customer impact ended, or the service was restored for most customers (`impact_ended`). When the report gives only a mitigation time, that is the end (`mitigated`). When it gives only the time everything was fully resolved, that is the end (`resolved`). A tail of backlog processing after impact ended is not part of the event.
 
-## 6. Script and model
+## 6. Merging reports of one incident
 
-The script sets the fields a report states in a fixed form: the Google Cloud lines that say when the incident began and ended and the locations affected, and the Azure lines that give the impact window in UTC. The language model sets every other field from the report text, with the evidence note. Each row records which one set its time and region fields.
+Reports of one provider whose impact windows overlap and whose region sets share a region form one event: the union of their regions, the earliest start and the latest end. Each merge is logged with the corpus numbers it joins.
 
-## 7. The author's blind check
+## 7. Script and model
 
-Twenty event-home instances are drawn with the "author-sample" stream of the preregistration. The author codes `scope`, `regions`, `start_utc` and `end_utc` from each report alone, without seeing the coded row. Agreement is counted per field: times within 15 minutes, the region set an exact match, scope an exact match. The rule of section 3.1 of the preregistration then applies.
+The script sets the fields a report states in a fixed form: the Google Cloud lines that say when the incident began and ended and the locations affected, and the Azure lines that give the impact window in UTC. The language model codes every report in batches of at most 10, each batch in a fresh session that holds only `docs/coding_prompt.md` and those reports' text. Each output is kept in `logs/coding/` with the model, its version and the date. Where the script and the model both set a field, a difference is logged and resolved by reading the report. Each row records who set its time and region fields.
+
+## 8. The author's blind check
+
+The author codes 30 reports, 10 per provider, drawn by the "author-sample" stream of the preregistration from the 271 kept reports. The author codes `scope`, `regions`, `start_utc` and `end_utc` from each report alone, without seeing the coded row. Agreement is counted per field: scope and the region set an exact match, times within 15 minutes. The rule of section 3.1 of the preregistration then applies.
