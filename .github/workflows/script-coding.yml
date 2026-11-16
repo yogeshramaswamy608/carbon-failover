@@ -1,0 +1,25 @@
+name: script-coding
+# Fetches the 271 kept reports and writes the script's coded fields (preregistration 3.1).
+# Report text stays in the runner's memory: it is not printed, committed or uploaded.
+on:
+  workflow_dispatch:
+  push:
+    branches: ["data-prep"]
+    paths: ["src/cfo/reports.py", "src/cfo/script_code.py", "src/cfo/script_run.py", ".github/workflows/script-coding.yml"]
+permissions:
+  contents: read
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Corpus 1.0.0 from Zenodo, checked by SHA-256
+        run: |
+          curl -sSfL -o corpus.csv https://zenodo.org/api/records/23973151/files/corpus.csv/content
+          echo "12f79715753521f4785cbbdb0f3ff71ac63979a81039db29a1de439f50a59db2  corpus.csv" | sha256sum -c -
+      - name: Script coding
+        run: PYTHONPATH=src python -m cfo.script_run corpus.csv script_fields.csv
+      - uses: actions/upload-artifact@v4
+        with: {name: script_fields, path: script_fields.csv}
