@@ -6,7 +6,7 @@ The study asks where traffic should go when a cloud region fails, if carbon is o
 
 ## Status
 
-The study design is written in `docs/preregistration.md` (version 1, Mon Nov 16, 2026), with the outage coding rules in `docs/event_codebook.md` and the coding instruction in `docs/coding_prompt.md`. After two independent reviews it is frozen by the commit that adds `prereg_hashes.txt` with the SHA-256 of those three files and `src/cfo/factors.py`; the same four files are deposited on Zenodo that day. Any change after the freeze is listed in `docs/deviations.md`. No result has been produced yet.
+The study design is `docs/preregistration.md` (version 1), with the outage coding rules in `docs/event_codebook.md` and the coding instruction in `docs/coding_prompt.md`. After three independent reviews it was frozen on Mon Nov 16, 2026 by commit d2a9a50, which adds `prereg_hashes.txt` with the SHA-256 of those three files and `src/cfo/factors.py`. The same four files are deposited on Zenodo: https://doi.org/10.5281/zenodo.24275704. Any change after the freeze is listed in `docs/deviations.md`. No result has been produced yet.
 
 ## Data pipeline
 
