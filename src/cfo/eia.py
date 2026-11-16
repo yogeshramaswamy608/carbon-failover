@@ -1,28 +1,25 @@
 """Hourly production-based carbon intensity per balancing authority from EIA-930 balance files.
 
 Intensity = sum over fuels of (generation x factor) / sum of generation, over non-storage
-fuels with positive generation. Imports are not traced (production-based signal).
+fuels with positive generation. Imports are not traced (production-based signal). Each hour is
+labelled by its start in UTC; the EIA file gives the end of the hour.
 """
 from __future__ import annotations
 
 import csv
-import re
 import sys
+from datetime import datetime, timedelta
 from typing import Iterator
 
-from .factors import FACTORS, STORAGE
+from .factors import FACTORS, STORAGE, key_for
 
 PREFIX = "Net Generation (MW) from "
-FUEL = [
-    (r"^Coal$", "coal"), (r"^Natural Gas$", "natural_gas"), (r"^Nuclear$", "nuclear"),
-    (r"^All Petroleum Products$", "petroleum"),
-    (r"^Hydropower and Pumped Storage$", "hydro"), (r"^Hydropower Excluding Pumped Storage$", "hydro"),
-    (r"^Pumped Storage$", "pumped_storage"),
-    (r"^Solar", "solar"), (r"^Wind", "wind"),
-    (r"^Battery Storage$", "battery"), (r"^Other Energy Storage$", "other_storage"),
-    (r"^Unknown Energy Storage$", "unknown_storage"), (r"^Geothermal$", "geothermal"),
-    (r"^Other Fuel Sources$", "other"), (r"^Unknown Fuel Sources$", "unknown"),
-]
+
+
+def hour_start(utc_end: str) -> str:
+    """The start of the hour in UTC, ISO 8601, from the file's "UTC Time at End of Hour"."""
+    end = datetime.strptime(utc_end.strip(), "%m/%d/%Y %I:%M:%S %p")
+    return (end - timedelta(hours=1)).strftime("%Y-%m-%dT%H:%MZ")
 
 
 def fuel_columns(header: list[str]) -> dict[int, str]:
@@ -35,13 +32,8 @@ def fuel_columns(header: list[str]) -> dict[int, str]:
         target = adj if name.endswith(" (Adjusted)") else base if not name.endswith(")") else None
         if target is None:
             continue
-        name = name.removesuffix(" (Adjusted)")
-        for pat, fuel in FUEL:
-            if re.search(pat, name):
-                target.setdefault(fuel, []).append(i)
-                break
-        else:
-            raise ValueError(f"unmapped fuel column: {h}")
+        fuel = key_for("eia930", name.removesuffix(" (Adjusted)"))  # raises on a label factors.py lacks
+        target.setdefault(fuel, []).append(i)
     chosen = adj if adj else base
     return {i: f for f, idx in chosen.items() for i in idx}
 
@@ -52,7 +44,7 @@ def _num(s: str) -> float:
 
 
 def rows(path: str, factors: dict = FACTORS) -> Iterator[tuple[str, str, float, float]]:
-    """Yield (balancing authority, UTC end of hour, intensity gCO2eq/kWh, generation MW)."""
+    """Yield (balancing authority, UTC start of hour, intensity gCO2eq/kWh, generation MW)."""
     with open(path, newline="", encoding="utf-8-sig") as fh:
         r = csv.reader(fh)
         header = next(r)
@@ -68,12 +60,12 @@ def rows(path: str, factors: dict = FACTORS) -> Iterator[tuple[str, str, float, 
                     gen += mw
                     em += mw * factors[fuel]
             if gen > 0:
-                yield row[ba], row[utc], em / gen, gen
+                yield row[ba], hour_start(row[utc]), em / gen, gen
 
 
 def main(argv: list[str] | None = None) -> int:
     w = csv.writer(sys.stdout)
-    w.writerow(["ba", "utc_end", "ci_g_per_kwh", "gen_mw"])
+    w.writerow(["ba", "utc_start", "ci_g_per_kwh", "gen_mw"])
     for p in argv or sys.argv[1:]:
         for ba, t, ci, g in rows(p):
             w.writerow([ba, t, f"{ci:.1f}", f"{g:.0f}"])

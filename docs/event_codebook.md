@@ -1,6 +1,6 @@
 # Event codebook, version 1
 
-For the study "Carbon-Aware Failover Without Losing Reliability". Written on Sun Nov 15, 2026 (Pacific time) and frozen with `docs/preregistration.md`. Changed only as section 3.1 of the preregistration allows, and logged in `docs/deviations.md`.
+For the study "Carbon-Aware Failover Without Losing Reliability". Written on Sun Nov 15 and Mon Nov 16, 2026 (Pacific time) and frozen with `docs/preregistration.md`. Changed only as section 3.1 of the preregistration allows, and logged in `docs/deviations.md`.
 
 ## 1. Unit
 
@@ -22,6 +22,7 @@ Code only what the report states. A field the report does not support is left em
 | `start_precision` | minute, hour, day | The finest unit the report gives for the start. |
 | `end_utc` | ISO 8601 in UTC | Section 5. |
 | `end_basis` | impact_ended, mitigated, resolved | Section 5. |
+| `duration_min` | integer | Only when the report states how long the impact lasted and gives no start and end pair. |
 | `region_starts` | region=ISO time pairs, separated by ";" | Only when the report gives a different start for some region. |
 | `services_n` | integer | The number of distinct products or services the report names as impaired. |
 | `evidence` | text, at most 25 words per field | The report section and a paraphrase in our own words for the start, the end and the regions. |
@@ -54,12 +55,12 @@ The end is the moment the report says customer impact ended, or the service was 
 
 ## 6. Merging reports of one incident
 
-Reports of one provider whose impact windows overlap and whose region sets share a region form one event: the union of their regions, the earliest start and the latest end. Each merge is logged with the corpus numbers it joins.
+Reports of one provider whose impact windows overlap form one event when their region sets share a region, or when both are global. The event takes the union of their regions, the earliest start, the latest end and the widest scope among them, and it is multi_region when the union holds two or more regions and no report is global. Each merge is logged with the corpus numbers it joins.
 
 ## 7. Script and model
 
-The script sets the fields a report states in a fixed form: the Google Cloud lines that say when the incident began and ended and the locations affected, and the Azure lines that give the impact window in UTC. The language model codes every report in batches of at most 10, each batch in a fresh session that holds only `docs/coding_prompt.md` and those reports' text. Each output is kept in `logs/coding/` with the model, its version and the date. Where the script and the model both set a field, a difference is logged and resolved by reading the report. Each row records who set its time and region fields.
+The script sets the fields a report states in a fixed form: the Google Cloud lines that say when the incident began and ended and the locations affected, and the Azure lines that give the impact window in UTC. The language model codes every report in batches of at most 10, each batch in a fresh session that holds only `docs/coding_prompt.md` and those reports' text. Each output is kept in `logs/coding/` with the model, its version and the date. Where the script and the model both set a field and differ, the script's value stands, since it copies the report's own line, and the difference is logged. Each row records who set its time and region fields.
 
 ## 8. The author's blind check
 
-The author codes 30 reports, 10 per provider, drawn by the "author-sample" stream of the preregistration from the 271 kept reports. The author codes `scope`, `regions`, `start_utc` and `end_utc` from each report alone, without seeing the coded row. Agreement is counted per field: scope and the region set an exact match, times within 15 minutes. The rule of section 3.1 of the preregistration then applies.
+The author codes 30 reports, 10 per provider, drawn by the "author-sample" stream of the preregistration from the 271 kept reports. The author codes `scope`, `regions`, `start_utc` and `end_utc` from each report alone, without seeing the coded row. Agreement is counted per field: scope and the region set an exact match, times within 15 minutes. The rule of section 3.1 of the preregistration then applies, and the author's codes are released with the data.
