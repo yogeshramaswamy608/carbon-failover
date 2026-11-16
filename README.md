@@ -23,4 +23,4 @@ Code: Apache License 2.0 (`LICENSE`). The design documents in `docs/` and the da
 
 ## Assistance
 
-The author approved the data sources and the test bed, codes the blind sample of the outage coding, reads the results and the paper before submission, and is responsible for every claim. Claude models from Anthropic drafted the design and the text, write and run the code and the test bed, and code the outage events; `docs/ai_use.md` lists each use.
+The author approved the data sources and the test bed, confirmed the primary values of the recovery model, the availability target and the visibility assumption against his production experience (Mon Nov 16, 2026), codes the blind sample of the outage coding, reads the results and the paper before submission, and is responsible for every claim. Claude models from Anthropic drafted the design and the text, write and run the code and the test bed, and code the outage events; `docs/ai_use.md` lists each use.

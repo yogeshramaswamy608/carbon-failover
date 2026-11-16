@@ -94,21 +94,23 @@ Carbon counts every minute from the first decision time to the end of the outage
 
 | Parameter | Primary value | Sensitivity values | Basis |
 |---|---|---|---|
-| Detection time | 5 minutes | 1 and 15 minutes | ASSUMED, an automated detection and decision |
-| Traffic steering time | 1 minute | 0.5 and 5 minutes | ASSUMED, a DNS time to live of 60 seconds (30 and 300 seconds) |
-| Data promotion, replica present | 2 minutes | 1 and 10 minutes | ASSUMED |
-| Data restore, no replica | 60 minutes | 30 and 240 minutes | ASSUMED |
-| Scale-up round | 3 minutes, adding 25 percent of the displaced load | 1 and 10 minutes | ASSUMED, node start and readiness |
+| Detection time | 5 minutes | 1 and 15 minutes | Confirmed by the author against his production experience (Mon Nov 16, 2026), an automated detection and decision |
+| Traffic steering time | 1 minute | 0.5 and 5 minutes | Confirmed by the author against his production experience (Mon Nov 16, 2026), a DNS time to live of 60 seconds (30 and 300 seconds) |
+| Data promotion, replica present | 2 minutes | 1 and 10 minutes | Confirmed by the author against his production experience (Mon Nov 16, 2026) |
+| Data restore, no replica | 60 minutes | 30 and 240 minutes | Confirmed by the author against his production experience (Mon Nov 16, 2026) |
+| Scale-up round | 3 minutes, adding 25 percent of the displaced load | 1 and 10 minutes | Confirmed by the author against his production experience (Mon Nov 16, 2026), node start and readiness |
 | PUE | 1.2 in every region | 1.1 and 1.5 | ASSUMED; equal PUE cancels in relative savings |
 | Route factor | 1.5 | 1.2 and 2.0 | ASSUMED, checked against the Azure table |
-| Latency bound | 50 milliseconds added round trip | 30 and 80 milliseconds | ASSUMED |
-| Minimum instance duration | 30 minutes | 15 and 60 minutes | ASSUMED |
+| Latency bound | 50 milliseconds added round trip | 30 and 80 milliseconds | Confirmed by the author against his production experience (Mon Nov 16, 2026) |
+| Minimum instance duration | 30 minutes | 15 and 60 minutes | Confirmed by the author against his production experience (Mon Nov 16, 2026) |
+
+The author's confirmation covers the primary values. The sensitivity values, the PUE and the route factor are ASSUMED.
 
 With these values every first failover in the primary scenario takes 8 minutes under every policy, so recovery-time cost there comes only from second failovers, at 8 minutes each.
 
 ## 5. Policies
 
-A candidate is healthy for a policy unless it is the home or a region the service has already left in this instance. No policy but the oracle observes other regions' impairment. This is the worst case for correlated failure; a sensitivity run of section 8 gives the other end.
+A candidate is healthy for a policy unless it is the home or a region the service has already left in this instance. No policy but the oracle observes other regions' impairment. This is the worst case for correlated failure, an assumption the author confirmed on Mon Nov 16, 2026; a sensitivity run of section 8 gives the other end.
 
 Nearest-region: the healthy candidate with the smallest added latency.
 
@@ -139,7 +141,7 @@ Primary, per event-home instance, each policy against the nearest-region policy 
 1. Carbon saved, as a share of the nearest-region carbon over the same window (RQ1). The kilograms of carbon dioxide equivalent per megawatt of IT load are reported beside it.
 2. Correlated-failure exposure: whether the first chosen destination was in the impaired set (RQ2).
 
-Secondary: recovery-time cost in minutes against the nearest-region policy, reported for every scenario and not tested; SLO breach minutes, which are the unavailable minutes since no candidate lies beyond the latency bound, and their share of a monthly error budget at 99.95 percent availability (21.9 minutes: 0.05 percent of an average month of 43,829 minutes, 365.2425 days over 12 months); decision regret, the carbon gap between the persistence choice and the oracle-forecast choice; the absolute carbon per outage hour.
+Secondary: recovery-time cost in minutes against the nearest-region policy, reported for every scenario and not tested; SLO breach minutes, which are the unavailable minutes since no candidate lies beyond the latency bound, and their share of a monthly error budget at 99.95 percent availability, a target the author confirmed against his production experience on Mon Nov 16, 2026 (21.9 minutes: 0.05 percent of an average month of 43,829 minutes, 365.2425 days over 12 months); decision regret, the carbon gap between the persistence choice and the oracle-forecast choice; the absolute carbon per outage hour.
 
 ## 8. Analysis
 
@@ -181,7 +183,7 @@ The pipeline calls no language model API; the event coding runs in sessions of t
 
 ## 12. Roles and assistance
 
-The author approved the data sources and the test bed of this design (Thu Nov 5, 2026), codes the blind sample of section 3.1, reads the results and the paper before submission, and is responsible for every claim. Claude models from Anthropic drafted the design and this text, write and run the code and the test bed, and code the outage events under the codebook. `docs/ai_use.md` lists each model and version with its dates and its work, and each commit names its AI co-author.
+The author approved the data sources and the test bed of this design (Thu Nov 5, 2026), confirmed the primary values of the recovery model, the availability target and the visibility assumption against his production experience (sections 4, 5 and 7, Mon Nov 16, 2026), codes the blind sample of section 3.1, reads the results and the paper before submission, and is responsible for every claim. Claude models from Anthropic drafted the design and this text, write and run the code and the test bed, and code the outage events under the codebook. `docs/ai_use.md` lists each model and version with its dates and its work, and each commit names its AI co-author.
 
 ## 13. Data and licenses
 
