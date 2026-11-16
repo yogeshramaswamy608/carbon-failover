@@ -1,8 +1,8 @@
 # Preregistration: Carbon-Aware Failover Without Losing Reliability
 
-Study 2 of Yogesh Ramaswamy (Independent Researcher, Sunnyvale, California, United States). Target journal: IEEE Transactions on Cloud Computing.
+Study 2 of Yogesh Ramaswamy (Independent Researcher, Sunnyvale, California, United States).
 
-Written on Sun Nov 15 and Mon Nov 16, 2026 (Pacific time) as version 1. It is frozen by the commit that adds `prereg_hashes.txt`, which records the SHA-256 of this file, `docs/event_codebook.md`, `docs/coding_prompt.md` and `src/cfo/factors.py`. The same four files are deposited on Zenodo on the day of that commit, and the deposit's date is the freeze date.
+Written on Sun Nov 15 and Mon Nov 16, 2026 (Pacific time) as version 1. It is frozen by the last commit that adds `prereg_hashes.txt`, which records the SHA-256 of this file, `docs/event_codebook.md`, `docs/coding_prompt.md` and `src/cfo/factors.py`. The same four files are deposited on Zenodo on the day of that commit, and the deposit's date is the freeze date.
 
 ## 1. What is frozen
 
@@ -10,7 +10,7 @@ The research questions, hypotheses, data rules, model, policies, scenarios, outc
 
 Data preparation may run after the freeze, because it produces no outcome: coding the outage events, building the region table and building the hourly carbon tables. It follows the rules fixed here.
 
-What existed at the freeze: the outage corpus had been read and coded for study 1, for trigger and fault classes only, and its coded fields hold the day of each incident and no region, start time or end time. The code that turns EIA-930 files into hourly carbon intensity had been written and tested. No outage of this study had been coded, so no carbon value had been joined to an outage, and no simulator, failover run or policy outcome existed.
+What existed at the freeze: the outage corpus had been read and coded for study 1, for trigger and fault classes only, and its coded fields hold the day of each incident and no region, start time or end time. The code that turns EIA-930 files into hourly carbon intensity had been written and tested. No outage of this study had been coded, so no carbon value had been joined to an outage, and no simulator, failover run or policy outcome existed. A first freeze commit of the same night (8194cba, 12:50am Pacific) was withdrawn before the deposit and before any data preparation, to take six corrections from a further independent review. The files deposited on Zenodo are those of the final freeze commit.
 
 Any change after the freeze is written to `docs/deviations.md` with its date, its reason and its effect on the results, before the affected run. Nothing changes silently.
 
@@ -50,13 +50,13 @@ An event-home instance enters the primary analysis when all seven rules hold:
 4. The report gives the start to the hour or better, or gives the day together with the duration. A start known only to the day gets an hour drawn uniformly by the "start-hour" stream of section 10 from the 24 hours of that day in the report's own time zone; the end follows from the duration, and the instance is flagged.
 5. The home region is in the region table of section 3.3.
 6. The home has two or more candidate destinations at the instance start (section 3.3). With one candidate every policy makes the same choice, so no decision exists.
-7. Hourly carbon intensity exists for every candidate destination for every hour of the instance's window.
+7. Hourly carbon intensity exists for every candidate destination for every hour of the instance's window and for the hour before it, which the persistence forecast of section 5 reads at the first decision.
 
 Each exclusion is counted by its rule, in this order, and the counts are reported. The primary analysis holds every event with at least one instance that meets all seven rules.
 
 Coding method: a script sets the fields that a report states in a fixed form (the Google Cloud lines that give when the incident began and ended and the locations affected, and the Azure lines that give the impact window in UTC). The language model codes every report in batches of at most 10, each batch in a fresh session that holds only the frozen prompt `docs/coding_prompt.md` and those reports' text. Each output is kept in `logs/coding/` with the model, its version and the date, and is released without report text. Where the script and the model both set a field and differ, the script's value stands, since it copies the report's own line, and the difference is logged.
 
-The author's blind check: the author codes 30 reports, 10 per provider, drawn by the "author-sample" stream of section 10 from the 271 kept reports, working from each report alone, without the coded rows. Agreement is counted per field: scope and the impaired region set must match exactly, start and end must fall within 15 minutes. A field under 80 percent agreement gets one codebook revision, a full recode of that field and a fresh sample of 30 from the same stream, whose agreement is reported whatever it shows. Where the two codes differ in a sample, the author's code stands. The author's codes are released with the data.
+The author's blind check: the author codes 30 reports, 10 per provider, drawn by the "author-sample" stream of section 10 from the 271 kept reports, working from each report alone, without the coded rows. Agreement is counted per field: scope and the impaired region set must match exactly, start and end must fall within 15 minutes. A field under 80 percent agreement gets one codebook revision, a full recode of that field and a fresh sample from the same stream (10 per provider from the reports not drawn before, and the 8 that are left for AWS), whose agreement is reported whatever it shows. Where the two codes differ in a sample, the author's code stands. The author's codes are released with the data.
 
 Report text is used only to code. It is not stored in this repository and is not released. The release carries each report's link and the coded fields, as study 1 does.
 
@@ -173,7 +173,7 @@ What it checks: the model's structure. First, that measured recovery equals the 
 
 Master seed: the text "20261115:carbon-failover". Each random stream is `numpy.random.Generator(numpy.random.PCG64(int.from_bytes(hashlib.sha256(f"{master}:{name}".encode()).digest()[:8], "big")))`, for the names "start-hour", "random-policy", "bootstrap" and "author-sample".
 
-Draws: "start-hour" draws `rng.integers(0, 24)` once per flagged instance, in `corpus_no` order, then by home region code. "random-policy" draws `rng.integers(0, n)` over the n healthy candidates sorted by region code, once per decision, instances in the same order and decisions in time order. "bootstrap" draws `rng.integers(0, n, size=(10000, n))` once per comparison, in the order lowest-carbon carbon, lowest-carbon exposure, budget-bounded carbon, budget-bounded exposure. "author-sample" draws `rng.choice(numbers, size=10, replace=False)` over each provider's sorted corpus numbers, in the order AWS, Azure, Google Cloud; a fresh sample continues the same stream and leaves out reports already drawn.
+Draws: "start-hour" draws `rng.integers(0, 24)` once per flagged instance, in the row order of `corpus.csv` in version 1.0.0 of the dataset (its numbers run 1 to 447, then P1 to P50), then by home region code. "random-policy" draws `rng.integers(0, n)` over the n healthy candidates sorted by region code, once per decision, instances in the same order and decisions in time order. "bootstrap" draws `rng.integers(0, n, size=(10000, n))` once per comparison, in the order lowest-carbon carbon, lowest-carbon exposure, budget-bounded carbon, budget-bounded exposure. "author-sample" draws `rng.choice(numbers, size=10, replace=False)` over each provider's corpus numbers in that row order, in the order AWS, Azure, Google Cloud; a fresh sample continues the same stream, leaves out reports already drawn, and takes every report that is left when fewer than 10 are.
 
 Every run writes a record with its configuration, the commit, the seed of each stream and the SHA-256 of every input file, so that every figure can be rebuilt from the release.
 

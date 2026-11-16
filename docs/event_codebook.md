@@ -12,7 +12,7 @@ Code only what the report states. A field the report does not support is left em
 
 | Field | Values | Rule |
 |---|---|---|
-| `corpus_no` | integer | From the corpus. |
+| `corpus_no` | 1 to 447, or P1 to P50 | From the corpus, as the corpus writes it. |
 | `provider` | aws, azure, gcp | From the corpus source. |
 | `published_utc` | ISO 8601 date in UTC | The report's own publication date. When the report shows none, the end plus 14 days, flagged in `notes`. |
 | `scope` | zonal, regional, multi_region, global, unclear | Section 3. |
@@ -37,7 +37,7 @@ regional: one region is impaired across more than one zone, or as a whole.
 
 multi_region: two or more named regions are impaired, and the report does not say that all regions were.
 
-global: the report says the impact was global, worldwide or in all regions for the affected service, or it names every region of the provider.
+global: the report says the impact was global, worldwide or in all regions for the affected service, lists the location Global, or names every region of the provider.
 
 unclear: the report gives no region, or says "multiple regions" without naming them.
 
@@ -46,6 +46,8 @@ A report that names one zone and gives no word on the other zones is coded zonal
 ## 4. Regions and time zones
 
 Regions are written as the provider's own region code: AWS as `us-east-1`; Azure as the programmatic name, `eastus` for "East US"; Google Cloud as `us-central1`. A zone is written as its code (`us-central1-a`) and its region is added to `regions`.
+
+Google Cloud also lists locations that are not regions: Global, and multi-region or dual-region locations such as `us`, `eu` or `nam5`. Global sets `scope` to global. A multi-region or dual-region location adds no region code and is named in `notes`.
 
 Time zones: Google Cloud incident reports give times in US/Pacific; AWS reports name PDT or PST beside each time; Azure post-incident reviews give UTC. Every time is converted to UTC with the daylight-saving rule of its date (the IANA zone America/Los_Angeles for Pacific time).
 
