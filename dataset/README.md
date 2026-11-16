@@ -4,7 +4,7 @@ Built on Mon Nov 16, 2026 from version 1.0.0 of the companion corpus (10.5281/ze
 
 | File | What it holds |
 |---|---|
-| `script_fields.csv` | The script's fields per kept report (the Google Cloud began/ended line and locations, the Azure UTC window); `src/cfo/script_run.py`, run in the workflow `script-coding`. |
+| `script_fields.csv` | The script's fields per kept report (the Google Cloud began/ended line and locations, the Azure UTC window); `src/cfo/script_run.py` over the pages read for the coding; the workflow `script-coding` (run 43855592311, commit 559de2b) gave the same fields for every report it could open, which was all but P9 and 61 (an empty page that run). |
 | `coded.csv` | One row per kept report under `docs/event_codebook.md`: the model's codes with the script's fields standing where both set one. `link` is the page the coding read. |
 | `script_model_diffs.csv` | Every field where the script and the model differed; the script's value stands. |
 | `events.csv`, `merges.csv` | Events after merging reports of one incident (codebook section 6), and each merge. |

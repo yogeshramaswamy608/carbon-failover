@@ -168,19 +168,21 @@ def one(dest: str, headroom: str, rep: int) -> dict:
            "detection_s": (t_eject - t_fail) if t_eject else None,
            "steering_s": (t_steer - t_eject) if (t_steer and t_eject) else None,
            "scaleup_s": (scale_ready - t_steer) if scale_ready and t_steer else (0.0 if headroom == "full" and t_steer else None),
-           "recovery_s": (t_rec - t_fail) if t_rec else None}
+           "recovery_s": (t_rec - t_fail) if t_rec else None,
+           "dest_p50_ms": statistics.median(l for t0, l, c, b in log if b == dest and t_steer and t0 > t_steer) if t_steer else None}
     print(json.dumps(out), flush=True)
     return out
 
 
 def steered(log, t_from: float, dest: str) -> float | None:
-    """The end of the first 1-second window after ejection with 99 percent of requests served by dest."""
+    """The start of the first 1-second window after ejection with 99 percent of requests served by dest
+    (a window start, so the 1-second window sets no floor on the measure)."""
     xs = sorted((t, b) for t, l, c, b in list(log) if t >= t_from)
     t = t_from
     while xs and t + 1 <= xs[-1][0]:
         w = [b for s, b in xs if t <= s < t + 1]
         if len(w) >= RPS * 0.5 and sum(b == dest for b in w) / len(w) >= 0.99:
-            return t + 1
+            return t
         t += 0.1
     return None
 
