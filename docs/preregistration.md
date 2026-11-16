@@ -185,4 +185,4 @@ The author approved the data sources and the test bed of this design (Thu Nov 5,
 
 ## 13. Data and licenses
 
-Code: Apache License 2.0 (`LICENSE`). Data produced for this study (the coded events, the region table, the results): CC BY 4.0. Third-party data keeps its own license: EIA data is in the public domain; NESO and Energy-Charts data are CC BY 4.0 and credited. Report text is never redistributed.
+Code: Apache License 2.0 (`LICENSE`). The design documents in `docs/` and the data produced for this study (the coded events, the region table, the results): CC BY 4.0. Third-party data keeps its own license: EIA data is in the public domain; NESO and Energy-Charts data are CC BY 4.0 and credited. Report text is never redistributed.

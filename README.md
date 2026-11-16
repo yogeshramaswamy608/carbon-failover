@@ -19,7 +19,7 @@ Third-party data keeps its own license and is not redistributed here; the script
 
 ## Licenses
 
-Code: Apache License 2.0 (`LICENSE`). Data created for this study: Creative Commons Attribution 4.0.
+Code: Apache License 2.0 (`LICENSE`). The design documents in `docs/` and the data created for this study: Creative Commons Attribution 4.0.
 
 ## Assistance
 
