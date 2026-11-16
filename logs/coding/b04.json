@@ -1,0 +1,212 @@
+[
+  {
+    "corpus_no": 31,
+    "provider": "azure",
+    "published_utc": "2024-11-13",
+    "scope": "multi_region",
+    "regions": "australiaeast;australiasoutheast;brazilsouth;brazilsoutheast;canadacentral;canadaeast;centralindia;centralus;eastasia;eastus;eastus2;eastus2euap;francecentral;germanywestcentral;japaneast;japanwest;koreacentral;northcentralus;northeurope;norwayeast;southafricanorth;southcentralus;southindia;southeastasia;swedencentral;switzerlandnorth;uaenorth;uksouth;ukwest;westcentralus;westeurope;westus;westus2;westus3",
+    "zones": "",
+    "start_utc": "2024-11-13T00:50Z",
+    "start_precision": "minute",
+    "end_utc": "2024-11-13T06:24Z",
+    "end_basis": "impact_ended",
+    "duration_min": "",
+    "region_starts": "",
+    "services_n": 5,
+    "evidence": {
+      "start": "What happened / timeline: the first customer impact came at 00:50 UTC on 13 November 2024, when a Traffic Manager profile was deleted.",
+      "end": "How did we respond / timeline: by 06:24 UTC most affected storage accounts were reachable again; the final accounts came back by 12:30 UTC.",
+      "regions": "What happened: the Azure Storage entry names 34 regions with DNS failures; Container Registry, Databricks and Log Analytics regions all fall within that list."
+    },
+    "notes": "End coded at 06:24 UTC, when the report says most impacted accounts were accessible; the last accounts were recovered and the incident declared mitigated at 12:30 UTC. Scope multi_region: 34 named regions, not described as all regions. services_n counts Blob Storage, Data Lake Storage, Container Registry, Databricks and Log Analytics; Traffic Manager is the cause, not listed as impaired. No zones named."
+  },
+  {
+    "corpus_no": 32,
+    "provider": "azure",
+    "published_utc": "2024-09-16",
+    "scope": "multi_region",
+    "regions": "centralus;eastus;eastus2;northcentralus;southcentralus;westcentralus;westus;westus2;westus3",
+    "zones": "",
+    "start_utc": "2024-09-16T18:46Z",
+    "start_precision": "minute",
+    "end_utc": "2024-09-16T20:36Z",
+    "end_basis": "impact_ended",
+    "duration_min": "",
+    "region_starts": "",
+    "services_n": 1,
+    "evidence": {
+      "start": "What happened / timeline: impact on Azure Virtual Desktop users with US-geography metadata began at 18:46 UTC on 16 September 2024.",
+      "end": "Timeline: at 20:36 UTC telemetry showed connection, discovery and management problems cleared, and the impact window closes then.",
+      "regions": "What happened: nine US regions are listed as impacted, with the US geography metadata hosted in East US 2."
+    },
+    "notes": "End coded as impact_ended because the report's impact window closes at 20:36 UTC, where the timeline says customer impact was mitigated. services_n counts Azure Virtual Desktop only; SQL Database is the underlying cause, not named as impaired for customers. No zones named."
+  },
+  {
+    "corpus_no": 33,
+    "provider": "azure",
+    "published_utc": "2024-09-05",
+    "scope": "multi_region",
+    "regions": "chinanorth3;chinaeast3",
+    "zones": "",
+    "start_utc": "2024-09-05T00:00Z",
+    "start_precision": "minute",
+    "end_utc": "2024-09-05T13:30Z",
+    "end_basis": "impact_ended",
+    "duration_min": "",
+    "region_starts": "",
+    "services_n": 9,
+    "evidence": {
+      "start": "What happened / How did we respond: customer impact on Azure China control plane operations began at 08:00 CST on 5 September 2024.",
+      "end": "How did we respond: at 21:30 CST the rollback finished and, after monitoring, functionality was judged fully restored and impact mitigated.",
+      "regions": "What happened: delays hit all Azure China regions, worst in China North 3; the timeline confirms mitigation in China East 3 and China North 3."
+    },
+    "notes": "The report gives times in CST without defining it; for Azure China in September this is read as China Standard Time (UTC+8), converted 08:00 CST to 00:00 UTC and 21:30 CST to 13:30 UTC; flag for review. Scope coded multi_region: the report says all Azure China regions were affected but this is limited to the China cloud, not all regions of the service; only China North 3 and China East 3 are named. Mitigation was confirmed for China East 3 and China North 3 at 17:36 CST (09:36 UTC), with other regions rolled back by 21:30 CST. services_n counts Azure Databricks, Data Factory, Database for MySQL, Event Hubs, Firewall, Kubernetes Service, Service Bus, Microsoft Purview and Azure Resource Manager; the unnamed other ARM-dependent services are not counted."
+  },
+  {
+    "corpus_no": 34,
+    "provider": "azure",
+    "published_utc": "2024-08-05",
+    "scope": "unclear",
+    "regions": "",
+    "zones": "",
+    "start_utc": "2024-08-05T18:22Z",
+    "start_precision": "minute",
+    "end_utc": "2024-08-05T19:49Z",
+    "end_basis": "impact_ended",
+    "duration_min": "",
+    "region_starts": "",
+    "services_n": 5,
+    "evidence": {
+      "start": "What happened / timeline: impact began at 18:22 UTC on 5 August 2024, set off by the configuration change.",
+      "end": "Timeline: customer impact was fully mitigated at 19:49 UTC; first-party services shifted traffic back to Front Door later, at 20:30 UTC.",
+      "regions": "What happened: the issue spanned multiple geographies, but the report names no region."
+    },
+    "notes": "Scope unclear: the report says multiple geographies and more regions without naming any. End coded as impact_ended, the close of the stated impact window. services_n counts Azure Front Door, Azure DevOps, Azure Virtual Desktop, LinkedIn and Microsoft 365; the report says Azure customers using Front Door directly were not impacted. No zones named."
+  },
+  {
+    "corpus_no": 35,
+    "provider": "azure",
+    "published_utc": "2024-07-30",
+    "scope": "unclear",
+    "regions": "",
+    "zones": "",
+    "start_utc": "2024-07-30T11:45Z",
+    "start_precision": "minute",
+    "end_utc": "2024-07-30T13:58Z",
+    "end_basis": "impact_ended",
+    "duration_min": "",
+    "region_starts": "",
+    "services_n": 5,
+    "evidence": {
+      "start": "What happened / timeline: impact on Front Door and CDN connections started at 11:45 UTC on 30 July 2024.",
+      "end": "What went wrong / timeline: rerouting resolved most impact by 13:58 UTC; only isolated timeouts for a small group lasted until 19:43 UTC.",
+      "regions": "What went wrong: congestion at one European site caused failures across multiple regions, none of them named."
+    },
+    "notes": "End coded at 13:58 UTC, when the report says the vast majority of impact was mitigated; a low rate of connection timeouts for a smaller set continued until 19:43 UTC, when impact was declared mitigated. A separate DDoS attack from 10:15 to 10:45 UTC had minimal impact (failures only for some clients without retry logic); the report marks 11:45 UTC as the start of this incident's impact. Scope unclear: multiple regions and one site in Europe, with no region named; the status communication mentioned global issues but the report does not call the impact global. services_n counts Azure Front Door, Azure CDN, Azure portal, Microsoft 365 and Microsoft Purview. No zones named."
+  },
+  {
+    "corpus_no": 36,
+    "provider": "azure",
+    "published_utc": "2024-07-19",
+    "scope": "unclear",
+    "regions": "",
+    "zones": "",
+    "start_utc": "",
+    "start_precision": "",
+    "end_utc": "",
+    "end_basis": "",
+    "duration_min": "",
+    "region_starts": "",
+    "services_n": 1,
+    "evidence": {
+      "start": "Summary: no start time is given; the text only says Windows VMs running the CrowdStrike Falcon agent hit crashes and reboot loops.",
+      "end": "Summary: no end, mitigation or resolution time is given; customers are pointed to recovery guidance instead.",
+      "regions": "Summary: impact is described across on-premises and several cloud platforms, with no Azure region named."
+    },
+    "notes": "Short notice, not a full PIR. No start, end or duration stated, so start_utc, start_precision, end_utc, end_basis and duration_min are empty. Scope unclear: no region named. services_n counts Virtual Machines only. No zones named."
+  },
+  {
+    "corpus_no": 37,
+    "provider": "azure",
+    "published_utc": "2024-07-18",
+    "scope": "global",
+    "regions": "centralus;westus3;westcentralus;mexicocentral",
+    "zones": "",
+    "start_utc": "2024-07-18T21:40Z",
+    "start_precision": "minute",
+    "end_utc": "2024-07-19T22:00Z",
+    "end_basis": "impact_ended",
+    "duration_min": "",
+    "region_starts": "",
+    "services_n": 37,
+    "evidence": {
+      "start": "What happened / detailed timeline: customer impact in Central US began at 21:40 UTC on 18 July 2024.",
+      "end": "What happened / timeline: the impact window runs to 22:00 UTC on 19 July, when the last SQL databases were verified recovered.",
+      "regions": "Central US is the primary region; ARM calls to West US 3, West Central US and Mexico Central failed; NetApp Files volume creation failed in all its regions."
+    },
+    "notes": "Scope coded global because the report says Azure NetApp Files was affected globally, in all NetApp regions; the primary event was regional in Central US. End coded at the close of the stated impact window, 22:00 UTC on 19 July; the underlying Storage issue was resolved at 02:55 UTC on 19 July, 99% of impacted compute had recovered by 02:51 UTC, and downstream services recovered later (Cosmos DB fully mitigated at 19:30 UTC, SQL at 22:00 UTC). Azure DevOps impact outside Central US is noted without named regions. Service-specific starts (Cosmos DB 22:09 UTC, SQL DB 22:13 UTC) are per service, not per region, so region_starts is empty. The timeline entry dated 00:45 UTC on 18 July appears to be a typo for 19 July. services_n counts the 33 listed services plus Azure Storage, Microsoft 365, Dynamics 365 and Privileged Identity Management; Microsoft Entra is treated as the same as Entra ID; the list is stated as not exhaustive. No zones named."
+  },
+  {
+    "corpus_no": 38,
+    "provider": "azure",
+    "published_utc": "2024-07-13",
+    "scope": "multi_region",
+    "regions": "australiaeast;brazilsouth;canadacentral;canadaeast;eastus2;francecentral;koreacentral;northcentralus;norwayeast;polandcentral;southafricanorth;southindia;swedencentral;uksouth;switzerlandwest",
+    "zones": "",
+    "start_utc": "2024-07-13T00:00Z",
+    "start_precision": "minute",
+    "end_utc": "2024-07-13T10:20Z",
+    "end_basis": "impact_ended",
+    "duration_min": "",
+    "region_starts": "switzerlandwest=2024-07-13T01:00Z",
+    "services_n": 1,
+    "evidence": {
+      "start": "What happened / How did we respond: impact began at 00:00 UTC on 13 July 2024 as the cleanup started deleting resources across regions.",
+      "end": "How did we respond: by 10:20 UTC most models and regions were back and error rates were normal; all base models recovered at 23:35 UTC.",
+      "regions": "What happened: 14 of 28 Azure OpenAI regions are named; fine-tuning deployments were also unavailable in four regions, adding Switzerland West."
+    },
+    "notes": "End coded at 10:20 UTC, when the report says the majority of models and regions had recovered; all base models were restored at 23:35 UTC on 13 July, and fine-tuning deployments only at 16:54 UTC on 15 July. Switzerland West appears only in the fine-tuning impact, which began at 01:00 UTC. The 10:20 UTC timeline entry also names Central US among regions where GPT-4 had not yet recovered, but Central US is not in the report's list of 14 impacted regions, so it is not coded. The report says regions went offline at different times without giving times per region. services_n counts Azure OpenAI Service only; models are not counted separately. No zones named."
+  },
+  {
+    "corpus_no": 39,
+    "provider": "azure",
+    "published_utc": "2024-04-22",
+    "scope": "multi_region",
+    "regions": "chinaeast2;chinaeast3",
+    "zones": "",
+    "start_utc": "2024-04-22T19:45Z",
+    "start_precision": "minute",
+    "end_utc": "2024-04-22T22:00Z",
+    "end_basis": "impact_ended",
+    "duration_min": "",
+    "region_starts": "",
+    "services_n": 20,
+    "evidence": {
+      "start": "What happened / How did we respond: the disruption window opens at 03:45 CST on 23 April 2024, when the nameservers were changed.",
+      "end": "How did we respond: at 06:00 CST full recovery was declared once traffic returned to pre-incident levels; reversion had finished at 05:13 CST.",
+      "regions": "What happened: impact was in the Azure China regions; only China East 2 and China East 3 are named, for Azure Monitor, Log Analytics and Sentinel."
+    },
+    "notes": "The report gives times in CST without defining it; read as China Standard Time (UTC+8) for Azure China, so 03:45 CST on 23 April is 19:45 UTC on 22 April and 06:00 CST is 22:00 UTC on 22 April; flag for review. The page date (04/22/2024) matches the UTC date. The start is the stated window opening, but the timeline says impact was not immediate because of DNS caching; the actual first impact time is not given. End coded as impact_ended at the close of the stated window; the change was reverted from 04:59 CST and completed at 05:13 CST (21:13 UTC), when services began recovering. Scope coded multi_region on the two named regions; the general impact covered unnamed Azure China regions. services_n counts the 16 listed services plus Azure Portal, Azure Monitor, Log Analytics and Microsoft Sentinel. No zones named."
+  },
+  {
+    "corpus_no": 40,
+    "provider": "azure",
+    "published_utc": "2024-04-19",
+    "scope": "multi_region",
+    "regions": "westus;westus2;southcentralus",
+    "zones": "",
+    "start_utc": "2024-04-19T04:26Z",
+    "start_precision": "minute",
+    "end_utc": "2024-04-19T07:30Z",
+    "end_basis": "impact_ended",
+    "duration_min": "",
+    "region_starts": "",
+    "services_n": 3,
+    "evidence": {
+      "start": "What happened / What went wrong: the DNS update at 04:26 UTC on 19 April 2024 sent connections to an unready gateway ring.",
+      "end": "How did we respond: at 07:30 UTC the rollback completed and connections returned to the working gateway ring, mitigating the incident.",
+      "regions": "What happened: the database issue was in West US; Databricks customers in West US, West US 2 and South Central US were affected."
+    },
+    "notes": "End coded as impact_ended at the close of the stated impact window, which the timeline calls the mitigation by full rollback. services_n counts Azure Database for MariaDB, Azure Database for MySQL Single Server and Azure Databricks. No zones named."
+  }
+]

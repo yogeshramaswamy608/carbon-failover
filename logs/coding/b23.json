@@ -1,0 +1,36 @@
+[
+  {
+    "corpus_no": 221,
+    "provider": "gcp",
+    "published_utc": "2022-08-19",
+    "scope": "global",
+    "regions": "",
+    "zones": "",
+    "start_utc": "2022-07-25T14:08Z",
+    "start_precision": "minute",
+    "end_utc": "2022-08-03T16:47Z",
+    "end_basis": "mitigated",
+    "duration_min": "",
+    "region_starts": "",
+    "services_n": 2,
+    "evidence": "Start: Root Cause section; a GCE rollout on 25 Jul 2022 07:08 Pacific changed usage data, causing a billing mismatch and delayed reporting. End: Remediation section; incident called fully mitigated 3 Aug 2022 09:47 Pacific once corrections finished across all systems. Regions: affected location listed as Global; Mini-IR gives Regions/Zones as Global.",
+    "notes": "Published date is the dated Incident Report entry (19 Aug 2022 13:50 PDT = 20:50Z). Location is Global, so no region codes. Times converted from PDT (UTC-7). Conflicts in the report: Mini-IR gives start 25 July 2021 00:00 (year apparently a typo) and end 3 Aug 2022 09:45 with duration 9 days 9 h 45 min; status update says resolved as of 09:45; summaries state duration 9 days 9 h 5 min, which matches neither start/end pair; header and full IR give 07:08 to 09:47, used here. Full-IR start 07:08 is the rollout time that caused the impact; no separate impact start is stated. Reporting resumed normal operation for usage from 2022-07-31, but historical usage data stayed incomplete until 3 Aug, which the report treats as part of the impact window, so the 3 Aug mitigation time is used. duration_min empty because a start and end pair is given. Services: Cloud Billing and Google Cloud Console (Billing Export); GCE, GKE and GAE Flex are named only as the products whose usage reporting was delayed, and BigQuery export is the billing export path, so they are not counted. Invoices were not impacted."
+  },
+  {
+    "corpus_no": 222,
+    "provider": "gcp",
+    "published_utc": "",
+    "scope": "regional",
+    "regions": "europe-west2",
+    "zones": "europe-west2-a",
+    "start_utc": "2022-07-19T15:10Z",
+    "start_precision": "minute",
+    "end_utc": "2022-07-20T03:43Z",
+    "end_basis": "impact_ended",
+    "duration_min": "",
+    "region_starts": "",
+    "services_n": 3,
+    "evidence": "Start: 10:13 PDT update Description; GCE problem stated as beginning 19 Jul 2022 08:10 Pacific. End: 20:45 PDT update; issue stated resolved for affected users as of 19 Jul 20:43 Pacific, a few HDD disks still erroring. Regions: summaries place the cooling failure in a building hosting europe-west2-a; 11:36 update reports regional effect on some new Persistent Disk volumes.",
+    "notes": "No publication date shown: the page holds only dated status updates (first 19 Jul 2022 10:13 PDT, last a 29 Jul 2022 14:05 PDT pointer) and refers to a separate full Incident Report and Mini-IR (incident fmEL9i2fArADKawkZAa2) that were not opened or coded. Scope coded regional rather than zonal: the zone failure was in europe-west2-a and VMs in europe-west2-b and -c were unaffected, but the 10:41 and 11:36 updates state regional impact for a small proportion of newly launched Persistent Disk volumes. Times converted from PDT (UTC-7). Header gives incident began 2022-07-19 06:33 and ended 2022-07-20 21:20 Pacific; 06:33 is not described as customer impact, so the stated GCE issue start 08:10 is used, and 21:20 is treated as the full-resolution time. The 15:29 update says impacts were mitigated and most customers could launch VMs, but states no moment, so the 20:43 restoration time is used; a small number of HDD-backed Persistent Disk volumes still had IO errors after it. duration_min empty because a start and end pair is given. Services: Compute Engine, Persistent Disk and Autoscaling, named together as impacted; the header lists only Google Compute Engine, and Persistent Disk and Autoscaling are Compute Engine components."
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "corpus_no": 223,
+    "provider": "gcp",
+    "published_utc": "2022-07-29",
+    "scope": "regional",
+    "regions": "europe-west2",
+    "zones": "europe-west2-a;europe-west2-b;europe-west2-c",
+    "start_utc": "2022-07-19T13:33Z",
+    "start_precision": "minute",
+    "end_utc": "2022-07-20T11:28Z",
+    "end_basis": "impact_ended",
+    "duration_min": "",
+    "region_starts": "",
+    "services_n": 28,
+    "evidence": {
+      "start": "Summary and Detailed Description of Impact: customer-facing errors and latency across many products began Tuesday 19 July 2022 at 06:33 Pacific when redundant cooling failed.",
+      "end": "Cloud Service Restoration Duration: services were back in operation by 04:28 Pacific on Wednesday 20 July 2022; only a small long tail continued afterwards.",
+      "regions": "Summary, Regional Impact and Root Cause: a cooling failure in a data center for zone europe-west2-a, with routing errors spreading impact to regional services across europe-west2."
+    },
+    "notes": "Publication date taken from the full Incident Report entry dated 29 Jul 2022 14:00 PDT; a preliminary Mini-IR was posted 21 Jul 2022. Times converted from US/Pacific (PDT, UTC-7). Scope regional: impact centered on europe-west2-a, but traffic routing avoided all three zones until 12:35 PDT, regional storage (GCS, BigQuery) was affected, and the report names impairment in europe-west2-b and europe-west2-c (Persistent Disk creation failures 10:23 to 11:36 PDT, PVM launches halted, Dataproc errors in europe-west2-c), hence all three zones listed. Start: 06:33 PDT is the incident start in the header, Summary, Detailed Description and Mini-IR; the BigQuery section alone states impact from 04:40 PDT, while attributing it to mitigations and the power down (10:05 PDT), so it is inconsistent and was not used; the Mini-IR says the cooling impairment began 04:30 PDT. End: 04:28 PDT 20 July is when Cloud services were restored for most customers; residual long-tail effects were fully mitigated and the incident closed at 21:20 PDT 20 July (2022-07-21T04:20Z, header end); GCE long-tail reconciliation ran to 02:32 PDT 21 July and Dataproc backlog to 16:45 PDT 21 July (backlog, excluded). duration_min left empty because a start and end pair is given (the report also states 18 h 23 min from the 10:05 PDT power down, 35 h 15 min for the long tail, and 1 day 14 h 47 min in the Mini-IR). services_n counts products named as impaired in the Detailed Description: Compute Engine, Persistent Disk, Cloud Storage, API Gateway, Bigtable, Composer, Data Fusion, Datastore, Dataproc, Firestore, Secret Manager, Cloud SQL, Dataflow, Datastream, App Engine (Standard and Flexible counted once), Cloud Functions, Cloud Run, BigQuery, Cloud Tasks, Cloud Scheduler, Filestore, GKE, Looker, Managed Microsoft AD, Memorystore for Memcached, Memorystore for Redis, Vertex AI online prediction, VPC; Cloud Spanner excluded because the final report found no evidence of customer impact. The Spanner multi-region configuration eur5 is mentioned (workaround to route to europe-west1); it is not a region and adds no code, and europe-west1 was a workaround location, not an affected region."
+  }
+]

@@ -1,0 +1,465 @@
+{
+ "model": "Claude Opus 5.5 (Anthropic), model id claude-opus-5-5",
+ "date_utc": "2026-11-16",
+ "prompt": "docs/coding_prompt.md, section Instruction, verbatim",
+ "prompt_sha256": "f3dba0f39c62124200d935c2457c7fbfde0ff251739b8c4b685689378cbaf6ec",
+ "session": "each batch in a fresh subagent session that read only its prompt file (the instruction plus an operating note naming the batch's files and the output path) and the batch's report text files",
+ "operating_note": "Read each file in full with the Read tool; use no tool other than Read and Write; do not search or open any web page; write the JSON list, and nothing else, to the output file.",
+ "report_text": "plain text of each page, made by src/cfo/reports.py (Azure: the review with the report's tracking ID), kept outside this repository and not released",
+ "batches": [
+  {
+   "file": "b01.json",
+   "corpus_nos": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+   ],
+   "sha256": "dcd26b742c23f3e8b53ac9eee9731c48af4601d2db88f41a5e053b6b9c6dcdd5"
+  },
+  {
+   "file": "b02.json",
+   "corpus_nos": [
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20"
+   ],
+   "sha256": "888e1acd5c22bac039350bb7dc984745975185c16d9ad9245cc6f4445d52bb44"
+  },
+  {
+   "file": "b03.json",
+   "corpus_nos": [
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30"
+   ],
+   "sha256": "36e64d79a259dc10052f896106505f54228d418cf0c969af8671fdf736232521"
+  },
+  {
+   "file": "b04.json",
+   "corpus_nos": [
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40"
+   ],
+   "sha256": "ea6ace9676164bd12933d61521c17439fe7703677ac3d90f283d98fea0f71212"
+  },
+  {
+   "file": "b05.json",
+   "corpus_nos": [
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50"
+   ],
+   "sha256": "7013308c81531b681c61b36ba50783cfb04a21093b0413078d8eb290f2b5e395"
+  },
+  {
+   "file": "b06.json",
+   "corpus_nos": [
+    "51",
+    "52",
+    "53",
+    "54",
+    "55",
+    "56",
+    "57",
+    "58",
+    "59",
+    "60"
+   ],
+   "sha256": "6a6d517d34eacd4ebcf19a4a820c562ee57a05f0cf5fc87ba5ed2d87a42f65e2"
+  },
+  {
+   "file": "b07.json",
+   "corpus_nos": [
+    "61",
+    "62",
+    "63",
+    "64",
+    "65",
+    "66",
+    "67",
+    "68",
+    "69",
+    "70"
+   ],
+   "sha256": "772f9dc844d6fe93cc84a4f8b9f0920c138637f733c02178c30648962bc362f8"
+  },
+  {
+   "file": "b08.json",
+   "corpus_nos": [
+    "71",
+    "72",
+    "73",
+    "74",
+    "75",
+    "76",
+    "77",
+    "78",
+    "79",
+    "80"
+   ],
+   "sha256": "36ae914298f03d85a2300a0f848a48d02fff7036060c49e01f9ea378c49c9ea1"
+  },
+  {
+   "file": "b09.json",
+   "corpus_nos": [
+    "81",
+    "82",
+    "83",
+    "84",
+    "85",
+    "86",
+    "87",
+    "88",
+    "89",
+    "90"
+   ],
+   "sha256": "13911f93f36afcba0feb82ee5e90b9dffb26551b0f2ffacf80f0e02287e3b022"
+  },
+  {
+   "file": "b10.json",
+   "corpus_nos": [
+    "91",
+    "92",
+    "93",
+    "94",
+    "95",
+    "96",
+    "97",
+    "98",
+    "99",
+    "100"
+   ],
+   "sha256": "b64be9c8874d2d739264c388879c5d53fe7226f0c6e7927642ec8c846f29046b"
+  },
+  {
+   "file": "b11.json",
+   "corpus_nos": [
+    "101",
+    "102",
+    "103",
+    "104",
+    "105",
+    "106",
+    "107",
+    "108",
+    "109",
+    "110"
+   ],
+   "sha256": "111a3dbb61365df6b24d2d1d0062c69e11cc757a7cbcd02aa546747a23959cd2"
+  },
+  {
+   "file": "b12.json",
+   "corpus_nos": [
+    "111",
+    "112",
+    "113",
+    "114",
+    "115",
+    "116",
+    "117",
+    "118",
+    "119",
+    "120"
+   ],
+   "sha256": "0a6e0bbf76a014ea0cf7e9d22ae1fc0d1a1ed20db4b79023bbee411a72a848df"
+  },
+  {
+   "file": "b13.json",
+   "corpus_nos": [
+    "121",
+    "122",
+    "123",
+    "124",
+    "125",
+    "126",
+    "127",
+    "128",
+    "129",
+    "130"
+   ],
+   "sha256": "43401919281b3100f0e03341090b8530d229b9bf220192af05780b2a9cb375a5"
+  },
+  {
+   "file": "b14.json",
+   "corpus_nos": [
+    "131",
+    "132",
+    "133",
+    "134",
+    "135",
+    "136",
+    "137",
+    "138",
+    "139",
+    "140"
+   ],
+   "sha256": "545d82e2cd29221ea3e228a946c52b39ae697838b343497c15e0434900c18713"
+  },
+  {
+   "file": "b15.json",
+   "corpus_nos": [
+    "141",
+    "142",
+    "143",
+    "144",
+    "145",
+    "146",
+    "147",
+    "148",
+    "149",
+    "150"
+   ],
+   "sha256": "1e01e44ee27098692b54602ae4e50191c28b7b1256775f9be5ef81ac394c6010"
+  },
+  {
+   "file": "b16.json",
+   "corpus_nos": [
+    "151",
+    "152",
+    "153",
+    "154",
+    "155",
+    "156",
+    "157",
+    "158",
+    "159",
+    "160"
+   ],
+   "sha256": "7cf1f33fdc941ecc35a1072edbbfab3d24189943817b17b15d6a92de8c620d20"
+  },
+  {
+   "file": "b17.json",
+   "corpus_nos": [
+    "161",
+    "162",
+    "163",
+    "164",
+    "165",
+    "166",
+    "167",
+    "168",
+    "169",
+    "170"
+   ],
+   "sha256": "4ef8f54aacb5302f25acb5ef75fe6e8b9685fde87cee85b68578ded333002d67"
+  },
+  {
+   "file": "b18.json",
+   "corpus_nos": [
+    "171",
+    "172",
+    "173",
+    "174",
+    "175",
+    "176",
+    "177",
+    "178",
+    "179",
+    "180"
+   ],
+   "sha256": "49cec67977b2e739a9e92846b1e0f189375f26866d5916e7a244de1c53ddd1c0"
+  },
+  {
+   "file": "b19.json",
+   "corpus_nos": [
+    "181",
+    "182",
+    "183",
+    "184",
+    "185",
+    "186",
+    "187",
+    "188",
+    "189",
+    "190"
+   ],
+   "sha256": "e027956cae04b39459ab655bcf2df1ae18180861689e8c9bc52a34db7c759d89"
+  },
+  {
+   "file": "b20.json",
+   "corpus_nos": [
+    "191",
+    "192",
+    "193",
+    "194",
+    "195",
+    "196",
+    "197",
+    "198",
+    "199",
+    "200"
+   ],
+   "sha256": "3203225232a5c91a33aaa6df08188f42291e4836521280c4afec7ec51513f01d"
+  },
+  {
+   "file": "b21.json",
+   "corpus_nos": [
+    "201",
+    "202",
+    "203",
+    "204",
+    "205",
+    "206",
+    "207",
+    "208",
+    "209",
+    "210"
+   ],
+   "sha256": "0d6688387efc3c6fb85bf2160ea9e1e00255555a7465dcb007b4d950f24981e6"
+  },
+  {
+   "file": "b22.json",
+   "corpus_nos": [
+    "211",
+    "212",
+    "213",
+    "214",
+    "215",
+    "216",
+    "217",
+    "218",
+    "219",
+    "220"
+   ],
+   "sha256": "38df42791759a92521f5d06f710eeca993a7c16375440f3f05663787d606c504"
+  },
+  {
+   "file": "b23.json",
+   "corpus_nos": [
+    "221",
+    "222"
+   ],
+   "sha256": "a5b07f8aee257ebf7f0083067ea84a7a540243473454c86a7bf557e09902da5d"
+  },
+  {
+   "file": "b24.json",
+   "corpus_nos": [
+    "223"
+   ],
+   "sha256": "fe53b3d23f3788db1ef12147bc52bab84a0597884cd3e970885a065b8fd4d1dd"
+  },
+  {
+   "file": "b25.json",
+   "corpus_nos": [
+    "224",
+    "225",
+    "226",
+    "227",
+    "228",
+    "229",
+    "230",
+    "231",
+    "232",
+    "233"
+   ],
+   "sha256": "36ce4a41b150a88db91a6bdd6afa313db494094f60a96a5d6d872a5ce3c6296d"
+  },
+  {
+   "file": "b26.json",
+   "corpus_nos": [
+    "234",
+    "235",
+    "236",
+    "237",
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6"
+   ],
+   "sha256": "b055d2fbeacf2a3dc63f35c21e469294fc8ea706f1b3c53a93848cd56aa73b75"
+  },
+  {
+   "file": "b27.json",
+   "corpus_nos": [
+    "P7",
+    "P8",
+    "P10",
+    "P11",
+    "P12",
+    "P13",
+    "P14",
+    "P15",
+    "P16",
+    "P17"
+   ],
+   "sha256": "bacf35503fb622b6ce935a27f1b10c1f87fe4858c8050f06625053bfbf981922"
+  },
+  {
+   "file": "b28.json",
+   "corpus_nos": [
+    "P18",
+    "P19",
+    "P20",
+    "P21",
+    "P22",
+    "P23",
+    "P24",
+    "P25",
+    "P26",
+    "P27"
+   ],
+   "sha256": "59bbf8eb0d55eb3b46f15601109c49e70b678e754c12dab5ae5d2e113f584ba3"
+  },
+  {
+   "file": "b29.json",
+   "corpus_nos": [
+    "P28",
+    "P29",
+    "P30",
+    "P31",
+    "P32",
+    "P33",
+    "P34"
+   ],
+   "sha256": "9ba98d796e8ed1335178d1ecfe56d3213387688489c826bfe0ec4fe1bd5b3b10"
+  }
+ ],
+ "not_coded": [
+  {
+   "corpus_no": "P9",
+   "reason": "the Azure review PLT7-RTZ (2021-11-12) was not on the history page on 2026-11-16; Azure keeps reviews 5 years"
+  }
+ ],
+ "session_notes": [
+  "Batches b10 and b13: the session opened its prompt file with one shell read before it reached the operating note; it then used only Read and Write.",
+  "Batch b29: the session ran one local shell count of the product list of report P34; no web access."
+ ]
+}

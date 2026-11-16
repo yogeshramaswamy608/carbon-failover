@@ -1,0 +1,9 @@
+rule,text,instances_excluded,events_excluded
+1,region named,0,65
+2,regional or multi-region scope,1285,68
+3,lasted 30 minutes or more,20,6
+4,"start to the hour, or day with duration",0,0
+5,home in the region table,218,25
+6,two or more candidates,8,8
+7,hourly carbon for every candidate,11,3
+kept,meets all seven rules,253,81

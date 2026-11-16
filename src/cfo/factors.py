@@ -49,6 +49,7 @@ EIA_930 = [
     (r"^Hydropower Excluding Pumped Storage$", "hydro"),
     (r"^Pumped Storage$", "pumped_storage"),
     (r"^Solar( with| without) Integrated Battery Storage$|^Solar$", "solar"),
+    (r"^Solar witho Integrated Battery Storage$", "solar"),  # deviation 2: the EIA files' own truncated header
     (r"^Wind( with| without) Integrated Battery Storage$|^Wind$", "wind"),
     (r"^Battery Storage$", "battery"), (r"^Other Energy Storage$", "other_storage"),
     (r"^Unknown Energy Storage$", "unknown_storage"), (r"^Geothermal$", "geothermal"),
@@ -82,10 +83,12 @@ ENERGY_CHARTS = {
     "Waste": "waste",
     "Wind offshore": "wind_offshore",
     "Wind onshore": "wind",
+    "Battery": "battery",  # added Mon Nov 16, 2026, deviation 1: battery output, storage, excluded
 }
 ENERGY_CHARTS_NOT_GENERATION = (
     "Cross border electricity trading", "Hydro pumped storage consumption", "Load", "Residual load",
     "Renewable share of generation", "Renewable share of load",
+    "Battery Consumption",  # added Mon Nov 16, 2026, deviation 1: battery charging, not generation
 )
 
 

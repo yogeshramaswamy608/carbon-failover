@@ -1,0 +1,31 @@
+draw_order,provider,corpus_no,link,title
+1,aws,7,https://aws.amazon.com/message/2329B7/,"Summary of the Amazon EC2, Amazon EBS, and Amazon RDS Service Event in the EU West Region"
+2,aws,10,https://aws.amazon.com/message/67457/,Summary of the AWS Service Event in the US East Region
+3,aws,P4,https://aws.amazon.com/message/4372T8/,Summary of the AWS Service Event in the Sydney Region
+4,aws,P2,https://aws.amazon.com/message/680587/,"Summary of the December 24, 2012 Amazon ELB Service Event in the US-East Region"
+5,aws,9,https://aws.amazon.com/message/680342/,"Summary of the October 22, 2012 AWS Service Event in the US-East Region"
+6,aws,P7,https://aws.amazon.com/message/12721/,Summary of the AWS Service Event in the Northern Virginia (US-EAST-1) Region
+7,aws,6,https://aws.amazon.com/message/5467D2/,Summary of the Amazon DynamoDB Service Disruption and Related Impacts in the US-East Region
+8,aws,5,https://aws.amazon.com/message/41926/,Summary of the Amazon S3 Service Disruption in the Northern Virginia (US-EAST-1) Region
+9,aws,3,https://aws.amazon.com/message/56489/,Summary of the Amazon EC2 and Amazon EBS Service Event in the Tokyo (AP-NORTHEAST-1) Region
+10,aws,P5,https://aws.amazon.com/message/11201/,Summary of the Amazon Kinesis Event in the Northern Virginia (US-EAST-1) Region
+11,azure,29,https://azure.status.microsoft/en-us/status/history/?trackingId=TMS9-J_8,Post Incident Review (PIR) – Microsoft Entra ID – DNS authentication failures using Seamless SSO and Microsoft Entra Connect Sync
+12,azure,15,https://azure.status.microsoft/en-us/status/history/?trackingId=GHRP-84G,Post Incident Review (PIR) – Multiple services – Power/cooling issues in West US 2
+13,azure,48,https://azure.status.microsoft/en-us/status/history/?trackingId=RNQ2-NC8,Post Incident Review (PIR) – Azure Resource Manager – West Europe
+14,azure,P19,https://azure.status.microsoft/en-us/status/history/?trackingId=QKNQ-PB8,Post Incident Review (PIR) – Azure Portal and other management portals – Access issues in multiple regions
+15,azure,50,https://azure.status.microsoft/en-us/status/history/?trackingId=VN11-JD8,Post Incident Review (PIR) - Multi-service outage – Asia-Pacific Area
+16,azure,37,https://azure.status.microsoft/en-us/status/history/?trackingId=1K80-N_8,Post Incident Review (PIR) – Storage – Impact to multiple services in Central US
+17,azure,P11,https://azure.status.microsoft/en-us/status/history/?trackingId=9TDP-N8G,RCA - SQL Database and App Service - West Europe
+18,azure,19,https://azure.status.microsoft/en-us/status/history/?trackingId=FV31-PQG,Post Incident Review (PIR) – Entra Privileged Identity Management – Customers experiencing API failures
+19,azure,71,https://azure.status.microsoft/en-us/status/history/?trackingId=SMWW-BDZ,RCA - Azure AD - Service Management Failures
+20,azure,P17,https://azure.status.microsoft/en-us/status/history/?trackingId=HSKF-FB0,Post Incident Review (PIR) – Azure Resource Manager – Issues in Azure US Government regions
+21,gcp,186,https://status.cloud.google.com/incidents/4NXQMwQJEXPDYnL6LELy,Increased connection errors for some Bigquery jobs impacting customers in US regions.
+22,gcp,170,https://status.cloud.google.com/incidents/1pLp2jKxWiiMPFXPHXkh,Customers with Cloud products in asia-south2 or Cloud Interconnects in Delhi can face partial packet loss.
+23,gcp,156,https://status.cloud.google.com/incidents/LXiGotx4CxeSqZwzGLZ2,Google Cloud VMWare engine is experiencing network link issues
+24,gcp,188,https://status.cloud.google.com/incidents/dS9ps52MUnxQfyDGPfkY,Multiple Google Cloud services in the europe-west9-a zone are impacted
+25,gcp,P23,https://status.cloud.google.com/incidents/FwyeeZDrGMZCEXvRLEpr,Global : Cloud Run is experiencing elevated latency and deployment failures
+26,gcp,145,https://status.cloud.google.com/incidents/QceUAfBRzT1B6qQmnCmW,Google App Engine (GAE) Flex new deployments were experiencing issues with app availability.
+27,gcp,157,https://status.cloud.google.com/incidents/U39RSGjaANJXtjHpRkdq,Multiple cloud products are experiencing networking issues in us-central1
+28,gcp,201,https://status.cloud.google.com/incidents/H5DnVWarEfFtncgky4KD,Customers are unable to create or modify L7 Internal Load balancers using the Cloud Console UI with the logging option enabled
+29,gcp,222,https://status.cloud.google.com/incidents/XVq5om2XEDSqLtJZUvcH,Cooling related failure in one of our buildings that hosts zone europe-west2-a for region europe-west2.
+30,gcp,119,https://status.cloud.google.com/incidents/HcNDMn4YeG57exykghT7,"Vertex AI Online Prediction, Dialogflow CX, and Agent Assist are experiencing elevated error rates in multiple regions."

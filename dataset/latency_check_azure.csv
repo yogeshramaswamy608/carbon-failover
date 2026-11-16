@@ -1,0 +1,283 @@
+source,destination,published_p50_ms,model_ms,abs_error_ms
+Austria East,Belgium Central,20.0,15.7,4.3
+Austria East,Denmark East,26.0,15.1,10.9
+Austria East,France Central,21.0,17.5,3.5
+Austria East,Germany West Central,14.0,11.0,3.0
+Austria East,Italy North,16.0,11.4,4.6
+Austria East,North Europe,36.0,27.2,8.8
+Austria East,Norway East,32.0,22.3,9.7
+Austria East,Poland Central,16.0,10.3,5.7
+Austria East,Spain Central,36.0,29.1,6.9
+Austria East,Sweden Central,36.0,22.8,13.2
+Austria East,Switzerland North,17.0,10.9,6.1
+Austria East,UK South,28.0,20.5,7.5
+Austria East,UK West,32.0,23.7,8.3
+Austria East,West Europe,22.0,16.0,6.0
+Belgium Central,Austria East,21.0,15.7,5.3
+Belgium Central,Denmark East,20.0,13.5,6.5
+Belgium Central,France Central,9.0,6.0,3.0
+Belgium Central,Germany West Central,11.0,6.8,4.2
+Belgium Central,Italy North,20.0,12.5,7.5
+Belgium Central,North Europe,21.0,13.6,7.4
+Belgium Central,Norway East,27.0,18.3,8.7
+Belgium Central,Poland Central,26.0,19.4,6.6
+Belgium Central,Spain Central,24.0,21.7,2.3
+Belgium Central,Sweden Central,33.0,22.2,10.8
+Belgium Central,Switzerland North,15.0,9.4,5.6
+Belgium Central,UK South,14.0,6.8,7.2
+Belgium Central,UK West,18.0,9.9,8.1
+Belgium Central,West Europe,8.0,4.6,3.4
+Central US,East US,29.0,23.0,6.0
+Central US,East US 2,33.0,23.0,10.0
+Central US,North Central US,15.0,9.6,5.4
+Central US,South Central US,26.0,23.3,2.7
+Central US,West Central US,17.0,15.9,1.1
+Central US,West US,39.0,38.8,0.2
+Central US,West US 2,39.0,34.4,4.6
+Central US,West US 3,44.0,29.7,14.3
+Denmark East,Austria East,25.0,15.1,9.9
+Denmark East,Belgium Central,19.0,13.5,5.5
+Denmark East,France Central,24.0,17.4,6.6
+Denmark East,Germany West Central,15.0,12.1,2.9
+Denmark East,Italy North,25.0,19.4,5.6
+Denmark East,North Europe,20.0,20.6,0.6
+Denmark East,Norway East,13.0,9.2,3.8
+Denmark East,Poland Central,20.0,12.1,7.9
+Denmark East,Spain Central,38.0,33.1,4.9
+Denmark East,Sweden Central,20.0,11.2,8.8
+Denmark East,Switzerland North,21.0,16.5,4.5
+Denmark East,UK South,21.0,16.3,4.7
+Denmark East,UK West,22.0,19.0,3.0
+Denmark East,West Europe,14.0,11.3,2.7
+East US,Central US,28.0,23.0,5.0
+East US,East US 2,8.0,2.0,6.0
+East US,North Central US,19.0,15.7,3.3
+East US,South Central US,35.0,35.0,0.0
+East US,West Central US,52.0,36.9,15.1
+East US,West US,69.0,59.7,9.3
+East US,West US 2,71.0,54.6,16.4
+East US,West US 3,58.0,49.1,8.9
+East US 2,Central US,33.0,23.0,10.0
+East US 2,East US,9.0,2.0,7.0
+East US 2,North Central US,25.0,15.7,9.3
+East US 2,South Central US,31.0,35.0,4.0
+East US 2,West Central US,48.0,36.9,11.1
+East US 2,West US,66.0,59.7,6.3
+East US 2,West US 2,69.0,54.6,14.4
+East US 2,West US 3,53.0,49.1,3.9
+France Central,Austria East,21.0,17.5,3.5
+France Central,Belgium Central,9.0,6.0,3.0
+France Central,Denmark East,23.0,17.4,5.6
+France Central,Germany West Central,12.0,9.2,2.8
+France Central,Italy North,21.0,11.6,9.4
+France Central,North Europe,19.0,13.7,5.3
+France Central,Norway East,30.0,22.1,7.9
+France Central,Poland Central,31.0,22.5,8.5
+France Central,Spain Central,19.0,17.8,1.2
+France Central,Sweden Central,37.0,26.2,10.8
+France Central,Switzerland North,16.0,9.3,6.7
+France Central,UK South,10.0,7.2,2.8
+France Central,UK West,13.0,9.3,3.7
+France Central,West Europe,13.0,8.4,4.6
+Germany West Central,Austria East,14.0,11.0,3.0
+Germany West Central,Belgium Central,10.0,6.8,3.2
+Germany West Central,Denmark East,16.0,12.1,3.9
+Germany West Central,France Central,12.0,9.2,2.8
+Germany West Central,Italy North,14.0,9.8,4.2
+Germany West Central,North Europe,26.0,18.3,7.7
+Germany West Central,Norway East,22.0,18.5,3.5
+Germany West Central,Poland Central,23.0,15.4,7.6
+Germany West Central,Spain Central,26.0,23.7,2.3
+Germany West Central,Sweden Central,28.0,21.3,6.7
+Germany West Central,Switzerland North,9.0,6.6,2.4
+Germany West Central,UK South,16.0,11.6,4.4
+Germany West Central,UK West,20.0,14.7,5.3
+Germany West Central,West Europe,11.0,7.5,3.5
+Italy North,Austria East,15.0,11.4,3.6
+Italy North,Belgium Central,19.0,12.5,6.5
+Italy North,Denmark East,29.0,19.4,9.6
+Italy North,France Central,23.0,11.6,11.4
+Italy North,Germany West Central,14.0,9.8,4.2
+Italy North,North Europe,37.0,23.2,13.8
+Italy North,Norway East,33.0,26.2,6.8
+Italy North,Poland Central,26.0,19.2,6.8
+Italy North,Spain Central,34.0,19.8,14.2
+Italy North,Sweden Central,37.0,28.5,8.5
+Italy North,Switzerland North,9.0,5.3,3.7
+Italy North,UK South,28.0,16.4,11.6
+Italy North,UK West,32.0,18.9,13.1
+Italy North,West Europe,23.0,14.4,8.6
+North Central US,Central US,14.0,9.6,4.4
+North Central US,East US,20.0,15.7,4.3
+North Central US,East US 2,23.0,15.7,7.3
+North Central US,South Central US,38.0,27.4,10.6
+North Central US,West Central US,30.0,23.5,6.5
+North Central US,West US,51.0,46.4,4.6
+North Central US,West US 2,51.0,41.0,10.0
+North Central US,West US 3,57.0,37.0,20.0
+North Europe,Austria East,36.0,27.2,8.8
+North Europe,Belgium Central,22.0,13.6,8.4
+North Europe,Denmark East,21.0,20.6,0.4
+North Europe,France Central,20.0,13.7,6.3
+North Europe,Germany West Central,27.0,18.3,8.7
+North Europe,Italy North,37.0,23.2,13.8
+North Europe,Norway East,28.0,21.0,7.0
+North Europe,Poland Central,35.0,29.4,5.6
+North Europe,Spain Central,33.0,23.8,9.2
+North Europe,Sweden Central,35.0,26.3,8.7
+North Europe,Switzerland North,31.0,20.6,10.4
+North Europe,UK South,13.0,8.9,4.1
+North Europe,UK West,16.0,6.4,9.6
+North Europe,West Europe,17.0,13.3,3.7
+Norway East,Austria East,33.0,22.3,10.7
+Norway East,Belgium Central,26.0,18.3,7.7
+Norway East,Denmark East,14.0,9.2,4.8
+Norway East,France Central,30.0,22.1,7.9
+Norway East,Germany West Central,23.0,18.5,4.5
+Norway East,Italy North,33.0,26.2,6.8
+Norway East,North Europe,28.0,21.0,7.0
+Norway East,Poland Central,28.0,17.9,10.1
+Norway East,Spain Central,45.0,37.8,7.2
+Norway East,Sweden Central,13.0,7.4,5.6
+Norway East,Switzerland North,28.0,23.0,5.0
+Norway East,UK South,24.0,19.3,4.7
+Norway East,UK West,28.0,21.1,6.9
+Norway East,West Europe,22.0,15.7,6.3
+Poland Central,Austria East,17.0,10.3,6.7
+Poland Central,Belgium Central,27.0,19.4,7.6
+Poland Central,Denmark East,21.0,12.1,8.9
+Poland Central,France Central,32.0,22.5,9.5
+Poland Central,Germany West Central,23.0,15.4,7.6
+Poland Central,Italy North,27.0,19.2,7.8
+Poland Central,North Europe,35.0,29.4,5.6
+Poland Central,Norway East,28.0,17.9,10.1
+Poland Central,Spain Central,47.0,36.3,10.7
+Poland Central,Sweden Central,25.0,16.5,8.5
+Poland Central,Switzerland North,27.0,17.6,9.4
+Poland Central,UK South,29.0,23.7,5.3
+Poland Central,UK West,30.0,26.8,3.2
+Poland Central,West Europe,22.0,18.4,3.6
+South Central US,Central US,26.0,23.3,2.7
+South Central US,East US,36.0,35.0,1.0
+South Central US,East US 2,31.0,35.0,4.0
+South Central US,North Central US,38.0,27.4,10.6
+South Central US,West Central US,27.0,23.3,3.7
+South Central US,West US,35.0,37.0,2.0
+South Central US,West US 2,52.0,42.5,9.5
+South Central US,West US 3,23.0,22.4,0.6
+Spain Central,Austria East,37.0,29.1,7.9
+Spain Central,Belgium Central,24.0,21.7,2.3
+Spain Central,Denmark East,39.0,33.1,5.9
+Spain Central,France Central,20.0,17.8,2.2
+Spain Central,Germany West Central,27.0,23.7,3.3
+Spain Central,Italy North,33.0,19.8,13.2
+Spain Central,North Europe,33.0,23.8,9.2
+Spain Central,Norway East,45.0,37.8,7.2
+Spain Central,Poland Central,47.0,36.3,10.7
+Spain Central,Sweden Central,51.0,42.0,9.0
+Spain Central,Switzerland North,28.0,20.7,7.3
+Spain Central,UK South,25.0,20.9,4.1
+Spain Central,UK West,27.0,20.5,6.5
+Spain Central,West Europe,28.0,24.2,3.8
+Sweden Central,Austria East,36.0,22.8,13.2
+Sweden Central,Belgium Central,33.0,22.2,10.8
+Sweden Central,Denmark East,21.0,11.2,9.8
+Sweden Central,France Central,36.0,26.2,9.8
+Sweden Central,Germany West Central,27.0,21.3,5.7
+Sweden Central,Italy North,38.0,28.5,9.5
+Sweden Central,North Europe,33.0,26.3,6.7
+Sweden Central,Norway East,12.0,7.4,4.6
+Sweden Central,Poland Central,26.0,16.5,9.5
+Sweden Central,Spain Central,50.0,42.0,8.0
+Sweden Central,Switzerland North,31.0,25.7,5.3
+Sweden Central,UK South,31.0,24.0,7.0
+Sweden Central,UK West,36.0,26.2,9.8
+Sweden Central,West Europe,27.0,19.8,7.2
+Switzerland North,Austria East,17.0,10.9,6.1
+Switzerland North,Belgium Central,15.0,9.4,5.6
+Switzerland North,Denmark East,21.0,16.5,4.5
+Switzerland North,France Central,17.0,9.3,7.7
+Switzerland North,Germany West Central,10.0,6.6,3.4
+Switzerland North,Italy North,9.0,5.3,3.7
+Switzerland North,North Europe,31.0,20.6,10.4
+Switzerland North,Norway East,28.0,23.0,5.0
+Switzerland North,Poland Central,27.0,17.6,9.4
+Switzerland North,Spain Central,28.0,20.7,7.3
+Switzerland North,Sweden Central,33.0,25.7,7.3
+Switzerland North,UK South,23.0,13.6,9.4
+Switzerland North,UK West,29.0,16.4,12.6
+Switzerland North,West Europe,17.0,11.2,5.8
+UK South,Austria East,28.0,20.5,7.5
+UK South,Belgium Central,14.0,6.8,7.2
+UK South,Denmark East,22.0,16.3,5.7
+UK South,France Central,11.0,7.2,3.8
+UK South,Germany West Central,17.0,11.6,5.4
+UK South,Italy North,27.0,16.4,10.6
+UK South,North Europe,12.0,8.9,3.1
+UK South,Norway East,24.0,19.3,4.7
+UK South,Poland Central,29.0,23.7,5.3
+UK South,Spain Central,25.0,20.9,4.1
+UK South,Sweden Central,31.0,24.0,7.0
+UK South,Switzerland North,23.0,13.6,9.4
+UK South,UK West,7.0,5.2,1.8
+UK South,West Europe,11.0,7.4,3.6
+UK West,Austria East,34.0,23.7,10.3
+UK West,Belgium Central,17.0,9.9,7.1
+UK West,Denmark East,24.0,19.0,5.0
+UK West,France Central,14.0,9.3,4.7
+UK West,Germany West Central,21.0,14.7,6.3
+UK West,Italy North,33.0,18.9,14.1
+UK West,North Europe,16.0,6.4,9.6
+UK West,Norway East,29.0,21.1,7.9
+UK West,Poland Central,31.0,26.8,4.2
+UK West,Spain Central,27.0,20.5,6.5
+UK West,Sweden Central,36.0,26.2,9.8
+UK West,Switzerland North,29.0,16.4,12.6
+UK West,UK South,8.0,5.2,2.8
+UK West,West Europe,14.0,10.4,3.6
+West Central US,Central US,17.0,15.9,1.1
+West Central US,East US,52.0,36.9,15.1
+West Central US,East US 2,48.0,36.9,11.1
+West Central US,North Central US,30.0,23.5,6.5
+West Central US,South Central US,27.0,23.3,3.7
+West Central US,West US,25.0,24.9,0.1
+West Central US,West US 2,25.0,22.6,2.4
+West Central US,West US 3,34.0,18.0,16.0
+West Europe,Austria East,23.0,16.0,7.0
+West Europe,Belgium Central,8.0,4.6,3.4
+West Europe,Denmark East,15.0,11.3,3.7
+West Europe,France Central,13.0,8.4,4.6
+West Europe,Germany West Central,11.0,7.5,3.5
+West Europe,Italy North,22.0,14.4,7.6
+West Europe,North Europe,17.0,13.3,3.7
+West Europe,Norway East,22.0,15.7,6.3
+West Europe,Poland Central,23.0,18.4,4.6
+West Europe,Spain Central,27.0,24.2,2.8
+West Europe,Sweden Central,26.0,19.8,6.2
+West Europe,Switzerland North,17.0,11.2,5.8
+West Europe,UK South,11.0,7.4,3.6
+West Europe,UK West,14.0,10.4,3.6
+West US,Central US,39.0,38.8,0.2
+West US,East US,67.0,59.7,7.3
+West US,East US 2,66.0,59.7,6.3
+West US,North Central US,52.0,46.4,5.6
+West US,South Central US,35.0,37.0,2.0
+West US,West Central US,26.0,24.9,1.1
+West US,West US 2,25.0,18.7,6.3
+West US,West US 3,19.0,16.8,2.2
+West US 2,Central US,38.0,34.4,3.6
+West US 2,East US,73.0,54.6,18.4
+West US 2,East US 2,68.0,54.6,13.4
+West US 2,North Central US,51.0,41.0,10.0
+West US 2,South Central US,56.0,42.5,13.5
+West US 2,West Central US,25.0,22.6,2.4
+West US 2,West US,24.0,18.7,5.3
+West US 2,West US 3,40.0,27.0,13.0
+West US 3,Central US,43.0,29.7,13.3
+West US 3,East US,57.0,49.1,7.9
+West US 3,East US 2,52.0,49.1,2.9
+West US 3,North Central US,53.0,37.0,16.0
+West US 3,South Central US,22.0,22.4,0.4
+West US 3,West Central US,34.0,18.0,16.0
+West US 3,West US,19.0,16.8,2.2
+West US 3,West US 2,40.0,27.0,13.0
