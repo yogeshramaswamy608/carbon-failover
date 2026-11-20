@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": "232",
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-06-02T21:30Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones line lists the location as Global; endpoints were marked deleted worldwide. End: Mini Incident Report gives the incident end as 2 June 2022 14:30 Pacific (PDT).",
+    "notes": "End taken from the Incident End line (14:30 PDT = 21:30Z) per the Google Cloud rule; the 15:24 PDT update says resolved as of 15:21 PDT the same date, which does not contradict the line's date, so the line stands."
+  },
+  {
+    "corpus_no": "233",
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: page title labels the incident Global and the affected-location list covers regions on every continent; the mini report calls it multiple regions. End: Incident Report impact section shows Cloud Storage errors to 14:17 and Cloud SQL to 14:13, past the 14:07 end line.",
+    "notes": "Scope coded global on the page title 'Global'; the mini report's Regions/Zones line says 'Multiple regions', which alone would give multi_region. End left empty: the Incident End line (20 May 2022 14:07 PDT) and the 'resolved for all affected users as of 14:07' update are contradicted by the incident report, which states Cloud Storage impact until 14:17 and Cloud SQL until 14:13 PDT; no later whole-event end statement exists."
+  },
+  {
+    "corpus_no": "234",
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Incident Report impact section says BigQuery degraded in us-central1 and the US multi-region; Datastream hit the whole region. End: Bigtable still affected some customers after 12:06, with residual impact for 6 hours 40 minutes more.",
+    "notes": "Scope: fault began in us-central1-b, but regional services (Datastream, Apigee, Data Fusion, BigQuery) were impaired across us-central1 and BigQuery was impaired in the US multi-region location (us), which counts as multi_region under rule 3; us is not a region code. End left empty: the Incident End line (6 May 2022 12:06 PDT) is not the end because the 12:09 update says Bigtable was still affecting under 2% of customers and the incident report states residual Bigtable impact for an additional 6 hours 40 minutes; no later whole-event end statement is given."
+  },
+  {
+    "corpus_no": "235",
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-04-28T15:51Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: mini report Regions/Zones line and affected-location list both give Global. End: mini report states the incident ended 28 April 2022 at 08:51 Pacific (PDT).",
+    "notes": "End taken from the Incident End line (08:51 PDT = 15:51Z) per the Google Cloud rule; a later update says resolved as of 09:04 PDT the same date, which does not contradict the line's date."
+  },
+  {
+    "corpus_no": "236",
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-03-08T20:42Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: mini report Regions/Zones line gives Global for Traffic Director. End: mini report puts the incident end at 8 March 2022 12:42 Pacific (PST); the full report says impact ran to 12:42.",
+    "notes": "Scope coded global because the report lists the location Global; status updates add that impact had only been observed in us-east1. 12:42 PST (standard time, before the 13 March 2022 DST change) = 20:42Z."
+  },
+  {
+    "corpus_no": "237",
+    "provider": "gcp",
+    "scope": "zonal",
+    "end_utc": "2022-01-09T02:36Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report says products in us-west1-b were hit and no other zone was ever at risk; mini report lists us-west1-b. End: mini report gives the incident end as 8 January 2022 18:36 Pacific.",
+    "notes": "End taken from the Incident End line of the newest report that has one (mini report): 18:36 PST = 02:36Z on 9 January 2022; the incident report also says fully resolved by 18:36."
+  },
+  {
+    "corpus_no": "P1",
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: opening summary says EBS API calls saw high errors and latency across the whole US East Region during two periods. End: recovery section shows volumes restored in stages through 24 April, some never recovered; no single end time given.",
+    "notes": "End left empty: the report states only service-by-service and percentage recovery times (EBS API access restored 6:15 PM PDT 23 April 2011, volume restores continuing 24 April, 0.07% of volumes never restored, RDS instances recovering through the weekend) and gives no time for the end of the event as a whole."
+  },
+  {
+    "corpus_no": "P2",
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "2012-12-25T20:05Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: report says the ELB control plane managing load balancers in the US-East Region lost state data, impairing API calls region-wide. End: team declared the service operating normally at 12:05 PM PST on 25 December.",
+    "notes": "End is the time the report says the service was announced as operating normally (12:05 PM PST 25 December 2012 = 20:05Z); 10:30 AM PST is only 'almost all' load balancers restored and is not the end."
+  },
+  {
+    "corpus_no": "P3",
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: summary says SimpleDB in the US East Region rejected all API calls, a datastore spanning several data centers. End: CreateDomain and DeleteDomain errors persisted until 1:30 AM, but no year is given.",
+    "notes": "End left empty: the report states elevated CreateDomain/DeleteDomain errors until 1:30 AM PDT the night after June 13, but neither the event date nor any publication date shows a year, so no UTC date can be coded without guessing."
+  },
+  {
+    "corpus_no": "P4",
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Recovery section says launches and auto-scaling failed in the Sydney Region until failover to unaffected zones. End: only partial recovery times given; some EBS volumes took much longer, no event end stated.",
+    "notes": "End left empty: the report gives only partial recoveries (over 80% back by 1:00 AM PDT, DNS by 2:49 AM, nearly all instances by 8 AM, some EBS volumes much later or not recovered) and no whole-event end; it also shows no year for June 4th."
+  }
+]

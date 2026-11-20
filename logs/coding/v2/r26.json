@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": "P16",
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2024-07-12T06:28Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope, What happened / How did we respond: token and identity management failures in Australia East, every zone in that region affected, management calls failing region-wide. End, How did we respond: full mitigation reached 06:28 UTC on 12 July 2024 after a configuration fix.",
+    "notes": "Australia Southeast is named only as the failover pair whose requests also failed for Australia East identities; no customer impact on Australia Southeast resources is stated, so scope stays regional. The What happened window also closes at 06:28 UTC; the end statement itself is worded as mitigation."
+  },
+  {
+    "corpus_no": "P17",
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2024-09-27T20:25Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope, What happened: ARM control plane calls failed across the Azure US Government cloud, naming US Gov Arizona, Texas and Virginia. End, How did we respond timeline: impact mitigated at 16:25 EDT on 27 September 2024 by reverting the change.",
+    "notes": "All regions of a sovereign cloud (Azure Government) count as multi_region under rule 3. 16:25 EDT (UTC-4) converted to 20:25 UTC."
+  },
+  {
+    "corpus_no": "P18",
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope, Impacted downstream services / Azure Synapse: power loss in one South Central US zone, yet Synapse job failures also hit East US 2 and Brazil South. End, How did we respond: mitigation declared 19:30 UTC 27 December, but Cosmos DB entry runs to 03:59 UTC 28 December.",
+    "notes": "End left empty: the only whole-event moment (19:30 UTC on 27 December 2024, declared mitigated, also the What happened window end) is contradicted by the Cosmos DB impact stated until 03:59 UTC on 28 December 2024, and the report gives no later whole-event statement; an end is not built from service-by-service times. Scope is multi_region because Synapse impact is stated in southcentralus, eastus2 and brazilsouth, beyond the one zone."
+  },
+  {
+    "corpus_no": "P19",
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2025-10-09T23:59Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope, title and What happened: management portal access failures described as occurring in multiple regions, with no region named. End, How did we respond: last hosting domain recovered at 23:59 UTC and mitigation confirmed.",
+    "notes": "Scope rests on the title's 'multiple regions' without names (rule 3). The 21:30 UTC Azure Portal mitigation is not the end, since residual impact on other portals continued until 23:59 UTC."
+  },
+  {
+    "corpus_no": "P20",
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2026-03-10T19:32Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope, What happened: GPT-5.2 errors affected customers in seven named regions, from Australia East to UK South. End, How did we respond: at 19:32 UTC on 10 March 2026 the service was judged fully restored with all impact addressed.",
+    "notes": "The end statement says the service was fully restored (and impact mitigated); coded impact_ended as a restoration statement. Seven of Azure's regions, not all, so multi_region."
+  },
+  {
+    "corpus_no": "P21",
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2022-12-09T15:55Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope, Mini Incident Report Regions/Zones: eleven Asia Pacific regions plus the asia multi-region listed as affected. End, Mini Incident Report: Incident End line gives 07:55 US/Pacific on 9 December 2022.",
+    "notes": "Incident End 07:55 PST (UTC-8) converted to 15:55 UTC; it agrees with the page header. The asia Google Cloud multi-region is also named. The description's 3 hours 17 minutes differs from the stated 3 hours 5 minutes duration; the Incident End line governs."
+  },
+  {
+    "corpus_no": "P22",
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2022-12-14T14:30Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope, Mini Incident Report Regions/Zones: only europe-west3 listed, log ingestion delays there. End, Mini Incident Report: Incident End line gives 06:30 US/Pacific on 14 December 2022.",
+    "notes": "Incident End 06:30 PST (UTC-8) converted to 14:30 UTC, taken over the 06:28 resolved time in the dated update per rule 7. No zone named; impact stated for the region."
+  },
+  {
+    "corpus_no": "P23",
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-04-02T02:25Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope, Mini Incident Report: location listed as Global and latency described as occurring globally. End, Mini Incident Report: Incident End line gives 19:25 US/Pacific on 1 April 2023.",
+    "notes": "19:25 PDT (UTC-7) on 1 April 2023 converted to 02:25 UTC on 2 April 2023; matches the resolved update."
+  },
+  {
+    "corpus_no": "P24",
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-05-03T00:19Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope, Mini Incident Report Regions/Zones: listed as Global for Cloud CLI errors. End, Mini Incident Report: Incident End line gives 17:19 US/Pacific on 2 May 2023.",
+    "notes": "17:19 PDT (UTC-7) on 2 May 2023 converted to 00:19 UTC on 3 May 2023; matches the resolved update."
+  },
+  {
+    "corpus_no": "P25",
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-10-17T02:00Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope, Incident Report and Mini Incident Report: load job errors confined to three locations, the US multi-region, asia-southeast1 and azure-eastus2. End, Mini Incident Report: Incident End line gives 19:00 US/Pacific on 16 October 2023.",
+    "notes": "The newer Incident Report has no Incident End line, so the Mini Incident Report's line is used; 19:00 PDT (UTC-7) converted to 02:00 UTC on 17 October 2023, consistent with the resolved update. The page header lists far more locations, but the reports limit impact to three; us is a Google Cloud multi-region and azure-eastus2 a BigQuery Omni location."
+  }
+]

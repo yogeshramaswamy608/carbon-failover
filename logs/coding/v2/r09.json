@@ -1,0 +1,122 @@
+[
+  {
+    "corpus_no": 82,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2026-09-01T18:52Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "Incident Report Affected Services and Addendum: two zones of us-central1 hit, regional products affected, and Spanner and Firestore nam5 multi-region instances saw errors.",
+      "end": "Preliminary Incident Report Date/Time: incident end given as 1 Sep 2026 11:52 US/Pacific; 12:12 update says all impacted products recovered."
+    },
+    "notes": "Scope is multi_region because the nam5 multi-region location (listed among affected locations) had impaired Spanner and Firestore instances, beyond us-central1-b and us-central1-f; nam5 is a multi-region location, not a region. Addendum also says PSC and Interconnect clients in any region could be affected. End from the Incident End line of the Preliminary Incident Report (newest report with such a line), 11:52 PDT converted to UTC; the final report says full recovery of nearly all services was confirmed by 11:52 and states no impact after it."
+  },
+  {
+    "corpus_no": 83,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": {
+      "scope": "Page header: previously affected locations list Global together with Oregon (us-west1); incident body describes us-west1 regional impact.",
+      "end": "Incident Report Affected Services: after 10:22 some services still recovering, backlog latency and slow us-west1-c VM provisioning; 12:21 update still recovering remaining products."
+    },
+    "notes": "Scope coded global under rule 3 because the page lists the location Global; the report text itself says regions other than us-west1 stayed unaffected, so impact described is regional to us-west1. End left empty: the Incident End line (20 Aug 2026 10:22 PDT, 17:22Z) is contradicted by the final report, which says some services kept elevated latency from backlogs and us-west1-c VM provisioning took longer after 10:22, with no statement that customer impact ended before the backlog work; the header end (12:20 PDT) is followed by a 12:21 update saying remaining products were still being recovered; the 12:37 update only restates mitigation as of 10:22. No later whole-event end moment is stated."
+  },
+  {
+    "corpus_no": 84,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2026-07-16T14:34Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "Detailed Description of Impact: europe-west4-a outage, and NetApp Volumes control plane operations such as creating pools and volumes failed in the affected region.",
+      "end": "Preliminary Incident Report windows: latest end is Bare Metal Solution at 16 Jul 2026 07:34 PDT; final report impact window also ends 07:34."
+    },
+    "notes": "Scope regional because NetApp Volumes control plane (management) operations failed across the affected region, beyond the one zone europe-west4-a. End is the latest of the per-service windows in the Preliminary Incident Report (BMS 07:34 PDT), matching the final report's impact window and the 14h55m duration; the header end (05:25 PDT) is not used because the 05:25 update says BMS was still affecting some customers. The BMS timeline lists 'incident mitigated' at 08:42 PDT after reboots were confirmed healthy, but the report states the customer impact window ended 07:34."
+  },
+  {
+    "corpus_no": 85,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2026-07-15T03:40Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "Incident Report Summary: GCVE Stretched Cluster customers in australia-southeast2 and europe-west3 had inter-site communication failures.",
+      "end": "Preliminary Incident Report Date/Time: incident end 14 Jul 2026 20:40 PDT; Remediation says inter-zonal connectivity fully restored at that time."
+    },
+    "notes": "Two named regions, so multi_region; the 17:13 update says northamerica-northeast2 was not impacted. End from the Incident End line (20:40 PDT, next day 03:40Z). The 22:34 PDT update said mitigation with affected customers was complete by 21:46 PDT, but the later reports state connectivity was fully restored at 20:40."
+  },
+  {
+    "corpus_no": 86,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2026-02-27T14:35Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "Page header lists Global plus several US regions; Incident Report says the global endpoint and US regions were impacted.",
+      "end": "Preliminary Incident Report Date/Time: incident end 27 Feb 2026 06:35 US/Pacific; full restoration confirmed at that time."
+    },
+    "notes": "Scope global because the page lists the location Global (the global endpoint) among affected locations. End from the Incident End line, 06:35 PST (UTC-8) giving 14:35Z. The earlier 08:12 update gave 06:45 PST; the later reports' Incident End line is used."
+  },
+  {
+    "corpus_no": 87,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2025-06-13T01:18Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "Mini Incident Report gives Regions/Zones as Global; Incident Report says the crash loop occurred globally across regional deployments.",
+      "end": "18:27 PDT update: Vertex AI Online Prediction recovered at 18:18 PDT and all services are fully recovered."
+    },
+    "notes": "Incident End line (13:49 PDT) not used: the Mini Incident Report itself says several products had residual impact after mitigation, and dated updates show Dataflow, Personalized Service Health and Vertex AI Online Prediction still impaired after 13:49. The next whole-event statement is the 18:27 update that all services were fully recovered, with the last one recovered at 18:18 PDT (13 Jun 01:18Z); the header end matches."
+  },
+  {
+    "corpus_no": 88,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2025-05-20T12:15Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "Incident Report Summary: Spot VM termination problems occurred globally, with VM creation degradation in us-central1 and us-east4.",
+      "end": "Incident Report Detailed Description of Impact: after mitigation, median and tail control plane latencies came back to normal by 05:15 US/Pacific."
+    },
+    "notes": "Scope global because the report says Spot VM termination was affected globally (21 regions are named for termination issues). Incident End line (05:05 PDT) not used because the final report says elevated control plane latency continued until it returned to normal at 05:15 PDT; 05:15 PDT converted to 12:15Z. Rollback completion at 03:55 is described only as mitigating the impact, with latency elevated after it."
+  },
+  {
+    "corpus_no": 89,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": {
+      "scope": "Incident Report impact: Filestore regional instances in us-east5 degraded, Kafka cluster creation failed region-wide, GKE capacity limits in other us-east5 zones.",
+      "end": "Detailed impact: Bigtable errors to 19:37 and Persistent Disk stalls to 20:45; 19:43 update says some disks still recovering."
+    },
+    "notes": "Scope regional: fault in us-east5-c, but region-wide management calls (Kafka CreateCluster) failed, regional Filestore instances were degraded and GKE had capacity constraints in other zones. End left empty: the Incident End line (19:12 PDT) and header end (19:15 PDT) are both followed by stated impact (Bigtable until 19:37, Memorystore until 19:28, Persistent Disk until 20:45 PDT, disks still in recovery at 19:43), and no later whole-event end is stated; per-service times are not combined into an end."
+  },
+  {
+    "corpus_no": 90,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2025-02-19T02:40Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "Mini Incident Report gives Regions/Zones as Global for the Chronicle Security and SOAR dashboard errors.",
+      "end": "Mini Incident Report: incident end 18 Feb 2025 18:40 US/Pacific; earlier update said resolved for all users from 18:35."
+    },
+    "notes": "Scope global because the report gives Global as the affected location. End from the Incident End line, 18:40 PST (UTC-8) giving 19 Feb 02:40Z; no impact stated after it."
+  },
+  {
+    "corpus_no": 91,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2025-01-31T14:13Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "Mini Incident Report Regions/Zones: asia-south1 and asia-southeast1 saw delayed WORKSPACE_ACTIVITY ingestion.",
+      "end": "Mini Incident Report: incident end 31 Jan 2025 06:13 US/Pacific; 06:14 update says resolved for all affected users then."
+    },
+    "notes": "Two named regions, so multi_region. End from the Incident End line, 06:13 PST (UTC-8) giving 14:13Z. The report says the ingestion delays were mitigated by raising network QoS while the underlying network issue was still being fixed; no customer impact is stated after 06:13."
+  }
+]

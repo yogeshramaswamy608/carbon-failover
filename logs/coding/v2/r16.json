@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 152,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-11-22T11:08Z",
+    "end_basis": "resolved",
+    "evidence": "Scope: Previously affected locations list only the eu multi-region; BigQuery latency and connection errors there. End: 22 Nov 03:14 PST update says BigQuery resolved for every affected user as of 03:08 Pacific.",
+    "notes": "Location is the Google Cloud multi-region eu, coded multi_region; no region code applies. This page carries no Incident End line (the mini report sits on a separate page), so the header end and the final update's resolved time, 03:08 PST, are used."
+  },
+  {
+    "corpus_no": 153,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-11-25T08:24Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report impact section places the latency and errors in the US multi-region. End: Detailed Description of Impact lists three windows, the last closing 25 Nov 00:24 Pacific.",
+    "notes": "Location is the Google Cloud multi-region us, coded multi_region. The mini report's Incident End (20 Nov 03:12 PST) is not the end because the newer Incident Report states impact recurred on 24 and 25 Nov; the latest stated impact window ends 25 Nov 00:24 PST, converted with PST (UTC-8)."
+  },
+  {
+    "corpus_no": 154,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Mini Incident Report Regions/Zones says later analysis confined impact to europe-west4 and europe-north1. End: same report puts Incident End at 08:07 but says Cloud Storage stayed impaired until about 09:10.",
+    "notes": "Two named regions, so multi_region (header lists twelve European locations, narrowed by the mini report). End left empty: the Incident End line (8 Nov 08:07 PST) is followed by stated Cloud Storage impact lasting 72 minutes, full recovery 09:10 per the mini report versus about 08:30 per the 09:30 update; the 09:30 PST whole-event resolved update gives no moment of resolution, and the Cloud Storage time is a single-service time, so no whole-event end moment is stated."
+  },
+  {
+    "corpus_no": 155,
+    "provider": "gcp",
+    "scope": "zonal",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Mini Incident Report names us-east4-a only; regional Persistent Disks unaffected. End: Compute Engine only mostly mitigated at 15:46, with long-tail Local SSD customers still being worked on.",
+    "notes": "Impact stayed in us-east4-a; the report says regional disks were not affected and gives no word of impact in other zones. End left empty: the Incident End line (7 Nov 15:46 PST) matches a time the report calls mostly mitigated, and both the mini report and the 14:45 update say some customers stayed impaired after it; no later whole-event end statement exists."
+  },
+  {
+    "corpus_no": 156,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2023-10-18T03:58Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report names australia-southeast1 and connectivity problems across the region's VMware Engine clusters. End: Incident End is 17 Oct 20:58 Pacific, when all peer circuits were back.",
+    "notes": "Impact stated at region level with no zone named, coded regional. End is the Incident End line, 17 Oct 20:58 PDT (UTC-7). The report says some customers may have had residual impact past resolution; this is hedged and no later whole-event statement exists (the 21:15 update gives an earlier 20:54 resolution)."
+  },
+  {
+    "corpus_no": 157,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2023-10-05T18:00Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report says the fault hit all virtual routers across us-central1, impairing new and migrated VMs region-wide. End: Mini Incident Report gives Incident End 5 Oct 11:00 Pacific.",
+    "notes": "Region-wide control-plane fault affecting VM creation and migration in us-central1, coded regional. End follows the mini report's Incident End line (11:00 PDT), the only Incident End line on the page; the full report and header give 10:55 and the final update 11:12. Filestore upgrade backlog finished about a day later; the full report bounds customer impact at 10:55, so the backlog is treated as outside the event."
+  },
+  {
+    "corpus_no": 158,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-10-02T22:00Z",
+    "end_basis": "resolved",
+    "evidence": "Scope: Mini Incident Report lists every region plus multi-regions and the Global location. End: 15:19 update says the issue was resolved for all affected users as of 15:00 Pacific.",
+    "notes": "All regions and Global listed, coded global. The Incident End line (2 Oct 14:30 PDT) is not used because the 14:53 update says the issue was mitigated only for most customers, so impact went on after 14:30; the next whole-event statement is resolved as of 15:00 PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 159,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-09-29T00:12Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini and full reports place the slot purchase and autoscaling failures in the US multi-region. End: Incident End is 28 Sept 17:12 Pacific, matching full mitigation and the resolved update.",
+    "notes": "Location is the Google Cloud multi-region us, coded multi_region; no region code applies. End is the Incident End line, 28 Sep 17:12 PDT (UTC-7), which crosses to 29 Sep in UTC."
+  },
+  {
+    "corpus_no": 160,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-09-23T08:10Z",
+    "end_basis": "resolved",
+    "evidence": "Scope: Affected location is Global; reports describe a global data-plane outage for affected load balancers. End: 23 Sep 01:14 update says resolved for all affected users as of 01:10 Pacific.",
+    "notes": "Location listed as Global, coded global. The Incident End line (22 Sep 23:34 PDT) is not used because the 23 Sep 00:15 update says rare load balancer error spikes continued and full mitigation had no ETA; the next whole-event statement is resolved as of 23 Sep 01:10 PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 161,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2023-09-13T11:01Z",
+    "end_basis": "resolved",
+    "evidence": "Scope: Fault began in us-central1-a, but instance creation API calls, Cloud SQL, Bigtable and regional GKE failed across us-central1. End: 04:03 update says all listed services resolved as of 04:01 Pacific.",
+    "notes": "Fault centered on us-central1-a but region-wide launch and API calls were impaired, so regional. The Incident End line (13 Sep 03:32 PDT) is not used because the Incident Report itself puts GKE mitigation at 04:00 and the final update resolves GKE at 04:01; the next whole-event statement is resolved as of 04:01 PDT (UTC-7)."
+  }
+]

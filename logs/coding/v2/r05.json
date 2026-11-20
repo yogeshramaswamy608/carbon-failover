@@ -1,0 +1,122 @@
+[
+  {
+    "corpus_no": 41,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2024-03-15T11:00Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened?: customers in two named regions, South Africa North and South Africa West, saw connectivity failures, latency and packet loss.",
+      "end": "What happened?: the impact window closes at 11:00 UTC on 15 March 2024; timeline adds that shifting Lagos edge capacity then mitigated customer impact."
+    },
+    "notes": "End taken from the impact window in What happened?; the timeline entry for the same moment calls it effectively mitigated. The 18 March 2024 02:00 UTC declaration of mitigation follows extra capacity and monitoring and states no further customer impact after 15 March, so it is not used."
+  },
+  {
+    "corpus_no": 42,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": {
+      "scope": "What happened?: impact mainly in Central US, East US, South Central US, West Central US and West Europe, possibly lesser elsewhere; not called global.",
+      "end": "How did we respond?: ARM fully mitigated at 08:58 UTC, but Key Vault impact in East US and West Europe lasted longer; only West Europe Key Vault recovery dated."
+    },
+    "notes": "Scope: five named regions plus hedged lesser impact in other regions; the report never says all regions or global, so multi_region. End left empty: 08:58 UTC ends the ARM window but the report says some downstream services, notably Key Vault in East US and West Europe, stayed impaired after it; the 09:28 UTC Key Vault recovery covers West Europe only, so no whole-event end is stated."
+  },
+  {
+    "corpus_no": 43,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2023-09-16T19:00Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened? and customer guidance: power loss in one unnamed Availability Zone of East US; the report calls it an incident affecting a single region.",
+      "end": "What happened? and timeline: customer connectivity issues ran until 19:00 UTC, when all compute and SQL nodes were mitigated."
+    },
+    "notes": "Scope: the fault began in one Availability Zone, but the zone is not named, so zonal cannot be coded; the report describes the event as impacting a single region (East US), so regional. End from the impact window; the same moment is described as full mitigation for VMs."
+  },
+  {
+    "corpus_no": 44,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2023-09-03T20:00Z",
+    "end_basis": "mitigated",
+    "evidence": {
+      "scope": "AKS perspective: besides Australia East, AKS create/update/delete operations failed in Australia Southeast because they depended on the same database.",
+      "end": "What happened?: most services were back by 22:40 UTC on 30 August, but full mitigation came only at 20:00 UTC on 3 September."
+    },
+    "notes": "Scope: impairment in Australia East (one zone plus region-wide ARM and AKS control plane) and in Australia Southeast (AKS CRUD), so multi_region; ARM errors for Australia East resource groups were seen by customers worldwide. End: the only whole-event statement is full mitigation at 20:00 UTC on 3 September 2023; the SQL section says most customers had no issues during the final ring move, but no earlier whole-event end of impact is stated."
+  },
+  {
+    "corpus_no": 45,
+    "provider": "azure",
+    "scope": "global",
+    "end_utc": "2023-07-07T09:00Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened?: the report states customers in every region were affected by the Log Analytics, Sentinel and Diagnostic Settings ingestion failures.",
+      "end": "What happened? and timeline: ingestion failures ran until 09:00 UTC on 7 July, when the incident was declared mitigated."
+    },
+    "notes": "End from the impact window in What happened?; the timeline calls the same moment declared mitigated."
+  },
+  {
+    "corpus_no": 46,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2023-07-05T16:00Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened?: West Europe services impaired by congestion, and Azure Databricks was also impaired in North Europe through a control plane dependency.",
+      "end": "What happened? and How did we respond?: impact window ends about 16:00 UTC, when packet drops fell back to pre-incident levels."
+    },
+    "notes": "Scope: two regions named as impaired (West Europe, and North Europe for Databricks), so multi_region. End from the approximate impact window; the 22:45 UTC mitigation declaration came after link repair and monitoring and states no customer impact after 16:00 UTC, so it is not used."
+  },
+  {
+    "corpus_no": 47,
+    "provider": "azure",
+    "scope": "global",
+    "end_utc": "2023-06-09T17:00Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What went wrong and How did we respond?: the portal failed in multiple geographies, and blocking attack traffic is said to have limited the global impact.",
+      "end": "What happened? and How did we respond?: errors ran until 17:00 UTC, when every portal endpoint reported healthy baseline state."
+    },
+    "notes": "Scope: no region named; the report describes the impact as global and spanning multiple geographies of the portal, so global. End from the impact window, matched by monitoring showing all endpoints healthy at 17:00 UTC."
+  },
+  {
+    "corpus_no": 48,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2023-03-23T07:30Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened?: ARM management calls handled in West Europe failed, up to half of them; customers elsewhere were mostly unaffected.",
+      "end": "What happened? and How did we respond?: impact window closes at 07:30 UTC, when availability was back to normal; mitigation confirmed at 07:54 UTC."
+    },
+    "notes": "Scope: region-wide management (ARM) calls impaired in one region, so regional. End from the impact window; 07:54 UTC is only the later confirmation of mitigation."
+  },
+  {
+    "corpus_no": 49,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2023-03-06T17:55Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened?: a subset of storage accounts in West Europe were over-throttled, with dependent services failing; no zone is named.",
+      "end": "What happened?: the impact window ends at 17:55 UTC on 6 March 2023."
+    },
+    "notes": "Scope: impact on storage resources in one region across several scale units, no zone named, so regional. End from the impact window; How did we respond? says impacted resources were mitigated by 16:34 UTC before the rollback and mitigation declaration, which conflicts with the window, so the stated window end 17:55 UTC is kept."
+  },
+  {
+    "corpus_no": 50,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2023-02-09T04:30Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened? and ARM section: customers in Southeast Asia and East Asia had trouble reaching and managing resources; ARM traffic shift overloaded East Asia.",
+      "end": "What happened? and SQL section: impact window ends 04:30 UTC on 9 February, when the last SQL tenant ring came back."
+    },
+    "notes": "Scope: two named regions impaired, so multi_region. End from the impact window, matching the final service recovery time."
+  }
+]

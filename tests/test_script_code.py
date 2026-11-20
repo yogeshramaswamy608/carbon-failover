@@ -33,3 +33,19 @@ def test_azure_review_url_and_section():
     page = "Header\n09/30/2026\nPIR title\nTracking ID: AB12-CD3\nWhat happened?\nBody\nSorry for the inconvenience, x\nFooter"
     assert azure_section(page, "AB12-CD3") == "09/30/2026\nPIR title\nTracking ID: AB12-CD3\nWhat happened?\nBody"
     assert azure_section(page, "ZZZZ-999") == ""
+
+
+def test_gcp_ir_end_version_2():
+    from cfo.script_code import gcp_ir_end
+    page = "\n".join([
+        "10 May 2023 15:27 PDT Incident Report",
+        "Incident Start: 28 April 2023 18:00",
+        "Incident End: 29 April 2023 13:10",
+        "2 May 2023 07:17 PDT Mini Incident Report",
+        "Incident End: 29 April 2023 12:00",
+    ])
+    assert gcp_ir_end(page, "2023-04-29T01:00Z") == "2023-04-29T20:10Z"  # the newest report's line
+    windows = "6 Jun 2023 14:02 PDT Mini Incident Report\nIncident End: 6 June 2023 at 07:58\nIncident End: 6 June 2023 at 08:35"
+    assert gcp_ir_end(windows, "2023-06-06T14:35Z") == "2023-06-06T15:35Z"  # the latest window
+    typo = "28 Jul 2023 12:34 PDT Mini Incident Report\nIncident End: 27 June 2023 at 10:33"
+    assert gcp_ir_end(typo, "2023-07-27T14:44Z") == ""  # before the header's begin time: left to the model

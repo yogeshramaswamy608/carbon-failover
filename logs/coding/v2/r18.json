@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 172,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-07-17T21:28Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Description: location given as Global; the create API failed intermittently worldwide. End: Mini Incident Report, Incident End: incident ended 17 July 2023 14:28 Pacific, after a 4 h 32 min impact.",
+    "notes": "Incident End line 14:28 PDT (UTC-7) taken; the closing update also gives 14:28 as resolved for all users. Header lists multi-regions eu and us and many regions, but the report states Global."
+  },
+  {
+    "corpus_no": 173,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-07-21T09:55Z",
+    "end_basis": "resolved",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones: eight named regions across Asia, Middle East and US had instance update failures. End: 21 Jul 02:55 update: issue declared resolved for every affected user at 02:55 Pacific.",
+    "notes": "Incident End line gives 21 July 2023 02:29 PDT, but the 02:30 PDT update states us-east1 was still being mitigated, so impact went on after it; the next whole-event statement, resolved as of 02:55 PDT (UTC-7), is taken."
+  },
+  {
+    "corpus_no": 174,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-07-10T18:28Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Description: Global; management plane errors in every region. End: Mini Incident Report, Incident End: configuration errors stopped 10 July 2023 11:28 Pacific after 1 h 50 min.",
+    "notes": "Incident End line 11:28 PDT (UTC-7) taken over the later resolved statement (11:37 PDT); no update states impact after 11:28."
+  },
+  {
+    "corpus_no": 175,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-07-10T20:29Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones: Global; page title also marks the issue global. End: Mini Incident Report, Incident End: API access problem ended 10 July 2023 13:29 Pacific after 4 h 10 min.",
+    "notes": "Incident End line 13:29 PDT (UTC-7) taken; the closing update gives the same moment as resolved for all users."
+  },
+  {
+    "corpus_no": 176,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-07-18T14:27Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones: Global for GKE logging. End: Mini Incident Report, Incident End: extra log messages stopped 18 July 2023 07:27 Pacific, matching the closing resolved update.",
+    "notes": "Incident End line 07:27 PDT (UTC-7) taken; the 18 Jul update gives the same moment as resolved for all users."
+  },
+  {
+    "corpus_no": 177,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-07-05T04:03Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Description: us-central1 plus three regions in Europe and Asia saw Spanner errors. End: Mini Incident Report, Incident End: impact closed 4 July 2023 21:03 Pacific.",
+    "notes": "Incident End line 21:03 PDT (UTC-7) taken over the later resolved statement (21:09 PDT); the description puts the last intermittent impact in the other regions before 21:03."
+  },
+  {
+    "corpus_no": 178,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Mini Incident Report, Description: IAM authentication failures hit many services across the us-east5 region, not one zone. End: Customer Impact: Cloud Storage errors lasted until 11:09 Pacific, past the stated end.",
+    "notes": "End left empty: Incident End line gives 11:04 PDT, but the Customer Impact section states Compute Engine errors until 11:05 and Cloud Storage errors until 11:09; the only later statement (resolved as of 11:06) names five products only and also precedes the 11:09 Storage impact, so no whole-event end is stated."
+  },
+  {
+    "corpus_no": 179,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-06-19T21:14Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report summary and Mini Incident Report: 403 errors in us-west1 and the US multi-region location. End: Incident Report remediation: services fully recovered 19 June 2023 14:14 Pacific, matching the Incident End line.",
+    "notes": "Incident End line 14:14 PDT (UTC-7) taken; the full Incident Report states full recovery at the same moment. Multi-region us counted toward multi_region; header also lists europe-west1 and us-west2, not named in the reports."
+  },
+  {
+    "corpus_no": 180,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-06-06T15:35Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones: packet loss in asia-southeast1, asia-east1 and europe-west1. End: Mini Incident Report, Impact Window #3: last window, in europe-west1, ended 6 June 2023 08:35 Pacific.",
+    "notes": "Latest of three Incident End windows, 08:35 PDT (UTC-7), taken over the later resolved statement (08:47 PDT)."
+  },
+  {
+    "corpus_no": 181,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2023-06-04T14:45Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones: three zones of us-east1 (b, c, d) had create and delete failures. End: Mini Incident Report, Incident End: impact closed 4 June 2023 07:45 Pacific.",
+    "notes": "Incident End line 07:45 PDT (UTC-7) taken over the later resolved statement (08:14 PDT); the 07:52 PDT update describes the failures in past tense with only a boilerplate may-see diagnosis line, so it is not read as stating impact after 07:45."
+  }
+]

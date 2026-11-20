@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 222,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2022-07-21T04:20Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: 19 Jul 2022 10:41 and 11:36 PDT updates; fault sat in europe-west2-a, but a share of new Persistent Disk volumes saw impact across the whole region. End: page header; incident shown as ending 2022-07-20 21:20 US/Pacific.",
+    "notes": "No Incident End line on this page (the full report lives on another incident page), so the header end time is used. The 19 Jul 2022 20:45 PDT update calls the issue resolved as of 20:43 but says some HDD-backed Persistent Disk volumes still had errors, so that earlier moment is not the end; nothing on the page says impact went on after the header time. Header gives no wording on the kind of end; coded impact_ended as the incident end. Times converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 223,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2022-07-21T04:20Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report, Regional Impact; routing wrongly avoided all three europe-west2 zones, so regional services such as GCS and BigQuery failed beyond zone a. End: Mini-IR Incident End line 2022-07-20 21:20 PDT; full report says long tail fully mitigated then, all services restored.",
+    "notes": "Incident End taken from the preliminary report (the full report has no Incident End line); it matches the 20 Jul 2022 22:48 PDT update and the header. Some per-service lines give later times (GCE long-tail reconciliation and Dataproc clusters 21 Jul 02:32 PDT, Dataproc old-request backlog errors to 21 Jul 16:45 PDT, a GCE mitigation time of 21 Jul 20:18 PDT that conflicts with its own text); these are not whole-event statements and the Incident End line is kept. Spanner multi-region latency was for clients in europe-west2; no other region named as impaired. Times converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 224,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2022-07-19T15:47Z",
+    "end_basis": "resolved",
+    "evidence": "Scope: 20 Jul 2022 06:44 PDT update; secrets held only in europe-west2, or new secrets created there, returned errors; no single zone named. End: same update and header; resolved for all affected projects at 08:47 US/Pacific.",
+    "notes": "No Incident End line on this page (the full report is on another incident page); header end 08:47 matches the dated resolution statement. Times converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 225,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-07-18T21:00Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: Mini-IR lists Regions/Zones as Global; all users of both consoles could not attach files to support cases. End: Mini-IR Incident End 18 July 2022 14:00 PDT; Incident Report says fully mitigated then after rollback.",
+    "notes": "The 18 Jul 2022 14:02 PDT update says resolved as of 14:02, on the same date as the Incident End line, so the Incident End line is kept. Its matching statement in the full report is mitigation only. Times converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 226,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-07-15T22:02Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini-IR lists Regions/Zones as Global and describes reduced networking availability worldwide. End: Mini-IR Incident End 15 July 2022 15:02 PDT; Incident Report says services for all customers restored by then.",
+    "notes": "The full Incident Report names specific affected regions (us-east1, southamerica-west1, southamerica-east1, us-central1, us-central2, and nam4 buckets), but the preliminary report lists the location Global, so coded global. The 15 Jul 2022 14:17 PDT BigQuery resolution (14:12) precedes the Incident End and does not contradict its date. Times converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 227,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-07-15T22:02Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini-IR lists Regions/Zones as Global and reports networking availability reduced worldwide. End: Mini-IR Incident End 15 July 2022 15:02 PDT; Incident Report says every customer's services restored by that time.",
+    "notes": "Header lists only southamerica-west1, us-central1 and us-east1, and the full report names specific regions, but the preliminary report lists the location Global, so coded global. The 15 Jul 2022 15:27 PDT update says GCS resolved as of 15:26, 24 minutes after the Incident End on the same date; not a date contradiction, so the Incident End line is kept. Times converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 228,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2022-06-15T00:43Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report summary and impact; administrative operations across us-central1 slowed or failed, with load balancer errors in zones c and f. End: Mini-IR Incident End 14 Jun 2022 17:43 PDT; report says the network control plane recovered then.",
+    "notes": "The 14 Jun 2022 18:15 PDT update calls the issue only fully mitigated at 17:43 and still working toward full resolution; the later Incident Report states recovery at 17:43, so coded impact_ended. The report's impact window also opens 13 June 16:30 PDT, while the Incident Start is 14 June 06:56. Times converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 229,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-06-07T16:02Z",
+    "end_basis": "resolved",
+    "evidence": "Scope: header location list includes Global plus many regions on several continents; loss toward Middle East and Europe-Asia latency. End: Mini-IR Incident End 07 June 2022 09:02 PDT; dated update says resolved for all affected users then.",
+    "notes": "The Detailed Description of Impact gives the window as ending 09:03 PDT, one minute after the Incident End line; the Incident End line is kept. Times converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 230,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-06-05T23:14Z",
+    "end_basis": "resolved",
+    "evidence": "Scope: Mini-IR lists Regions/Zones as Global; IAM policy and group changes were slow to take effect everywhere. End: Mini-IR Incident End 05 June 2022 16:14 PDT; dated update reports resolution for all affected projects.",
+    "notes": "The 5 Jun 2022 16:22 PDT update gives resolution at 16:15, one minute after the Incident End on the same date; the Incident End line is kept. Times converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 231,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2022-06-05T00:03Z",
+    "end_basis": "resolved",
+    "evidence": "Scope: Mini-IR Customer Impact; fault in us-east1-c hit regional services in us-east1, and instance operations and Composer creation also suffered in us-east4. End: Mini-IR Incident End 04 June 2022 17:03 PDT; dated update says resolved for all affected users.",
+    "notes": "Mini-IR lists Regions/Zones as us-east1-c only, but its Customer Impact names us-east4 for Compute Engine and Cloud Composer, so two regions were impaired. The description cites 3 hours 4 minutes of elevated errors and most impact mitigated by 13:20 PDT, but the whole-event end is 17:03. Times converted from PDT (UTC-7)."
+  }
+]

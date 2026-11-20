@@ -94,3 +94,56 @@ def code(provider: str, text: str) -> dict:
                 return {"start_utc": start, "start_precision": "minute", "end_utc": end}
         return {}
     return {}
+
+
+# Version 2 of the event codebook (sections 5 and 7), Thu Nov 19, 2026: the Google Cloud end is the
+# incident report's own "Incident End" line, not the dashboard header's "ended at" time.
+REPORT_HEAD = re.compile(r"^\d{1,2} [A-Z][a-z]{2} \d{4} \d{2}:\d{2} P[DS]T .*(Incident Report|Mini-IR)")
+UPDATE_HEAD = re.compile(r"^\d{1,2} [A-Z][a-z]{2} \d{4} \d{2}:\d{2} P[DS]T\b")
+IR_END = re.compile(r"^Incident End\s*:?\s*(\d{1,2})(?:st|nd|rd|th)? ([A-Z][a-z]+)\.?,? (\d{4}),?(?: at)? (\d{1,2}:\d{2})(?::\d{2})?(?: (?:US/Pacific|PDT|PST)\b.*)?\s*$")
+
+
+def _pacific(d: str, month: str, y: str, hm: str) -> str | None:
+    month = {"Sept": "Sep"}.get(month, month)
+    for fmt in ("%Y %B %d %H:%M", "%Y %b %d %H:%M"):
+        try:
+            return _utc(datetime.strptime(f"{y} {month} {d} {hm}", fmt).replace(tzinfo=PACIFIC))
+        except ValueError:
+            continue
+    return None
+
+
+def gcp_ir_end(text: str, began_utc: str) -> str:
+    """The end under codebook version 2: the latest plain "Incident End:" line of the newest incident
+    report on the page that has one; "" when there is none, when a line cannot be read, or when the
+    end falls before the header's begin time (a date the model reads from the dated updates)."""
+    lines = text.split("\n")
+    heads = [k for k, x in enumerate(lines) if REPORT_HEAD.match(x)]
+    blocks = []
+    for k in heads:
+        j = next((m for m in range(k + 1, len(lines)) if UPDATE_HEAD.match(lines[m])), len(lines))
+        blocks.append(lines[k + 1:j])
+    if not heads:
+        blocks = [lines]
+    for b in blocks:
+        hits = [IR_END.match(x) for x in b if x.startswith("Incident End")]
+        if not hits:
+            continue
+        if not all(hits):
+            return ""
+        ends = [_pacific(*m.groups()) for m in hits]
+        if None in ends:
+            return ""
+        end = max(ends)
+        return end if end > began_utc else ""
+    return ""
+
+
+def code_v2(provider: str, text: str) -> dict:
+    """The script's fields under codebook version 2: as code(), with the Google Cloud end replaced."""
+    out = code(provider, text)
+    if provider == "gcp" and out:
+        out["end_utc"] = gcp_ir_end(text, out["start_utc"])
+        if not out["end_utc"]:
+            del out["end_utc"]
+    return out

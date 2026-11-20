@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 1,
+    "provider": "aws",
+    "scope": "global",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Other AWS Services (Redshift paragraph): IAM-credential queries failed for Redshift users in every AWS Region; console sign-in also failed outside us-east-1. End: Opening summary gives an event end of 2:20 PM PDT Oct 20, yet the Redshift paragraph says some clusters stayed unavailable until 4:05 AM PDT Oct 21.",
+    "notes": "Scope global: the report says Redshift customers in all AWS Regions could not run queries with IAM user credentials; the fault itself was in us-east-1. End left empty: the stated event end (2:20 PM PDT Oct 20, 2025 = 2025-10-20T21:20Z) is followed by stated customer impact, Redshift clusters impaired until 4:05 AM PDT Oct 21, 2025 (service-level, not a whole-event statement); no later whole-event end is stated. Connect data backfill by Oct 28 is a backlog."
+  },
+  {
+    "corpus_no": 2,
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Issue Summary: several services (CloudWatch Logs, Firehose, S3 events, ECS, Lambda, Redshift, Glue) degraded in US-EAST-1; other regions unaffected. End: AWS Service Impact: normal operations by 9:37 PM PDT, but CloudWatch alarms on delayed metrics only normal at 5:50 AM July 31 and S3 event backlog finished Aug 1.",
+    "notes": "Scope regional: many services across the us-east-1 region impaired, no single zone named. End left empty: the 9:37 PM PDT July 30, 2024 (2024-07-31T04:37Z) normal-operations statement is followed by stated impact, CloudWatch logs, filtered metrics and alarms not operating normally until 5:50 AM PDT July 31 and delayed S3 events until 2:38 AM PDT Aug 1; the report does not say customer impact ended before the backlog, and gives no later whole-event end."
+  },
+  {
+    "corpus_no": 3,
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: English summary, RunInstances paragraph: launches using the idempotency token failed region-wide and Auto Scaling launches were blocked, beyond the one affected zone. End: Summary says most instances recovered by 6:30 PM JST, while a few took longer and some were retired.",
+    "notes": "Scope regional: the fault was in one Tokyo AZ (not named by ID), but RunInstances calls with the idempotency token failed across the ap-northeast-1 region from 1:21 to 2:51 PM JST, a region-wide launch/API impairment; the Aug 28 update also cites multi-AZ ALB errors. Times are JST (UTC+9), not PDT/PST. End left empty: 6:30 PM JST Aug 23, 2019 covers only the vast majority of instances and volumes, with the rest recovering later at no stated time; no whole-event end is stated."
+  },
+  {
+    "corpus_no": 4,
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "2018-11-22T00:43Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: English summary: EC2 instances throughout the Seoul region had DNS resolution failures; no zone named. End: Summary and root-cause paragraph: DNS queries from EC2 instances fully recovered at 9:43 AM KST, service restored.",
+    "notes": "Scope regional: the impact was the EC2 DNS resolver fleet for the whole ap-northeast-2 region, no zone. End: 9:43 AM KST on November 22, 2018; KST is UTC+9, giving 2018-11-22T00:43Z. Times are KST, not PDT/PST."
+  },
+  {
+    "corpus_no": 5,
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Opening section: S3 in US-EAST-1 could not serve requests; dependent regional services (console, EC2 launches, EBS, Lambda) also hit. End: Recovery paragraph: S3 normal at 1:54 PM PST, but other services were still recovering backlogs afterward.",
+    "notes": "Scope regional: S3 in the whole us-east-1 region plus dependent services there. End left empty: 1:54 PM PST Feb 28, 2017 (2017-02-28T21:54Z) is S3 alone; the report says other affected services only began recovering then and some needed more time, with no stated time for the event as a whole."
+  },
+  {
+    "corpus_no": 6,
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Opening and DynamoDB Event sections: DynamoDB customers in US-East and other services in that region affected; no zone named. End: Error rates low enough for most customers at 7:10 AM PDT; Auto Scaling delays to 10:52 AM and a residual issue closed Monday.",
+    "notes": "Scope regional: DynamoDB and dependent services across the US-East region (us-east-1). End left empty: 7:10 AM PDT Sep 20, 2015 is stated for most customers only; CloudWatch recovered 7:29 AM, Auto Scaling stayed delayed until 10:52 AM PDT, and some customers saw high error rates into Monday, closed with no time given. No whole-event end is stated."
+  },
+  {
+    "corpus_no": 7,
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Primary Outage section: launch delays and API errors hit all EU West zones from 11:05 AM PDT, beyond the one powered-down zone. End: EBS recovery section: recovery snapshots 98% delivered by 8:25 PM PDT Aug 10, with the rest still needing manual work.",
+    "notes": "Scope regional: the power loss was in one eu-west-1 AZ (not named by ID), but EC2 launch and API calls were degraded in every EU West zone until 12:00 PM PDT Aug 7, 2011. End left empty: the report gives only service-level and partial recovery times (connectivity 1:49 PM PDT Aug 7; snapshots 98% at 8:25 PM PDT Aug 10, remaining few pending) and no stated end for the event as a whole."
+  },
+  {
+    "corpus_no": 8,
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Second paragraph: a bad network route degraded Internet connectivity for both SA-EAST-1 zones for 20 minutes. End: Second paragraph: full customer access restored after power and network recovered, with no clock time given.",
+    "notes": "Scope regional: the power loss hit one sa-east-1 AZ, but both zones of the region had 20 minutes of degraded connectivity. End left empty: the report says services and full customer access were restored but states no time for it."
+  },
+  {
+    "corpus_no": 9,
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Impact on EC2 and EBS APIs section: aggressive throttling hindered customers' API and console use region-wide from 12:06 to 2:33 PM PDT. End: Sections give only per-service recoveries; last ELB load balancers fixed after the EIP shortage at 9:50 PM PDT.",
+    "notes": "Scope regional: EBS volumes were stuck in one us-east-1 AZ (not named by ID), but API throttling impaired EC2/EBS management calls for many customers across the region. End left empty: the report gives service-by-service recovery times (volumes nearly all by 4:15 PM, RDS almost all by 6:35 PM, ELB EIP fix 9:50 PM PDT Oct 22, 2012) and no stated end for the event as a whole."
+  },
+  {
+    "corpus_no": 10,
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: EC2 and EBS section: from 8:04 to 9:10 PM PDT no customer could launch instances or create or attach volumes in any us-east-1 zone. End: Sections give partial recoveries only, such as 90% of volumes returned by 2:45 AM PDT.",
+    "notes": "Scope regional: the power loss hit one us-east-1 AZ, but the EC2/EBS control planes failed region-wide and the ELB control plane backlogged for the region. End left empty: the report gives only partial or service-level recovery times (most instances by just after midnight, 90% of EBS volumes by 2:45 AM PDT June 30, 2012, remaining RDS Multi-AZ after EBS recovery) and no stated end for the event as a whole."
+  }
+]

@@ -1,0 +1,29 @@
+draw_order,provider,corpus_no,link,title,incident_date
+1,aws,1,https://aws.amazon.com/message/101925/,Summary of the Amazon DynamoDB Service Disruption in the Northern Virginia (US-EAST-1) Region,2025-10-19
+2,aws,2,https://aws.amazon.com/message/073024/,Summary of the Amazon Kinesis Data Streams Service Event in Northern Virginia (US-EAST-1) Region,2024-07-30
+3,aws,4,https://aws.amazon.com/message/74876-2/,Summary of the Amazon EC2 DNS Resolution Issues in the Asia Pacific (Seoul) Region (AP-NORTHEAST-2),2018-11-22
+4,aws,8,https://aws.amazon.com/message/656481/,Summary of the December 17th event in the South America Region (SA-EAST-1),2013-12-17
+5,aws,P1,https://aws.amazon.com/message/65648/,Summary of the Amazon EC2 and Amazon RDS Service Disruption in the US East Region,2011-04-21
+6,aws,P3,https://aws.amazon.com/message/65649/,Summary of the Amazon SimpleDB Service Disruption,2014-06-13
+7,aws,P6,https://aws.amazon.com/message/17908/,Summary of AWS Direct Connect Event in the Tokyo (AP-NORTHEAST-1) Region,2021-09-02
+8,aws,P8,https://aws.amazon.com/message/061323/,Summary of the AWS Lambda Service Event in Northern Virginia (US-EAST-1) Region,2023-06-13
+9,azure,18,https://azure.status.microsoft/en-us/status/history/?trackingId=FNJ8-VQZ,"Microsoft Azure PIR FNJ8-VQZ, 2026-02-02",2026-02-02
+10,azure,31,https://azure.status.microsoft/en-us/status/history/?trackingId=PSM0-BQ8,Post Incident Review (PIR) – Azure Storage – Unreachable Blob and Data Lake storage accounts in multiple regions,2024-11-13
+11,azure,32,https://azure.status.microsoft/en-us/status/history/?trackingId=1LG8-1X0,"Post Incident Review (PIR) – Azure Virtual Desktop – Unable to create new connections, impacting US regions",2024-09-16
+12,azure,P10,https://azure.status.microsoft/en-us/status/history/?trackingId=ZN7Y-5DG,Mitigated - Microsoft Graph API,2021-12-16
+13,azure,P12,https://azure.status.microsoft/en-us/status/history/?trackingId=TTCR-NTZ,RCA - Azure AD B2C – Authentication Failures and Error Notifications,2022-03-16
+14,azure,34,https://azure.status.microsoft/en-us/status/history/?trackingId=0N_5-PQ0,Post Incident Review (PIR) – Azure Front Door – Intermittent issues with Microsoft services using AFD,2024-08-05
+15,azure,77,https://azure.status.microsoft/en-us/status/history/?trackingId=SNCJ-9ZG,RCA - Errors connecting to SCM App Service and/or Azure Functions deployments,2021-12-09
+16,azure,25,https://azure.status.microsoft/en-us/status/history/?trackingId=BT6W-FX0,Post Incident Review (PIR) – Network Connectivity – Multiple services impacted in Switzerland North,2025-09-26
+17,azure,41,https://azure.status.microsoft/en-us/status/history/?trackingId=VT60-RPZ,Post Incident Review (PIR) - Network connectivity - Multiple services impacted in South Africa North and South Africa West,2024-03-14
+18,azure,65,https://azure.status.microsoft/en-us/status/history/?trackingId=YVTL-RS0,Post Incident Review (PIR) - Azure Software Load Balancer - Multiple Regions,2022-06-28
+19,gcp,88,https://status.cloud.google.com/incidents/SXRPpPwx2RZ5VHjTwFLx,Google Compute Engine (GCE) issue impacting multiple dependent GCP services across zones,2025-05-19
+20,gcp,130,https://status.cloud.google.com/incidents/SPSqWfXYYSGzBmQCXNA4,Creation and Upgrades are failing for some Environments while using Cloud Composer 2,2024-04-16
+21,gcp,208,https://status.cloud.google.com/incidents/NXMPMbVyi51BMicBX3ga,Google Cloud Storage (GCS) in europe-west1 is experiencing unavailability errors,2022-11-10
+22,gcp,216,https://status.cloud.google.com/incidents/a39Bb5MP1XYq6utZmssE,Google Engineer are investigating an issues with Cloud GCE.,2022-09-14
+23,gcp,176,https://status.cloud.google.com/incidents/y5XvpyBXFhsphSt4DfiE,Customers may see unexpected additional messages in GKE cluster logs.,2023-07-06
+24,gcp,P22,https://status.cloud.google.com/incidents/AY59eBBxFZnaZgUSYQUf,Logs delayed in europe-west3,2022-12-14
+25,gcp,116,https://status.cloud.google.com/incidents/PtQCvMMdqsRLZLbdC11p,Chronicle Security is experiencing a service degradation with multiple features in the US/multiregion.,2024-06-25
+26,gcp,108,https://status.cloud.google.com/incidents/psbdfLBYU9GR3bNNq7HT,Mandiant Security Validation customers are unable to access the application and run jobs,2024-09-25
+27,gcp,162,https://status.cloud.google.com/incidents/hbQvquDhzwy2cpK9FU3k,Apigee Integrated Developer Portal is experiencing issues while accessing it from Apigee Edge and Apigee X,2023-09-11
+28,gcp,175,https://status.cloud.google.com/incidents/qNkjeU849eNkxgkT4FP4,Global: GetComplianceStats and ListWorkload returning errors,2023-07-10

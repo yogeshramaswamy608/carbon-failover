@@ -1,0 +1,122 @@
+[
+  {
+    "corpus_no": 31,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2024-11-13T12:30Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened?: storage DNS failures listed across roughly thirty named Azure regions, plus downstream services in subsets of them; not described as all regions.",
+      "end": "How did we respond? and timeline: the final storage accounts were back and fully operational at 12:30 UTC, recovery validated, matching the stated impact window end."
+    },
+    "notes": "Many regions named but not all Azure public regions and no global wording, so multi_region. The 12:30 UTC line says both mitigated and fully operational; coded impact_ended because restoration is stated. 06:24 UTC majority recovery is not the end since accounts stayed down after it."
+  },
+  {
+    "corpus_no": 32,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2024-09-16T20:36Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened?: Azure Virtual Desktop users in nine named US regions were affected, with metadata hosted in East US 2 for the US geography.",
+      "end": "Timeline: at 20:36 UTC customer impact was mitigated and telemetry confirmed connection, discovery and management problems were resolved; impact window ends at 20:36."
+    },
+    "notes": "Nine US regions of one geography named, not all Azure regions, so multi_region. The end line says mitigated and also that the customer-facing issues were resolved, so coded impact_ended."
+  },
+  {
+    "corpus_no": 33,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2024-09-05T13:30Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened?: control plane delays hit customers across all Azure China regions, worst in China North 3; rollback later extended to other regions.",
+      "end": "How did we respond?: at 21:30 CST rollback finished and, after monitoring, service functionality was judged fully restored and customer impact mitigated."
+    },
+    "notes": "All regions of Azure China, a separate sovereign cloud, so multi_region under rule 3. Times are given as CST, read as China Standard Time (UTC+8) for Azure China; 21:30 CST on 5 Sep 2024 converted to 13:30 UTC. Statement says fully restored, so impact_ended."
+  },
+  {
+    "corpus_no": 34,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2024-08-05T19:49Z",
+    "end_basis": "mitigated",
+    "evidence": {
+      "scope": "What happened?: the Front Door issue affected Microsoft services across multiple geographies; no regions are named and no global or all-regions wording.",
+      "end": "How did we respond? timeline: customer impact declared fully mitigated at 19:49 UTC; the later 20:30 UTC entry is traffic returning after mitigation."
+    },
+    "notes": "Multiple geographies without names coded multi_region; no region codes given. End line states only that impact was fully mitigated, so mitigated. The 20:30 UTC traffic failback is after the declared mitigation and not customer impact."
+  },
+  {
+    "corpus_no": 35,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2024-07-30T19:43Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What went wrong and why?: congestion from one European site caused latency and connection failures across multiple regions; no regions named, no all-regions claim.",
+      "end": "Timeline: at 19:43 UTC impact was mitigated once availability was confirmed back at pre-incident levels; residual timeouts lasted until then."
+    },
+    "notes": "Multiple regions without names, so multi_region; a 13:13 UTC communication mentioned global issues, but the report's own account says multiple regions. 13:58 UTC is not the end because a smaller set of customers stayed impacted until 19:43 UTC. Availability back to pre-incident levels is stated, so impact_ended."
+  },
+  {
+    "corpus_no": 36,
+    "provider": "azure",
+    "scope": "unclear",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": {
+      "scope": "Summary paragraph: Windows VMs running the CrowdStrike agent failed to start; no Azure region is named and no count of regions given.",
+      "end": "Summary paragraph: the report gives no time at which impact ended, only a pointer to recovery guidance."
+    },
+    "notes": "Short notice with no region named and no word on how many, so unclear. No end moment stated, so end_utc and end_basis left empty."
+  },
+  {
+    "corpus_no": 37,
+    "provider": "azure",
+    "scope": "global",
+    "end_utc": "2024-07-19T22:00Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "Azure NetApp section: new volume creation failed in all NetApp regions, described as a global effect; most other impact centered on Central US.",
+      "end": "What happened? window runs to 22:00 UTC 19 July; timeline marks that time as SQL mitigation with all databases verified recovered."
+    },
+    "notes": "Fault in Central US, but the report says Azure NetApp Files was affected globally in all its regions, so global under rule 3. 02:55 UTC storage resolution is not the end since downstream services stayed impaired. End taken from the stated impact window ending 22:00 UTC 19 July 2024, the last timed recovery; coded impact_ended as the window states impact up to then and databases verified recovered."
+  },
+  {
+    "corpus_no": 38,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2024-07-15T16:54Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened?: Azure OpenAI errors in 14 of the 28 regions offering the service, each named; fine-tuning deployments affected in four regions.",
+      "end": "What happened? and timeline: fine-tuned deployments stayed unavailable until 16:54 UTC 15 July, when all were restored across affected regions."
+    },
+    "notes": "Half of the service's regions named, so multi_region. 23:35 UTC 13 July (base models restored) is not the event end because the report says fine-tuned deployments stayed unavailable until 16:54 UTC 15 July 2024. Restoration is stated, so impact_ended."
+  },
+  {
+    "corpus_no": 39,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2024-04-22T22:00Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened?: DNS failure of two system domains hit services in the Azure China regions, with monitoring issues named in China East 2 and 3.",
+      "end": "How did we respond?: at 06:00 CST full recovery was declared once traffic for services and zones was verified back to pre-incident levels."
+    },
+    "notes": "Azure China regions of a separate sovereign cloud, so multi_region. CST read as China Standard Time (UTC+8); 06:00 CST on 23 Apr 2024 converted to 22:00 UTC on 22 Apr 2024, consistent with the page date 04/22/2024. Full recovery stated, so impact_ended."
+  },
+  {
+    "corpus_no": 40,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2024-04-19T07:30Z",
+    "end_basis": "mitigated",
+    "evidence": {
+      "scope": "What happened?: MySQL and MariaDB connections failed in West US, and Databricks customers in West US, West US 2 and South Central US were affected.",
+      "end": "How did we respond?: at 07:30 UTC the incident was mitigated after the change was fully rolled back and connections returned to the working gateway ring."
+    },
+    "notes": "Fault in West US but customer impact named in three regions, so multi_region. End line states the incident was mitigated, with no separate statement that impact ended, so mitigated."
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 51,
+    "provider": "azure",
+    "scope": "zonal",
+    "end_utc": "2023-02-01T00:58Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope, What happened: management-operation failures were confined to resources in physical AZ-02; the other two zones saw no VM impact and new creations were redirected there. End, What happened: the impact window closes at 00:58 UTC on 1 February 2023.",
+    "notes": "The response section gives 00:48 UTC on 1 February as the last recorded failure before the incident was declared mitigated; the What happened window end of 00:58 UTC is taken as the whole-event end. Downstream services were impaired only through their dependencies in AZ-02."
+  },
+  {
+    "corpus_no": 52,
+    "provider": "azure",
+    "scope": "global",
+    "end_utc": "2023-01-25T12:43Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope, title and What happened: a global WAN fault disrupted connectivity to resources across Azure regions and the Microsoft global network, also reaching Azure Government. End, What happened and How did we respond: the impact window and final recovery both close at 12:43 UTC.",
+    "notes": "Most regions recovered by 09:05 UTC, but some customers stayed impaired by packet loss until 12:43 UTC, so the earlier time is not the end. The report names no individual regions; global is coded from its statement that the global WAN and Azure regions broadly were affected."
+  },
+  {
+    "corpus_no": 53,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2023-01-23T19:38Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope, What happened and What went wrong: a faulty router in the regional gateway serving traffic between zones and in and out of South Central US caused region-wide connectivity issues. End, What happened: impact window closes 19:38 UTC.",
+    "notes": "The response section also says removing the router at 19:38 UTC mitigated the incident; the impact window end is taken."
+  },
+  {
+    "corpus_no": 54,
+    "provider": "azure",
+    "scope": "zonal",
+    "end_utc": "2023-01-18T13:10Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope, What went wrong: the power fault hit infrastructure in one datacenter of a single Availability Zone in West Europe; zone-redundant storage stayed available. End, What happened: impact window closes 13:10 UTC.",
+    "notes": "The report does not identify which zone was affected and says nothing explicit about impact outside that zone; it is coded zonal from the title and the single-zone description. The second storage scale unit's full recovery at 13:10 UTC matches the window end."
+  },
+  {
+    "corpus_no": 55,
+    "provider": "azure",
+    "scope": "unclear",
+    "end_utc": "2022-11-03T05:55Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope, title and What happened: provisioning failures in Azure Public, Government and China clouds, with no region named and no count of regions given. End, What happened: impact window closes 05:55 UTC on 3 November 2022.",
+    "notes": "The report names three clouds but no region and no statement of all or several regions, so scope is unclear under rule 3."
+  },
+  {
+    "corpus_no": 56,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2022-10-26T06:00Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope, What happened: Cosmos DB customers in East US had connection errors, with no zone limit stated. End, What happened and How did we respond: impact window closes 06:00 UTC, when all customer impact was confirmed mitigated.",
+    "notes": "The fault was in one cluster; the report names the region but no zone."
+  },
+  {
+    "corpus_no": 57,
+    "provider": "azure",
+    "scope": "global",
+    "end_utc": "2022-09-07T19:55Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope, What went wrong and How did we respond: attack traffic came from around the world against the global edge network; recovery is described as global. End, What happened and How did we respond: impact window and full global recovery close at 19:55 UTC.",
+    "notes": "Impact was concentrated in North America, Europe and APAC, but the report describes the impact and recovery of the edge service as global; no Azure region codes are named."
+  },
+  {
+    "corpus_no": 58,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2022-09-07T17:21Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope, What happened: Cosmos DB customers in North Europe saw errors or timeouts, with no zone limit stated. End, What happened: impact window closes 17:21 UTC.",
+    "notes": "The fault was in one frontend cluster; most clusters in the region were unaffected, and no zone is named."
+  },
+  {
+    "corpus_no": 59,
+    "provider": "azure",
+    "scope": "global",
+    "end_utc": "2022-08-31T16:00Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope, What happened: the Ubuntu 18.04 DNS failure reached every Azure region, public and sovereign. End, What happened: impact window closes 16:00 UTC on 31 August 2022.",
+    "notes": "Some downstream services recovered before the final time; the window end is the whole-event end."
+  },
+  {
+    "corpus_no": 60,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope, What went wrong: utility power was lost across all three zones of West US 2, and customer impact came from two datacenters in two different zones. End, How did we respond: the Ultra Disk scale unit stayed not fully available until 21:40 UTC on 28 August, after the stated 02:00 window end.",
+    "notes": "End left empty: What happened gives 02:00 UTC on 28 August as the final recovery, but the response section says the Ultra Disk scale unit was not fully available until 21:40 UTC on 28 August, so impact went on after 02:00, and the report states no whole-event end after that."
+  }
+]

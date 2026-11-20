@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": "P5",
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Title and opening paragraph; Kinesis and several dependent services (Cognito, CloudWatch, Lambda, EventBridge, ECS, EKS) were disrupted across the Northern Virginia region. End: Kinesis and CloudWatch paragraphs; Kinesis was normal at 10:23 PM PST, yet CloudWatch metrics and alarms only fully recovered at 10:31 PM PST.",
+    "notes": "End left empty: the report gives only service-by-service recovery times (Kinesis normal 10:23 PM PST = 2020-11-26T06:23Z; CloudWatch fully recovered 10:31 PM PST = 2020-11-26T06:31Z, then backfill over subsequent hours) and no whole-event end statement; CloudWatch stayed impaired after the Kinesis time, so that time is not the event end."
+  },
+  {
+    "corpus_no": "P6",
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "2021-09-02T04:42Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Opening paragraph; Direct Connect traffic into the Tokyo region was affected, with no limit to one zone; other regions unaffected. End: Opening and response paragraphs; at 1:42 PM JST connectivity problems were cleared and the service was back to normal operations.",
+    "notes": "Report states times in JST (UTC+9); 1:42 PM JST on 2021-09-02 converted to 04:42Z. The report says both fully resolved and returned to normal operations; coded impact_ended for the restored-service statement. Engineers disabled the protocol in one Availability Zone first, but impact is described for the Tokyo region as a whole."
+  },
+  {
+    "corpus_no": "P7",
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: AWS Service Impact section; control-plane APIs for launching and managing resources, console sign-in and other services failed in Northern Virginia. End: Issue Summary and service paragraphs; network devices recovered at 2:22 PM PST, but STS, API Gateway, Fargate and EventBridge kept problems for hours.",
+    "notes": "End left empty: no whole-event end statement. Network devices fully recovered 2:22 PM PST (2021-12-07T22:22Z), but EC2 launches recovered 2:40 PM, STS 4:28 PM, API Gateway largely 4:37 PM with low errors for several more hours, Fargate 5:00 PM, EventBridge latency until 6:40 PM PST; building an end from these parts is not allowed."
+  },
+  {
+    "corpus_no": "P8",
+    "provider": "aws",
+    "scope": "regional",
+    "end_utc": "2023-06-13T22:37Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Issue Summary; Lambda invocations and dependent services such as STS, console, EKS, Connect and EventBridge degraded in the Northern Virginia region. End: Issue Summary; by 3:37 PM PDT every affected service had fully recovered.",
+    "notes": "3:37 PM PDT (UTC-7) on 2023-06-13 converted to 22:37Z. The window from 1:45 PM to 3:37 PM PDT included asynchronous backlog processing; the report does not state that customer impact ended before the backlog, so the whole-event statement at 3:37 PM PDT is taken. Impact was within one Lambda cell, which is not a zone."
+  },
+  {
+    "corpus_no": "P10",
+    "provider": "azure",
+    "scope": "unclear",
+    "end_utc": "2021-12-16T17:30Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: Summary of Impact and Mitigation; some users in North America saw Graph API timeouts, and traffic moved to other healthy North American regions. End: Title and Summary of Impact; the issue is marked mitigated, with impact ending at 17:30 UTC.",
+    "notes": "Scope unclear: no affected region is named and the report does not say how many regions were affected; North America is a geography, and the report does not say all its regions were affected. End basis mitigated because the report title labels the event only as mitigated."
+  },
+  {
+    "corpus_no": "P11",
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2022-02-16T15:31Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Summary of Impact; SQL Database connections and App Service management operations failed in West Europe, with no limit to a zone. End: Summary of Impact; the impact window closes at 15:31 UTC on 16 Feb 2022.",
+    "notes": "Azure times are in UTC; no conversion needed."
+  },
+  {
+    "corpus_no": "P12",
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2022-03-16T10:22Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Root Cause; the workload surge hit one unnamed affected region, causing sign-in and sign-up errors for B2C end users there. End: Summary of Impact; the error window ends at 10:22 UTC on 16 March 2022.",
+    "notes": "The report refers to a single affected region but does not name it, so no region code exists; coded regional because the report states one region, not zone-limited. Times in UTC."
+  },
+  {
+    "corpus_no": "P13",
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2022-04-09T14:40Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Title and Summary of Impact; service management calls failed for many services across East US 2, though the trigger began in one zone. End: Summary of Impact; impact window closes at 14:40 UTC on 09 Apr 2022.",
+    "notes": "The fault began with a zonal Allocator failure, but customer impact was region-wide management operations, so coded regional. Times in UTC."
+  },
+  {
+    "corpus_no": "P14",
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2022-08-13T03:30Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Title; the review is labelled as affecting multiple regions, with no regions named. End: What happened; the impact window ends at 03:30 UTC on 13 Aug 2022, when the hotfix completed.",
+    "notes": "Scope from the title's multiple regions without names. The response section adds that customers reported success shortly after the 03:30 UTC hotfix completion, but gives no later time; the stated impact window end is taken. Times in UTC."
+  },
+  {
+    "corpus_no": "P15",
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: What happened; West Europe traffic and many services were hit, and Azure Databricks also had impact in North Europe. End: How did we respond; loss rates normal at 07:25 UTC, but dependent services recovered only afterwards, with no time given.",
+    "notes": "Scope multi_region because two regions were impaired (westeurope, plus Databricks in northeurope), although the customer guidance calls it a single-region incident. End left empty: the 07:25 UTC window end is for network loss rates, and the report says dependent services recovered shortly thereafter without a stated time, so impact went on after 07:25 UTC and no later whole-event moment is given."
+  }
+]

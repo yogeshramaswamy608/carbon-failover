@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 202,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2022-12-09T15:55Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones, lists eleven Asia Pacific regions plus the asia multi-region as affected, not every region. End: Mini Incident Report, Incident End line puts the close of the incident at 07:55 Pacific on 9 December 2022.",
+    "notes": "Incident End 2022-12-09 07:55 US/Pacific (PST, UTC-8) converted to 15:55Z; it matches the page header end. The asia Google Cloud multi-region is also named as affected; it is not a region code. The description gives 3 hours 17 minutes while the Duration line gives 3 hours 5 minutes; the Incident End line is used."
+  },
+  {
+    "corpus_no": 203,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2022-12-09T15:55Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones, names eleven Asia and Australia regions and the asia multi-region, a subset of all regions. End: Mini Incident Report, Incident End line closes the incident at 07:55 Pacific, 9 December 2022.",
+    "notes": "Incident End 2022-12-09 07:55 US/Pacific (PST, UTC-8) converted to 15:55Z, taken over the dated updates under the Google Cloud rule since its date does not contradict them. The 08:22 PST update states resolution for all affected projects as of 08:06 PST (16:06Z), and a 07:56 PST status update still described the issue as ongoing; both are noted, not used. The asia multi-region is named but is not a region code."
+  },
+  {
+    "corpus_no": 204,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-12-01T13:19Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Header affected location and Mini Incident Report Regions/Zones both give Global for Cloud Monitoring. End: Mini Incident Report, Incident End line gives 05:19 Pacific on 1 December 2022.",
+    "notes": "Incident End 2022-12-01 05:19 US/Pacific (PST, UTC-8) converted to 13:19Z; the 05:21 PST update also says resolved for all affected users as of 05:19, and the header end agrees."
+  },
+  {
+    "corpus_no": 205,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-12-03T04:50Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones gives Global for the IAP SSH failure. End: Mini Incident Report, Second Incident End line closes the later impact window at 20:50 Pacific on 2 December 2022.",
+    "notes": "Two impact windows; the newest report with an Incident End line is the 5 Dec 2022 Mini Incident Report, whose latest window ends 2022-12-02 20:50 US/Pacific (PST, UTC-8), converted to 2022-12-03 04:50Z. The 21 Dec 2022 Incident Report has no Incident End line but agrees the issue was fully mitigated and resolved at 20:50 PT. The 2 Dec 16:05 PST update declaring resolution at 13:11 is not the end because impact recurred at 17:45 PT."
+  },
+  {
+    "corpus_no": 206,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-12-01T21:36Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones gives Global and the description says App Engine Flexible errors occurred globally. End: Mini Incident Report, Incident End line gives 13:36 Pacific, 1 December 2022.",
+    "notes": "Incident End 2022-12-01 13:36 US/Pacific (PST, UTC-8) converted to 21:36Z; the 13:41 PST update says resolved for all affected projects as of 13:36, matching the header."
+  },
+  {
+    "corpus_no": 207,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-11-14T19:38Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Page header lists the previously affected location as Global for the multi-service Cloud incident. End: Incident Report, Remediation section says Google Cloud service came back by 11:38 PT on 14 November 2022.",
+    "notes": "No line is labelled Incident End; the Mini Incident Report gives a Google Cloud Platform Impact End of 2022-11-14 11:38 US/Pacific, the Incident Report states restoration for Google Cloud at 11:38 PT, and the header end agrees; Workspace impact ended earlier at 11:27/11:28. 11:38 PST (UTC-8) converted to 19:38Z. The Incident Report names specific regions and the US and nam5 multi-regions, but the page lists the location as Global."
+  },
+  {
+    "corpus_no": 208,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2022-11-10T16:07Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report, Detailed Description of Impact puts the failing read and write traffic in the europe-west1 region, with no single zone named. End: Mini Incident Report, Incident End line gives 08:07 Pacific, 10 November 2022.",
+    "notes": "Incident End 2022-11-10 08:07 US/Pacific (PST, UTC-8) converted to 16:07Z; the Incident Report impact window and the 08:41 PST resolution update agree. Impact is described for the region as a whole; no zone is named."
+  },
+  {
+    "corpus_no": 209,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2022-11-10T16:07Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones names only europe-west1, with Storage and BigQuery errors across that region and no zone given. End: Mini Incident Report, Incident End line gives 08:07 Pacific, 10 November 2022.",
+    "notes": "Incident End 2022-11-10 08:07 US/Pacific (PST, UTC-8) converted to 16:07Z, taken over the dated updates under the Google Cloud rule since its date does not contradict them. The 08:22 PST update states BigQuery resolved as of 08:22 PST (16:22Z), and 08:17/08:18 PST status updates still described mitigation underway; noted, not used."
+  },
+  {
+    "corpus_no": 210,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2022-11-09T15:11Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones names the nam5 Firestore multi-region as the affected location. End: Mini Incident Report, Incident End line gives 07:11 Pacific, 9 November 2022.",
+    "notes": "nam5 is a Google Cloud multi-region location, coded multi_region with no region code. Incident End 2022-11-09 07:11 US/Pacific (PST, UTC-8) converted to 15:11Z, taken over the dated updates under the Google Cloud rule since its date does not contradict them; the 07:40 PST update states resolution as of 07:15 PST (15:15Z), noted, not used."
+  },
+  {
+    "corpus_no": 211,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-11-09T16:27Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones gives global and the description says operations failed globally. End: Mini Incident Report, Third Occurrence Impact End gives 08:27 Pacific on 9 November 2022 as the last window's close.",
+    "notes": "The page has no Incident End line. The header end (2022-11-08 20:25 PST) and the 20:25 PST update resolving at 20:20 are not the end, because the Mini Incident Report says impact recurred in a third occurrence from 9 Nov 01:44 to 08:27 PST. The latest window end, 2022-11-09 08:27 US/Pacific (PST, UTC-8), is converted to 16:27Z; the report also says traffic was moved away from the slow data center, mitigating the issue at 08:37 PST (16:37Z)."
+  }
+]

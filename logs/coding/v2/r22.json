@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 212,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-11-03T03:00Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones line gives global; the affected-locations list also spans dozens of regions on every continent. End: Mini Incident Report, Incident End line puts the end at 2 Nov 2022 20:00 Pacific.",
+    "notes": "End taken from the Incident End line (20:00 PDT) over the 20:14 PDT resolved update; dates agree. PDT is UTC-7 on 2 Nov 2022."
+  },
+  {
+    "corpus_no": 213,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2022-10-14T11:30Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report and Mini Incident Report place the Write API errors in the US multi-region location; us-central1 also appears in the affected list. End: Mini Incident Report, Incident End line gives 14 Oct 2022 04:30 Pacific.",
+    "notes": "The US multi-region location (us) is a Google Cloud multi-region, coded multi_region. The newest report (Incident Report) has no Incident End line, so the Mini Incident Report's line is used; it matches the stated full mitigation at 04:30 PDT. The 04:50 resolved update is later and not used."
+  },
+  {
+    "corpus_no": 214,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-10-03T16:00Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Previously affected locations lists every Google Cloud region of that time, 34 in total. End: Mini Incident Report, Incident End line gives 3 Oct 2022 09:00 Pacific.",
+    "notes": "The Regions/Zones line reads Regional, which describes the product type; the location list names every region on the page, so scope is global. Incident End (09:00 PDT) taken over the 09:15 resolved update; dates agree. The report's Incident Start (26 Sep) differs from the header (27 Sep); not a recoded field."
+  },
+  {
+    "corpus_no": 215,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2022-09-22T11:58Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report lists fifteen named regions plus Workspace with possible impact; not all regions. End: Mini Incident Report, second occurrence's Incident End line is 22 Sep 2022 04:58 Pacific.",
+    "notes": "The newest Incident Report has no Incident End line and states impact through 04:50 (some services to 04:51); the rule takes the Mini Incident Report's Incident End line, latest of its two windows (04:58 PDT). Header says 04:50."
+  },
+  {
+    "corpus_no": 216,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-09-15T15:56Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones line gives Global for the Red Hat update failures. End: Mini Incident Report, Incident End line gives 15 Sep 2022 08:56 Pacific.",
+    "notes": "Incident End matches the dated resolved update at 08:56 PDT."
+  },
+  {
+    "corpus_no": 217,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-09-06T16:13Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report and location list both give Global; policy updates failed worldwide. End: Mini Incident Report, Incident End line gives 6 Sep 2022 09:13 Pacific.",
+    "notes": "Customer Impact says submitted changes took effect only by 09:30 PDT; the Google Cloud rule takes the Incident End line (09:13 PDT), which agrees in date with the 09:11 resolved update."
+  },
+  {
+    "corpus_no": 218,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-08-30T18:02Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones line is Global and the description says the console issue was worldwide. End: Mini Incident Report, Incident End line gives 30 Aug 2022 11:02 Pacific.",
+    "notes": "Incident End matches the dated resolved update at 11:02 PDT."
+  },
+  {
+    "corpus_no": 219,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-08-25T09:30Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report impact section says Compute Engine API calls failed or hung worldwide, beyond the us-central1 fault; KMS errors hit several multi-region locations. End: Mini Incident Report, Incident End line is 25 Aug 2022 02:30 Pacific.",
+    "notes": "Fault and most impact were in us-central1, but the report states GCE Compute API errors globally, so scope is global. KMS multi-region locations nam-eur-asia1, nam7, nam9, nam10, nam11, nam12 add no region codes. Incident End matches the 02:30 resolved update."
+  },
+  {
+    "corpus_no": 220,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2022-08-20T15:20Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report names us-central1 and us-central2; Full Incident Report says indexing failed in both regions. End: Mini Incident Report, Incident End line gives 20 Aug 2022 08:20 Pacific.",
+    "notes": "Full Incident Report also says services fully recovered at 08:20 PDT; the 08:32 resolved update is later and not used. Some system metrics stay permanently missing, which is data loss, not ongoing impact."
+  },
+  {
+    "corpus_no": 221,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-08-03T16:45Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini-IR Regions/Zones line and the location list both give Global for billing reporting. End: Mini-IR Incident End line gives 3 Aug 2022 09:45 Pacific.",
+    "notes": "The newest Incident Report has no Incident End line and says full mitigation at 09:47 PDT, as does the header; the Mini-IR's Incident End line (09:45 PDT) is used and agrees with the 09:45 resolved update. Mini-IR Incident Start shows year 2021, apparently a typo; not a recoded field."
+  }
+]

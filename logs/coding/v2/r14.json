@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 132,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-04-04T22:15Z",
+    "end_basis": "resolved",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Description: location given as Global; database UI errors hit users worldwide. End: Mini Incident Report, Incident End and Description: rollback finished 15:15 PDT, fully clearing the problem.",
+    "notes": "Incident End 4 Apr 2024 15:15 US/Pacific (PDT) converted to UTC. The 15:55 PDT update gives 15:33 as the resolution time; its date agrees with the Incident End line, so the Incident End line is kept. Basis is resolved because the report says the rollback completely resolved the issue."
+  },
+  {
+    "corpus_no": 133,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-03-30T12:27Z",
+    "end_basis": "resolved",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Customer Impact: location listed as Global; data delays affected customers in every region. End: Mini Incident Report, Incident End and Description: pipelines done by 05:26, impact fully resolved; end line 05:27 PDT.",
+    "notes": "Incident End 30 Mar 2024 05:27 US/Pacific (PDT) converted to UTC. The header lists ten regions, but the report lists Global and says all regions were delayed, so scope is global. Basis is resolved: the report says pipeline completion fully resolved impact."
+  },
+  {
+    "corpus_no": 134,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-03-27T00:30Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Description: errors and slow console loads in two named regions, us-west1 and us-central1. End: Mini Incident Report, Incident End and Description: incident closed 17:30 PDT after engineers mitigated by throttling traffic.",
+    "notes": "Incident End 26 Mar 2024 17:30 US/Pacific (PDT) converted to UTC, falling on 27 Mar 2024 UTC. The 17:35 PDT update states resolution as of 17:20; same date, so the Incident End line is kept. Basis is mitigated because the report describes the fix as a mitigation by throttling."
+  },
+  {
+    "corpus_no": 135,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-03-22T17:29Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones: dashboards failed in the us and eu multi-region locations. End: Mini Incident Report, Incident End and Description: rollback mitigated the problem at 10:29 PDT.",
+    "notes": "Scope rests on the Google Cloud multi-region locations us and eu, which carry no region code. Incident End 22 Mar 2024 10:29 US/Pacific (PDT) converted to UTC. Basis is mitigated as the report says the rollback mitigated the issue; the 10:39 PDT update also calls it resolved at the same moment."
+  },
+  {
+    "corpus_no": 136,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-03-20T21:45Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones: location given as Global, with four named regions also listed. End: Mini Incident Report, Second Impact Window end and Additional details: temporary mitigation reapplied at 14:45 PDT, ending the later window.",
+    "notes": "Two impact windows; the later window end, 20 Mar 2024 14:45 US/Pacific (PDT), is taken and converted to UTC. The 21 Mar 2024 16:30 resolution followed a permanent fix; the page does not say customer impact went on after 14:45, so it is not used. Basis is mitigated: the report calls the 14:45 action a temporary mitigation."
+  },
+  {
+    "corpus_no": 137,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-02-29T17:50Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Description: API call errors confined to the US multi-region location. End: Mini Incident Report, Incident End and Description: further steps mitigated the problem at 09:50 PST.",
+    "notes": "Scope rests on the Google Cloud multi-region location us, which carries no region code. Incident End 29 Feb 2024 09:50 US/Pacific (PST) converted to UTC. The 08:21 PST update gave 08:20 as resolution, earlier than the Incident End line on the same date; the Incident End line is kept. Basis is mitigated per the report wording."
+  },
+  {
+    "corpus_no": 138,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-02-14T21:10Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: Incident Report, Detailed Description of Impact: many services failed across all us-west1 zones; Document AI Warehouse errors also hit the US multi-region. End: Mini Incident Report, Incident End and Description: ended 13:10 PST after isolating traffic mitigated it.",
+    "notes": "Scope is multi_region because, besides region-wide impact in us-west1, the 28 Feb 2024 addition reports Document AI Warehouse errors in the US multi-region location (no code); without that line the event would be regional. The final Incident Report has no Incident End line (it gives 09:45 to 12:52), so the Mini Incident Report's Incident End 14 Feb 2024 13:10 US/Pacific (PST) is used, converted to UTC; header says 12:52. Basis is mitigated per the mini report."
+  },
+  {
+    "corpus_no": 139,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-02-07T11:54Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: Incident Report, Detailed Description of Impact: failures spread to europe-west8-c and region-wide, and Cloud Armor policy propagation stalled worldwide; header lists Global. End: Mini Incident Report, Incident End and Remediation: capacity restored 03:54 PST, mitigating impact.",
+    "notes": "Fault began in zone europe-west8-b but impact reached other zones and region-wide operations, and Cloud Armor update propagation stalled globally; the header also lists Global, so scope is global. Incident End 7 Feb 2024 03:54 US/Pacific (PST) converted to UTC. Status updates up to 04:58 PST still described mitigation underway and resolution came at 05:02, but the incident reports place the impact end at 03:54. Basis is mitigated per the report wording."
+  },
+  {
+    "corpus_no": 140,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-01-25T06:00Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: Incident Report, Summary and Detailed Description: log ingestion delays in five named regions; other regions unaffected. End: Incident Report, Remediation: degraded log-based metric queries mitigated by 24 January 22:00 PT.",
+    "notes": "The header lists Global and every region, but the later reports narrow impact to us-central1, us-east1, europe-west1, europe-north1 and asia-east1 and say other regions were not impacted, so scope is multi_region; the eu and us multi-region locations in the header carry no code. The Mini Incident Report's latest end line (metrics backfill, 23 Jan 2024 18:05 PST) is not the end because the Incident Report says log-based metrics queries stayed degraded until 24 Jan 2024 22:00 PT, which matches the header end; that moment is converted from PST to UTC. Basis is mitigated per the report wording."
+  },
+  {
+    "corpus_no": 141,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-01-23T17:20Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones: location stated as Global for the portal and management API outage. End: Mini Incident Report, Incident End and Description: new certificates installed at 09:20 PST mitigated it.",
+    "notes": "Incident End 23 Jan 2024 09:20 US/Pacific (PST) converted to UTC. Basis is mitigated because the report says the issue was mitigated by installing new certificates; the 09:21 PST update also calls it resolved at 09:20."
+  }
+]

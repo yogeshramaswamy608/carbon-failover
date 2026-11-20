@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 182,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-05-08T00:06Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones line gives Global for Cloud SQL replica creation failures; page lists every region as affected. End: Mini Incident Report Incident End line gives 7 May 2023 17:06 US/Pacific.",
+    "notes": "Incident End 17:06 PDT converted to UTC (PDT = UTC-7). Additional details also say engineers mitigated at the same moment; the later resolved banner (17:19) is not used because the Incident End line takes precedence."
+  },
+  {
+    "corpus_no": 183,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2023-05-06T17:35Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Customer Impact section lists region-level impairment in europe-west9 (Interconnect, Storage, Cloud SQL, Dataflow) beyond the europe-west9-c zone. End: Mini Incident Report Incident End line gives 6 May 2023 10:35 US/Pacific.",
+    "notes": "Fault began in zone europe-west9-c, but the report lists several services impaired at the europe-west9 region level, so regional. Incident End 10:35 PDT taken over the later resolved banner (11:40 PDT)."
+  },
+  {
+    "corpus_no": 184,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-05-05T19:58Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report Regions/Zones line gives Multi Region Europe; outage hit users reaching Google via ISPs in and around Spain/Morocco. End: Incident End line gives 5 May 2023 12:58 US/Pacific.",
+    "notes": "Regions/Zones line names a multi-region Europe location; only europe-southwest1 is listed as an affected location on the page. Coded multi_region per the multi-region rule. Report also says mitigation came at 12:58 by removing routers."
+  },
+  {
+    "corpus_no": 185,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-05-04T10:10Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report Regions/Zones line names two Asian regions, asia-southeast1 and asia-east1, with intermittent packet loss. End: Incident End line gives 4 May 2023 03:10 US/Pacific.",
+    "notes": "Incident End 03:10 PDT taken over the later resolved banner (04:11 PDT)."
+  },
+  {
+    "corpus_no": 186,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-04-29T20:10Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report Regions/Zones line gives the US multi-region for BigQuery connection errors. End: Mini Incident Report Incident End line gives 29 April 2023 13:10 US/Pacific; full report agrees mitigation completed then.",
+    "notes": "US multi-region is a Google Cloud multi-region location, coded multi_region. The newer full Incident Report has no Incident End line, so the Mini Incident Report line is used; the full report says the issue was fully mitigated by 13:10. The resolved banner gives 12:00 PDT, earlier than the 11:30 update that still reported elevated errors, so it is not used."
+  },
+  {
+    "corpus_no": 187,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-04-26T11:56Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report Regions/Zones line gives Global; customers worldwide could not change external HTTPS load balancer settings. End: Incident End line gives 26 April 2023 04:56 US/Pacific.",
+    "notes": "Incident End 04:56 PDT; description says full mitigation came at that moment after rollback and propagation. Later resolved banner (05:00) not used."
+  },
+  {
+    "corpus_no": 188,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Incident Report Global Service Impact section says Cloud Console and some control plane calls failed worldwide; page lists Global as an affected location. End: 27 Apr update says europe-west9-a services still impaired with no recovery ETA.",
+    "notes": "The page has no Incident End line. The header end (26 Apr 2023 20:00 PDT) is not used because the 27 Apr 2023 06:39 PDT update says impact continued in europe-west9-a, and the report says 58% of VMs there stayed out until the cluster was decommissioned. Its 19:00 time is only for the region being primarily recovered. No whole-event end is stated, so the end is left empty."
+  },
+  {
+    "corpus_no": 189,
+    "provider": "gcp",
+    "scope": "zonal",
+    "end_utc": "2023-04-25T16:42Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report Regions/Zones line names only us-east4-a; packet loss affected traffic to and within that zone. End: Incident End line gives 25 April 2023 09:42 US/Pacific.",
+    "notes": "Report gives no word on impact outside zone us-east4-a; early updates referred to us-east4 broadly, but the incident reports confine impact to us-east4-a. Incident End 09:42 PDT taken over the later resolved banner (09:52)."
+  },
+  {
+    "corpus_no": 190,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-04-21T22:13Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report Regions/Zones line gives Global for failing Compute Engine health check changes. End: Incident End line gives 21 April 2023 15:13 US/Pacific, matching the resolved banner.",
+    "notes": "An early update named only europe-west12 zones, but the incident report states Global and the page lists every region."
+  },
+  {
+    "corpus_no": 191,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-04-03T12:30Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report Regions/Zones line gives the US multi-region for BigQuery jobs API errors. End: third and latest impact window ends 3 April 2023 05:30 US/Pacific per the Incident End line.",
+    "notes": "US multi-region is a Google Cloud multi-region location, coded multi_region. Three impact windows; the latest Incident End (window 3) is used. It agrees with the dated updates and the resolved banner."
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 142,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-01-17T17:52Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones - custom extractor training failed in six named regions plus the eu and us multi-regions, described as multiple regions. End: Mini Incident Report, Incident End - incident closed 09:52 Pacific on 17 January 2024, fix rollout resolving impact.",
+    "notes": "Incident End line reads '17 Januar, 2024 09:52' (typo in month); its date matches the dated updates, so it is taken; 09:52 PST = 17:52Z. The 09:58 PST update gives 09:57 as resolution for all users, five minutes later, not a date contradiction. Multi-regions eu and us named in addition to six regions; fewer than all regions."
+  },
+  {
+    "corpus_no": 143,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-01-12T11:08Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones - location given as Global; monitoring metrics for all exposing products affected. End: page header - incident ended 12 January 2024 03:08 Pacific, matching the query-issue window close in the mini report.",
+    "notes": "Neither report on the page has an 'Incident End' line (the mini report gives separate issue windows), so the header 'ended at' time is taken; 03:08 PST = 11:08Z. The full report says query SLIs recovered fully at 03:15 PST and a status update says resolved for all users as of 06:29 PST; neither states customer impact continued past 03:08. Query failures were limited to us-central1 data, but metric unavailability was listed Global."
+  },
+  {
+    "corpus_no": 144,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-12-19T07:40Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones - AppSheet impact listed as Global. End: Mini Incident Report, Incident End - incident closed at 23:40 Pacific on 18 December 2023, consistent with the resolution update.",
+    "notes": "Incident End 18 Dec 2023 23:40 PST = 19 Dec 2023 07:40Z. Header lists four regions, but the incident report gives the location Global."
+  },
+  {
+    "corpus_no": 145,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-12-07T00:47Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones - twenty-three named regions affected for App Engine Flex apps. End: Mini Incident Report, Incident End - incident closed 16:47 Pacific on 6 December 2023 after rollback of the configuration change.",
+    "notes": "23 regions named, not every Google Cloud region, and the report does not say global or all regions for the impact (the word 'globally' refers to the fix rollout); the report does not state whether these are all App Engine regions. Incident End 16:47 PST = 00:47Z next day; the description calls it a mitigation at 16:47, the line itself marks the incident end."
+  },
+  {
+    "corpus_no": 146,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2023-12-06T11:55Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones - Bigtable latency and errors in the us-central1 region, no zone named. End: Mini Incident Report, Incident End - 03:55 Pacific on 6 December 2023, when the trigger fix fully resolved latency.",
+    "notes": "Region-level impact in us-central1 with no single zone named. Incident End 03:55 PST = 11:55Z; the report calls this full mitigation. A later update posts resolution as of 08:23 PST but does not say impact went on after 03:55."
+  },
+  {
+    "corpus_no": 147,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-12-04T09:18Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Customer Impact - location Global; a share of log queries failed worldwide. End: Mini Incident Report, Recurrence End - second window closed 01:18 Pacific on 4 December 2023.",
+    "notes": "Two windows in the incident report (end 3 Dec 20:22 and recurrence end 4 Dec 01:18 PST); the latest is taken, 01:18 PST = 09:18Z, matching the dated update's resolution time. Header 'ended at' 02:17 is the posting time and is not used."
+  },
+  {
+    "corpus_no": 148,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-12-04T09:18Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: header locations and Mini Incident Report, Regions/Zones - Global listed, plus us-east4; queries failed globally. End: Mini Incident Report, Recurrence End - final window closed 01:18 Pacific on 4 December 2023.",
+    "notes": "The incident report gives two windows (end 3 Dec 20:22, recurrence end 4 Dec 01:18 PST); the latest is taken, 01:18 PST = 09:18Z. The page's dated updates and header (resolved 20:22, ended 20:28 on 3 Dec) predate the recurrence and do not contradict it."
+  },
+  {
+    "corpus_no": 149,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-11-22T11:28Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones - BigQuery autoscaling impaired in the eu multi-region. End: Mini Incident Report, Incident End - closed 03:28 Pacific on 22 November 2023.",
+    "notes": "Location is the Google Cloud multi-region eu (no region code). Incident End 03:28 PST = 11:28Z; the description calls the fix a mitigation; the dated update gives resolution as of 03:30 PST, same date."
+  },
+  {
+    "corpus_no": 150,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-11-22T18:50Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones - BigQuery job latency and errors in the eu multi-region. End: Mini Incident Report, Third occurrence End - last window closed 10:50 Pacific on 22 November 2023.",
+    "notes": "Location is the multi-region eu (no region code). Newest report with end lines is the mini report; three windows, latest end 10:50 PST = 18:50Z, matching the header. The 13:47 PST full mitigation was a preventive measure; updates at 12:08 and 12:59 state no ongoing impact, so impact did not continue past 10:50."
+  },
+  {
+    "corpus_no": 151,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-11-22T14:02Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: header locations - only the eu multi-region listed for BigQuery latency. End: page header and resolution update - monitoring shows the impact window closing 06:02 Pacific on 22 November 2023.",
+    "notes": "Location is the multi-region eu (no region code). No incident report with an 'Incident End' line on this page (it links to another incident page), so the header 'ended at' 06:02 PST = 14:02Z is taken; the resolution update states the impact window ended then. That update's 'resolved as of 08:27' is later than its own 07:27 posting time and is not used."
+  }
+]

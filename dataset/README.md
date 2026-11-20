@@ -5,7 +5,7 @@ Built on Mon Nov 16, 2026 from version 1.0.0 of the companion corpus (10.5281/ze
 | File | What it holds |
 |---|---|
 | `script_fields.csv` | The script's fields per kept report (the Google Cloud began/ended line and locations, the Azure UTC window); `src/cfo/script_run.py` over the pages read for the coding; the workflow `script-coding` (run 43855592311, commit 559de2b) gave the same fields for every report it could open, which was all but P9 and 61 (an empty page that run). |
-| `coded.csv` | One row per kept report under `docs/event_codebook.md`: the model's codes with the script's fields standing where both set one. `link` is the page the coding read. |
+| `coded.csv` | One row per kept report under `docs/event_codebook.md` (scope and end under version 2 since Thu Nov 19, 2026, with `evidence_v2` and `notes_v2`): the model's codes with the script's fields standing where both set one. `link` is the page the coding read. |
 | `script_model_diffs.csv` | Every field where the script and the model differed; the script's value stands. |
 | `events.csv`, `merges.csv` | Events after merging reports of one incident (codebook section 6), and each merge. |
 | `instances_ruled.csv` | Every event-home instance with the first rule of section 3.1 it fails, or `kept`, and its candidate destinations. |
@@ -14,6 +14,9 @@ Built on Mon Nov 16, 2026 from version 1.0.0 of the companion corpus (10.5281/ze
 | `ci_hourly.csv.gz` | Hourly production-based carbon intensity per grid zone, gCO2eq/kWh, each hour labelled by its start in UTC; no hour filled. |
 | `latency_check_azure.csv` | The latency model of section 3.3 against Microsoft's published Azure round-trip table (P50, 30 days to Jul 30, 2026). |
 | `author_sample.csv` | The 30 reports of the author's blind check, drawn by the "author-sample" stream. |
+| `author_sample_2.csv` | The fresh sample of 28 reports for the author's second check (section 3.1), drawn Thu Nov 19, 2026 by the same stream. |
+| `recode_v2_changes.csv` | Every row whose scope, end or end basis changed in the recode under codebook version 2. |
+| `script_fields_v2.csv`, `script_model_diffs_v2.csv` | The script's scope and end under version 2, and each field where it differed from the recode; the script's value stands. |
 | `author_check.csv` | His codes for the 30 (Thu Nov 19, 2026), the coded rows they were checked against, and agreement per field; his codes stand in `coded.csv`. |
 
 Readings recorded here, for review:

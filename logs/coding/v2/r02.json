@@ -1,0 +1,122 @@
+[
+  {
+    "corpus_no": 11,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2026-10-01T02:15Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened?: lists 33 named Azure regions across several geographies hit by gateway management failures; not described as all regions or global.",
+      "end": "How did we respond?: at 02:15 UTC on 1 October the rollback finished in every affected region and customer impact stopped."
+    },
+    "notes": "The summary also calls 02:15 UTC the mitigation of the last impact wave; the timeline and the root-cause section state impact ended then, so impact_ended is coded. Impact times varied by region."
+  },
+  {
+    "corpus_no": 12,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2026-09-29T15:58Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened?: AI services hosted in Sweden Central saw request failures and latency; no zone is named and no other region is impaired.",
+      "end": "How did we respond?: by 15:58 UTC availability was back and customer impact was mitigated."
+    },
+    "notes": "The end statement says both that service availability recovered and that impact was mitigated; recovery of service is coded as impact_ended. No availability zone is named, so the impact is region-wide in the report's terms."
+  },
+  {
+    "corpus_no": 13,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2026-07-23T19:41Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened?: traffic into and out of West US failed for many services; one region, no single zone named.",
+      "end": "What went wrong and why? and timeline: every affected service had fully recovered by 19:41 UTC, when impact was confirmed mitigated."
+    },
+    "notes": "The timeline words the end as mitigated, but the root-cause section says all impacted services fully recovered at 19:41 UTC; restoration is coded as impact_ended. Connectivity was restored at 18:26 UTC, but services kept recovering until 19:41 UTC."
+  },
+  {
+    "corpus_no": 14,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2026-05-29T17:05Z",
+    "end_basis": "mitigated",
+    "evidence": {
+      "scope": "What happened? and What went wrong: OpenAI inference degraded across multiple regions, worst in European regions and Australia East; not called global.",
+      "end": "How did we respond?: at 17:05 UTC, after isolation, rollback and clearing of queued requests, impact was confirmed mitigated."
+    },
+    "notes": "Only Australia East and Sweden Central are named; the report says multiple regions without listing all, so multi_region. The end statement says only mitigated. Backlog clearing came before that statement, so it falls inside the event."
+  },
+  {
+    "corpus_no": 15,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2026-05-30T02:30Z",
+    "end_basis": "mitigated",
+    "evidence": {
+      "scope": "What happened?: West US 2 services failed after shutdowns in two availability zones (physical AZ-01 and AZ-03), including management operations.",
+      "end": "What happened? and timeline: the event window closes at 02:30 UTC on 30 May, when the last services, Log Analytics and Application Insights, were confirmed mitigated."
+    },
+    "notes": "At 20:18 UTC on 29 May all services but Log Analytics and Application Insights had recovered; those two stayed impaired while processing backlogs, and the report does not say customer impact had ended before that backlog work, so 20:18 is not the end. The 02:30 statement says only mitigated."
+  },
+  {
+    "corpus_no": 16,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2026-04-24T23:22Z",
+    "end_basis": "mitigated",
+    "evidence": {
+      "scope": "What happened?: provisioning and scaling failures in East US started in one zone, then spread to all three physical zones.",
+      "end": "How did we respond?: at 23:22 UTC on 24 April all customer impact was confirmed mitigated."
+    },
+    "notes": "The fault began in physical AZ-01 but impact moved to AZ-02 and AZ-03, so more than one zone was impaired. The end statement says only mitigated."
+  },
+  {
+    "corpus_no": 17,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2026-02-08T04:24Z",
+    "end_basis": "mitigated",
+    "evidence": {
+      "scope": "What happened?: a power loss at one datacenter disrupted many services in West US, a region the report says has no availability zones.",
+      "end": "How did we respond?: at 04:24 UTC on 8 February every affected service was confirmed mitigated."
+    },
+    "notes": "Compute long-tail impact was mitigated at 23:30 UTC on 7 February, but Application Insights telemetry stayed impaired to 04:24 UTC on 8 February, so the whole-event end is 04:24. The return to utility power on 9 February is not customer impact. The end statement says only mitigated."
+  },
+  {
+    "corpus_no": 18,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2026-02-03T06:05Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened? and timeline: control plane failures hit multiple Azure regions; later managed identity failures were limited to East US and West US.",
+      "end": "How did we respond?: at 06:05 UTC on 3 February backlogs finished, services were back to normal and all impact confirmed mitigated."
+    },
+    "notes": "The header window ending about 00:30 UTC is not the end, because managed identity impact in East US and West US went on to 06:05 UTC. The report says multiple regions without saying all Azure regions; the all-regions remark concerns GitHub Actions runners, not Azure regions. The 06:05 statement says services returned to normal, coded as impact_ended. Backlog processing ran before that statement, so it falls inside the event."
+  },
+  {
+    "corpus_no": 19,
+    "provider": "azure",
+    "scope": "unclear",
+    "end_utc": "2025-12-22T18:30Z",
+    "end_basis": "impact_ended",
+    "evidence": {
+      "scope": "What happened?: PIM role operations failed for a subset of customers; the report names no region or count of regions.",
+      "end": "How did we respond?: at 18:30 UTC, once the rollback finished and errors returned to normal, impact was confirmed mitigated."
+    },
+    "notes": "No region is named and the report gives no number of impaired regions; the mention of rolling back across all regions describes the repair, not customer impact. The end statement pairs mitigation with error rates back at normal levels, coded as impact_ended."
+  },
+  {
+    "corpus_no": 20,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2025-12-08T19:13Z",
+    "end_basis": "mitigated",
+    "evidence": {
+      "scope": "What happened? and What went wrong: ARM management failures hit every Azure Government region; that separate sovereign cloud only.",
+      "end": "How did we respond?: at 14:13 EST on 8 December all customer impact was confirmed mitigated."
+    },
+    "notes": "All regions of the Azure Government sovereign cloud count as multi_region under the rule. The report gives times in EST (UTC-5 in December); 14:13 EST converts to 19:13 UTC. The end statement says only mitigated. A similar earlier issue in Azure in China is described as a separate incident."
+  }
+]

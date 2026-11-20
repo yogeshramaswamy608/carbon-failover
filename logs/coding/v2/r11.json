@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 102,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2024-10-25T15:47Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report, Summary and Detailed Description: every build in us-central1 sat queued unexecuted, a region-wide halt; Deploy, App Engine and Functions deployments also failed there. End: Incident Report, Summary and Remediation: after a 4.5-hour outage, builds ran with heavy delays for another 2 hours 2 minutes; the backlog returned to normal at 08:47 Pacific.",
+    "notes": "The Mini Incident Report's Incident End line (08:03 PDT) is not taken: the newer Incident Report says significant execution delays continued from 06:45 for 2 hours 2 minutes, i.e. to 08:47 PDT, when it states the backlog queue dropped to normal; the delays were customer impact, so the backlog is inside the event. 08:47 PDT converted at UTC-7. The 08:06 PDT resolved update is also before 08:47."
+  },
+  {
+    "corpus_no": 103,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Incident Report, Detailed Description of Impact: GCE instance creation and disk attach errors hit all europe-west3 zones; Dataflow, Dataproc, Cloud Build and Cloud SQL errors are given for the region. End: Incident Report, Dataproc and Cloud SQL: some customers saw errors in europe-west3 until late on 24 October, well after the 02:09 incident end.",
+    "notes": "The fault began in europe-west3-c but region-wide operations were impaired. The Mini Incident Report's Incident End line (24 Oct 2024 02:09 PDT) is not the end: the Incident Report states Dataproc API errors through 24 Oct 23:47 PDT and Cloud SQL create/update errors to 24 Oct 23:28 PDT, after it; the 02:09 full-restoration statement covers only the affected zone. No later whole-event end is stated, so end_utc and end_basis are left empty."
+  },
+  {
+    "corpus_no": 104,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-11-05T04:30Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones: every region except five named ones was affected, so many but not all regions. End: Mini Incident Report, Incident End: the incident closed at 20:30 Pacific on 4 November 2024.",
+    "notes": "Not global because five regions (asia-southeast1, europe-west4, us-central1, us-east1, us-east4) are stated as unaffected. Incident End 4 Nov 2024 20:30 PST converted at UTC-8 (daylight saving ended 3 Nov 2024). The description says the rollback mitigated the impact; the resolved update gives 20:28 PST, two minutes earlier."
+  },
+  {
+    "corpus_no": 105,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-10-17T09:45Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and page header: the affected location is listed as Global. End: Mini Incident Report, Incident End: the disruption closed at 02:45 Pacific on 17 October 2024.",
+    "notes": "Incident End 17 Oct 2024 02:45 PDT converted at UTC-7. The earlier resolved update gives 04:19 PDT and a 04:16 PDT update said mitigation still needed investigation; the rule takes the Incident End line, whose date agrees with the dated updates."
+  },
+  {
+    "corpus_no": 106,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2024-10-16T09:49Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report, Detailed Description: products were down in us-west2-a and us-west2; Cloud Deploy operations and Interconnect attachment changes failed across us-west2. End: Mini Incident Report, Incident End: impact closed at 02:49 Pacific on 16 October 2024.",
+    "notes": "The fault was in one zone but region-wide operations (Cloud Deploy in us-west2, Interconnect attachments to us-west2, Cloud SQL instance creation) were impaired. Incident End 16 Oct 2024 02:49 PDT converted at UTC-7; the Incident Report and resolved update agree."
+  },
+  {
+    "corpus_no": 107,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-10-02T23:23Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and page header: the location is given as Global. End: Mini Incident Report, Incident End, and Incident Report Summary: intermittent case creation trouble stopped at 16:23 Pacific on 2 October 2024.",
+    "notes": "Incident End 2 Oct 2024 16:23 PDT converted at UTC-7. The resolved and mitigated updates give 16:12 PDT; the Incident End line is taken."
+  },
+  {
+    "corpus_no": 108,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-09-25T19:28Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and page header: the affected location is Global. End: Mini Incident Report, Incident End, and Incident Report Summary: the outage closed at 12:28 Pacific on 25 September 2024.",
+    "notes": "Incident End 25 Sep 2024 12:28 PDT converted at UTC-7. The resolved update gives 12:30 PDT; the Incident End line is taken."
+  },
+  {
+    "corpus_no": 109,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-09-18T22:30Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report, Detailed Description: impact is listed by region, 13 with full outages and 11 with elevated errors, not every region. End: Mini Incident Report, Incident End: impact closed at 15:30 Pacific on 18 September 2024.",
+    "notes": "The Mini Incident Report lists Regions/Zones as Global, but the newer Incident Report names 24 specific regions and says multiple regions, not all; coded multi_region on the newer report. Incident End 18 Sep 2024 15:30 PDT converted at UTC-7; the Incident Report also says impact was mitigated and completely resolved at 15:30."
+  },
+  {
+    "corpus_no": 110,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-09-11T18:20Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Customer Impact: packet loss on paths from the Hyderabad edge to three named Asian regions. End: Mini Incident Report, Incident End: the incident closed at 11:20 Pacific on 11 September 2024.",
+    "notes": "Incident End 11 Sep 2024 11:20 PDT converted at UTC-7. The description says the issue was mitigated by rerouting traffic; the resolved update gives the same time."
+  },
+  {
+    "corpus_no": 111,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2024-09-07T13:10Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report, Root Cause: the metadata store failed for the whole region, halting every GCE instance operation in asia-northeast1 and dependent services. End: Mini Incident Report, Incident End: the incident closed at 06:10 Pacific on 7 September 2024.",
+    "notes": "Incident End 7 Sep 2024 06:10 PDT converted at UTC-7. The Incident Report calls 06:10 full mitigation; the resolved update gives the same time."
+  }
+]

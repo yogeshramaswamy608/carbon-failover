@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 192,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-03-31T13:30Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Customer Impact; latency hit links from us-central1 to us-east4 and us-east5, three named regions. End: Mini Incident Report, Description; every network flow was back to full operation at 06:30 PDT on 31 March.",
+    "notes": "The Incident End line gives 31 Mar 2023 03:00 PDT, but the dated updates of 03:56, 05:03 and 05:56 PDT that day say some flows still saw elevated latency, so impact went on after 03:00; the next whole-event statement, full operation of all network flows at 06:30 PDT (13:30Z), is taken. The resolved update gives 06:35 PDT."
+  },
+  {
+    "corpus_no": 193,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-03-20T11:46Z",
+    "end_basis": "resolved",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Description; overload in us-east4 pushed traffic to us-east1 and us-east5, raising latency and errors there. End: 20 Mar 2023 04:46 PDT update; Cloud Load Balancing declared resolved for every affected user.",
+    "notes": "The Incident End line gives 19 Mar 2023 09:24 PDT (also the header end), but dated updates from 19 Mar 11:41 PDT to 20 Mar 03:47 PDT say mitigation was still under way with no ETA; the line's date contradicts the dated updates, so the dated resolution of 20 Mar 2023 04:46 PDT (11:46Z) is used. That statement says only resolved."
+  },
+  {
+    "corpus_no": 194,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2023-03-09T10:24Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report, Summary and Root Cause; Cloud Armor failed across the asia-southeast1 region, no zone named. End: Mini Incident Report, Incident End line, 02:24 PST on 9 March, matching the full recovery stated in the Incident Report.",
+    "notes": "The newer Incident Report has no Incident End line, so the Mini Incident Report's line (09 Mar 2023 02:24 PST) is taken; the Incident Report also says service fully recovered by 02:24. The resolved update gives 02:30 PST."
+  },
+  {
+    "corpus_no": 195,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-03-04T02:00Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Description; location listed as Global and the SAS issue described as worldwide. End: Mini Incident Report, Impact Period 2, Incident End at 18:00 PST on 3 March, the later window.",
+    "notes": "Two impact windows; the later Incident End (3 Mar 2023 18:00 PST) is taken. The resolved update of 12:57 PST gives 12:20 PST, which precedes the second window."
+  },
+  {
+    "corpus_no": 196,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-03-03T20:45Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones; location listed as Global, and the title says creates failed worldwide. End: Mini Incident Report, Incident End line, 12:45 PST on 3 March.",
+    "notes": "The Incident End line (3 Mar 2023 12:45 PST) is taken; the resolved update gives 13:07 PST and the 13:04 PST update said mitigation was under way, but no update states that customer impact went on after 12:45."
+  },
+  {
+    "corpus_no": 197,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-02-27T13:12Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: affected locations list and title; Global appears among dozens of listed regions and the title says impact was worldwide. End: Incident Report, Detailed Description of Impact; the impact window ran to 05:12 PST unless noted otherwise.",
+    "notes": "The Mini Incident Report's Incident End line gives 27 Feb 2023 05:11 PST, but the newer Incident Report states the impact window ran to 05:12 PST, one minute later, so 05:12 PST is taken. The Mini Incident Report lists Regions/Zones as Multiple regions; multi-region locations us, nam3, nam5, nam7 and others are also named."
+  },
+  {
+    "corpus_no": 198,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2023-02-02T17:42Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Description and Customer Impact; control plane and API calls failed region-wide in southamerica-east1. End: Mini Incident Report, Incident End line, 09:42 PST on 2 February.",
+    "notes": "The Incident End line (2 Feb 2023 09:42 PST) is taken; the resolved update gives 09:32 PST."
+  },
+  {
+    "corpus_no": 199,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2023-01-30T10:45Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Description and Customer Impact; configuration changes for load balancers and Cloud DNS failed across asia-south1. End: Mini Incident Report, Incident End line, 02:45 PST on 30 January.",
+    "notes": "The Incident End line (30 Jan 2023 02:45 PST) is taken; the resolved update gives 02:20 PST."
+  },
+  {
+    "corpus_no": 200,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2022-12-20T17:54Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and title; location given as Global and the issue called global, with every region listed. End: Mini Incident Report, Incident End line, 09:54 PST on 20 December.",
+    "notes": "The Incident End line (20 Dec 2022 09:54 PST) is taken over the header end of 11:15 PST; the resolved update gives 11:14 PST, but no update states customer impact went on after 09:54."
+  },
+  {
+    "corpus_no": 201,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-01-03T15:15Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Description; location Global and the console error seen worldwide. End: Mini Incident Report, Incident End line, 07:15 PST on 3 January 2023.",
+    "notes": "The Incident End line (3 Jan 2023 07:15 PST) is taken; the description adds that a fix was rolled out and the issue mitigated, and the resolved update gives 08:08 PST."
+  }
+]

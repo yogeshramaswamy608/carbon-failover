@@ -1,0 +1,448 @@
+{
+ "model": "Claude Opus 5.5 (Anthropic), model id claude-opus-5-5",
+ "date_utc": "2026-11-20",
+ "date_pacific": "Thu Nov 19, 2026",
+ "work": "full recode of scope, end_utc and end_basis under event codebook version 2 (preregistration section 3.1)",
+ "prompt": "docs/coding_prompt.md version 2, sections Instruction and Recode instruction, verbatim",
+ "prompt_sha256": "ba49675356909a0f6c5f573404a858aad6592d2b0e93f5d2e02cc50a25ea8d28",
+ "codebook_sha256": "0e0d6394bb26a8a86aa0ad11af0f1982a3510d8a3b137c6a1cdab3b1b6fbcd2e",
+ "session": "each batch in a fresh subagent session that read only its prompt file (the instruction, the recode instruction and an operating note naming the batch's files and the output path) and the batch's report text files",
+ "report_text": "plain text of each page, fetched Thu Nov 19, 2026 by src/cfo/reports.py, kept outside this repository and not released",
+ "not_recoded": {
+  "79": "the review was not on the Azure history page on Thu Nov 19, 2026 (four fetches); its version 1 codes stand",
+  "P9": "not on the Azure history page since Mon Nov 16, 2026; not coded"
+ },
+ "batches": [
+  {
+   "file": "r01.json",
+   "corpus_nos": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+   ],
+   "sha256": "4e690ecaee4877d751cef00ccbcc650044b8efbe9cec210a7f1e8da71765c092"
+  },
+  {
+   "file": "r02.json",
+   "corpus_nos": [
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20"
+   ],
+   "sha256": "b3bf6d506e289f3beda3f067d99290de41c18dcdc3f74ad0e857cc9135ef92da"
+  },
+  {
+   "file": "r03.json",
+   "corpus_nos": [
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30"
+   ],
+   "sha256": "03f7efbefac0ea853a9bbddb8a3c8210267bff0ecc82902916bc2658ed2a7986"
+  },
+  {
+   "file": "r04.json",
+   "corpus_nos": [
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40"
+   ],
+   "sha256": "4bf7f1c7f8c5af79373abff7d0a430c95ad383e5d971c253ba5278b5146da86d"
+  },
+  {
+   "file": "r05.json",
+   "corpus_nos": [
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50"
+   ],
+   "sha256": "adb43714a7d61af00dd64c70174b8ddfc9b140d35754fa2d440e504cb67197f3"
+  },
+  {
+   "file": "r06.json",
+   "corpus_nos": [
+    "51",
+    "52",
+    "53",
+    "54",
+    "55",
+    "56",
+    "57",
+    "58",
+    "59",
+    "60"
+   ],
+   "sha256": "c680a97a226019ff90f24426af89933c7bec532202528ac74c845ad17cba1e19"
+  },
+  {
+   "file": "r07.json",
+   "corpus_nos": [
+    "61",
+    "62",
+    "63",
+    "64",
+    "65",
+    "66",
+    "67",
+    "68",
+    "69",
+    "70"
+   ],
+   "sha256": "3457402de1da964d15fa4f3af055680c8424c10f8d1da7fe4eeee3c22e23e992"
+  },
+  {
+   "file": "r08.json",
+   "corpus_nos": [
+    "71",
+    "72",
+    "73",
+    "74",
+    "75",
+    "76",
+    "77",
+    "78",
+    "80",
+    "81"
+   ],
+   "sha256": "4fd1559041fb1a8d595519d6eab3dc34d6120ea87aabbcc5d254b6bd89642506"
+  },
+  {
+   "file": "r09.json",
+   "corpus_nos": [
+    "82",
+    "83",
+    "84",
+    "85",
+    "86",
+    "87",
+    "88",
+    "89",
+    "90",
+    "91"
+   ],
+   "sha256": "03d6aeaf8f0f90b5b93b7d03b76e3835b19aad1460cfaa2c6f859c1411805825"
+  },
+  {
+   "file": "r10.json",
+   "corpus_nos": [
+    "92",
+    "93",
+    "94",
+    "95",
+    "96",
+    "97",
+    "98",
+    "99",
+    "100",
+    "101"
+   ],
+   "sha256": "4741dd5bf1fae07e029bc7d154ceb193491952d728aad0273569de11b5ab6ece"
+  },
+  {
+   "file": "r11.json",
+   "corpus_nos": [
+    "102",
+    "103",
+    "104",
+    "105",
+    "106",
+    "107",
+    "108",
+    "109",
+    "110",
+    "111"
+   ],
+   "sha256": "64783ebaf790f91c4423e7da0d35a5ada790792fb4a1d1c9d3f15a2781ba7367"
+  },
+  {
+   "file": "r12.json",
+   "corpus_nos": [
+    "112",
+    "113",
+    "114",
+    "115",
+    "116",
+    "117",
+    "118",
+    "119",
+    "120",
+    "121"
+   ],
+   "sha256": "b5c58ef859f6d8efdc7864d50928e14b05359575419a91c200ee76c7fe0b2bed"
+  },
+  {
+   "file": "r13.json",
+   "corpus_nos": [
+    "122",
+    "123",
+    "124",
+    "125",
+    "126",
+    "127",
+    "128",
+    "129",
+    "130",
+    "131"
+   ],
+   "sha256": "ec14817190ded4c92cc51fada67818c233c36f1fdd5aaba0e1c9483c97f7b164"
+  },
+  {
+   "file": "r14.json",
+   "corpus_nos": [
+    "132",
+    "133",
+    "134",
+    "135",
+    "136",
+    "137",
+    "138",
+    "139",
+    "140",
+    "141"
+   ],
+   "sha256": "29ba55210f55b7565b46a5a69a3eadba06ae940c6087f9ef1c37bf4c629972bd"
+  },
+  {
+   "file": "r15.json",
+   "corpus_nos": [
+    "142",
+    "143",
+    "144",
+    "145",
+    "146",
+    "147",
+    "148",
+    "149",
+    "150",
+    "151"
+   ],
+   "sha256": "804be0e48791d119db8de694f4c60f6c0919f147988c96cd599aa02e2441cbee"
+  },
+  {
+   "file": "r16.json",
+   "corpus_nos": [
+    "152",
+    "153",
+    "154",
+    "155",
+    "156",
+    "157",
+    "158",
+    "159",
+    "160",
+    "161"
+   ],
+   "sha256": "f76fc4427c8836b83a246c90480d346afda340471aa7f1fe41f3bbe1c04b104d"
+  },
+  {
+   "file": "r17.json",
+   "corpus_nos": [
+    "162",
+    "163",
+    "164",
+    "165",
+    "166",
+    "167",
+    "168",
+    "169",
+    "170",
+    "171"
+   ],
+   "sha256": "3dc86161d9f67d4ef30aecc4758537e51279f527dc849140f9b41982e635d1d3"
+  },
+  {
+   "file": "r18.json",
+   "corpus_nos": [
+    "172",
+    "173",
+    "174",
+    "175",
+    "176",
+    "177",
+    "178",
+    "179",
+    "180",
+    "181"
+   ],
+   "sha256": "dfa464003aa55d14f54a5d1abb6c765f9b98f3b185b30f12e4aa254f96f51fc0"
+  },
+  {
+   "file": "r19.json",
+   "corpus_nos": [
+    "182",
+    "183",
+    "184",
+    "185",
+    "186",
+    "187",
+    "188",
+    "189",
+    "190",
+    "191"
+   ],
+   "sha256": "b8ec045aac55f583f1e64e77fc1d45da2bc93206241d49491210c6e84a502b69"
+  },
+  {
+   "file": "r20.json",
+   "corpus_nos": [
+    "192",
+    "193",
+    "194",
+    "195",
+    "196",
+    "197",
+    "198",
+    "199",
+    "200",
+    "201"
+   ],
+   "sha256": "9560b86e985f58a95715753f3f1cee4a83cacc50eb2fe623b0ebe6850291a795"
+  },
+  {
+   "file": "r21.json",
+   "corpus_nos": [
+    "202",
+    "203",
+    "204",
+    "205",
+    "206",
+    "207",
+    "208",
+    "209",
+    "210",
+    "211"
+   ],
+   "sha256": "2cadfae4c55ab8acd55c987e853177f053ad1045345ce81555efb2da50377b0b"
+  },
+  {
+   "file": "r22.json",
+   "corpus_nos": [
+    "212",
+    "213",
+    "214",
+    "215",
+    "216",
+    "217",
+    "218",
+    "219",
+    "220",
+    "221"
+   ],
+   "sha256": "ae0e09787300ceb0c8507d0ce5cdaed712b7e0fa4cf0e57a8002e5f0001190d0"
+  },
+  {
+   "file": "r23.json",
+   "corpus_nos": [
+    "222",
+    "223",
+    "224",
+    "225",
+    "226",
+    "227",
+    "228",
+    "229",
+    "230",
+    "231"
+   ],
+   "sha256": "fd31f07273282dcb69a31055fe267da99683d58455ae350acd8e8a7f0e019ecf"
+  },
+  {
+   "file": "r24.json",
+   "corpus_nos": [
+    "232",
+    "233",
+    "234",
+    "235",
+    "236",
+    "237",
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+   ],
+   "sha256": "46169c1fa185215c2263d22d1d5f1ac8079ae93a116e877ffa891a24dcdcaff9"
+  },
+  {
+   "file": "r25.json",
+   "corpus_nos": [
+    "P5",
+    "P6",
+    "P7",
+    "P8",
+    "P10",
+    "P11",
+    "P12",
+    "P13",
+    "P14",
+    "P15"
+   ],
+   "sha256": "dfc5c621af8ac0cfdd479188cd0bece2d29e5162e496cadcec4591e72cc84cb1"
+  },
+  {
+   "file": "r26.json",
+   "corpus_nos": [
+    "P16",
+    "P17",
+    "P18",
+    "P19",
+    "P20",
+    "P21",
+    "P22",
+    "P23",
+    "P24",
+    "P25"
+   ],
+   "sha256": "a42f63076dcff3c37d8a8a757c914aa8c39f63cf5e23ce398768e94047830da4"
+  },
+  {
+   "file": "r27.json",
+   "corpus_nos": [
+    "P26",
+    "P27",
+    "P28",
+    "P29",
+    "P30",
+    "P31",
+    "P32",
+    "P33",
+    "P34"
+   ],
+   "sha256": "a5277ed4cf5f014b32cf57483af2b4c5229f3df82ef095514abfbc4d61611a2e"
+  }
+ ]
+}

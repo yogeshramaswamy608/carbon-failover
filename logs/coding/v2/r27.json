@@ -1,0 +1,83 @@
+[
+  {
+    "corpus_no": "P26",
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-11-16T02:42Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report, Firestore impact, says about a fifth of access checks failed worldwide; affected locations list includes Global plus many regions. End: Mini Incident Report gives the incident end as 18:42 Pacific on 15 November 2023.",
+    "notes": "Scope global because the report states Firestore failures globally and lists the location Global, although the Mini Incident Report names nam5 as the main location. End taken from the Mini Incident Report's Incident End line, the newest report with one (the later full Incident Report has none); 15 Nov 2023 18:42 PST converted at UTC-8. The full Incident Report says services were restored at 18:41 and the header gives 18:41; the 18:44 update says resolved for all users as of 18:42."
+  },
+  {
+    "corpus_no": "P27",
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-11-21T11:07Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report lists Regions/Zones as Global, and Backup and DR management server creation failed worldwide. End: Mini Incident Report puts the incident end at 03:07 Pacific, when the service recovered.",
+    "notes": "End from the Mini Incident Report's Incident End line, 21 Nov 2023 03:07 PST converted at UTC-8; per-service mitigation times (02:12 to 02:38) are parts and not used. Matches the header end time."
+  },
+  {
+    "corpus_no": "P28",
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-11-21T13:50Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report and Mini Incident Report confine impact to the BigQuery EU multi-region. End: Mini Incident Report gives the incident end as 05:50 Pacific on 21 November 2023.",
+    "notes": "Scope multi_region because the affected location is the Google Cloud multi-region eu, which is not a single region. End from the Mini Incident Report's Incident End line (the newer full Incident Report has none), 21 Nov 2023 05:50 PST converted at UTC-8; the full report says fully mitigated at 05:50, while the 06:00 status update says resolved as of 05:34."
+  },
+  {
+    "corpus_no": "P29",
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-03-12T21:55Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report says every GPU region and zone was affected; the location list names all regions. End: Mini Incident Report gives the incident end as 14:55 Pacific on 12 March 2024.",
+    "notes": "Scope global because the report gives all GPU regions and zones for the affected feature and the affected-location list names every region. End from the Incident End line, 12 Mar 2024 14:55 PDT converted at UTC-7 (DST in effect from 10 Mar 2024); the 15:39 status update says resolved as of 15:09, and notes nodes with auto-repair disabled may need recreation."
+  },
+  {
+    "corpus_no": "P30",
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-04-15T20:35Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report names three affected regions in Finland, Santiago and Los Angeles. End: Mini Incident Report gives the incident end as 13:35 Pacific after the change was rolled back.",
+    "notes": "End from the Incident End line, 15 Apr 2024 13:35 PDT converted at UTC-7; the later status update also says resolved for all users as of 13:35."
+  },
+  {
+    "corpus_no": "P31",
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-04-24T07:23Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report gives the location as the US multi-region for Chronicle SIEM. End: Mini Incident Report gives the incident end as 00:23 Pacific on 24 April 2024.",
+    "notes": "Scope multi_region because the location is the Google Cloud multi-region us, not a single region. End from the Incident End line, 24 Apr 2024 00:23 PDT converted at UTC-7; the status update says resolved as of 00:15, and an earlier update said backlog was processed but downstream impact remained, so the earlier mitigation is not the end."
+  },
+  {
+    "corpus_no": "P32",
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-10-01T17:03Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report and the affected-location list give the location as Global. End: Mini Incident Report gives the incident end as 10:03 Pacific on 1 October 2024.",
+    "notes": "End from the Incident End line, 1 Oct 2024 10:03 PDT converted at UTC-7; the 11:14 status update says errors stopped as of 10:05."
+  },
+  {
+    "corpus_no": "P33",
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-12-09T19:40Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report places BigQuery impact in the US multi-region and Dataflow impact in five named US regions. End: Mini Incident Report gives the incident end as 11:40 Pacific on 9 December 2024.",
+    "notes": "Scope multi_region: five named regions plus the multi-region us, which gets no region code. End from the Mini Incident Report's Incident End line (the newer full Incident Report has none, though it also gives impact ending 11:40), 9 Dec 2024 11:40 PST converted at UTC-8; the page header gives 11:50."
+  },
+  {
+    "corpus_no": "P34",
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2025-07-18T16:47Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report impact section says us-east1 products were hit, mostly zone b, regional products briefly too, no other region. End: Incident Report timeline says all services were stable at 09:47 Pacific.",
+    "notes": "Scope regional because regional products in us-east1 were briefly impaired and updates mention affected us-east1 zones, beyond the single zone us-east1-b. Neither report has an Incident End line, so the header end time 18 Jul 2025 09:47 PDT is taken (UTC-7); it matches the GCP impact window and the resolved-for-all-products update. Workspace impact ended earlier, at 08:40."
+  }
+]

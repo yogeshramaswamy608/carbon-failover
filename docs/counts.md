@@ -15,6 +15,27 @@ The author coded the 30 reports of `dataset/author_sample.csv` from each report 
 
 Where the codes differ, the author's code stands; the 30 rows of `dataset/coded.csv` carry his codes (`coded_by` author). Scope and end are under 80 percent, so section 3.1 now requires one codebook revision for each, a full recode of each, and a fresh sample from the "author-sample" stream (10 Azure, 10 Google Cloud and the 8 AWS reports left), whose agreement is reported whatever it shows. Of the 7 scope differences, 4 are AWS reports the model coded zonal and the author regional (one zone failed and region-wide calls failed with it); of the 10 end differences, 7 are AWS reports where the author found no single end of customer impact and left it empty.
 
+## State after the codebook revision and recode, Thu Nov 19, 2026 (not fixed: the author's check of the fresh sample comes first)
+
+Codebook version 2 and the recode of scope and end (`docs/deviations.md`, deviation 3), with the author's codes standing for his 30 reports. Report 79 keeps its version 1 codes (its Azure review was gone that day); P9 stays uncoded.
+
+Events: 259 (10 merges). Event-home instances: 1,800.
+
+| Rule | Text | Instances excluded | Events excluded |
+|---|---|---|---|
+| 1 | region named | 0 | 65 |
+| 2 | regional or multi-region scope | 1289 | 59 |
+| 3 | lasted 30 minutes or more | 28 | 16 |
+| 4 | start to the hour, or day with duration | 0 | 0 |
+| 5 | home in the region table | 218 | 28 |
+| 6 | two or more candidates | 1 | 1 |
+| 7 | hourly carbon for every candidate | 11 | 3 |
+| kept | meets all seven rules | 253 | 87 |
+
+Events that meet all seven rules: 87 (instances 253; Google Cloud 156, Azure 97, AWS 0). Rule 3 counts an instance with no end and no stated duration as failing, so an AWS report that states no end of customer impact leaves the analysis there.
+
+The fresh sample of section 3.1: 28 reports drawn by the "author-sample" stream on Thu Nov 19, 2026, continuing after the first 30 (the first draw reproduced exactly): the 8 AWS reports left, 10 Azure and 10 Google Cloud (`dataset/author_sample_2.csv`). The author codes scope and end from each report alone.
+
 ## State after the author's codes, Thu Nov 19, 2026 (not fixed: the revision and recode of scope and end come first)
 
 Events: 258 (11 merges). Event-home instances: 1,800.

@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 112,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2024-08-12T15:32Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report, Detailed Description of Impact: load balancers, VM external IPs and several Interconnect zones across europe-west2 lost connectivity. End: Mini Incident Report, GCP Impact Time: the GCP incident closed at 08:32 Pacific on 12 August.",
+    "notes": "The newer Incident Report has no Incident End line, so the Mini Incident Report line is used; of its two windows (GCP 08:32, Workspace 07:00) the later is taken. 08:32 PDT converted to UTC. The 08:34 update gives 08:19 as resolved, but the Incident End line governs."
+  },
+  {
+    "corpus_no": 113,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-07-27T01:11Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones: location given as Global, with customers in all regions possibly affected. End: Mini Incident Report: the incident closed at 18:11 Pacific on 26 July.",
+    "notes": "The Incident Report has no Incident End line; the Mini Incident Report line is used. 18:11 PDT on 2024-07-26 converted to UTC, which falls on 2024-07-27."
+  },
+  {
+    "corpus_no": 114,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2024-07-15T18:00Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report, Detailed Description of Impact: only metrics held in us-central1 were affected; other regions, including global, kept working. End: Mini Incident Report: incident closed 11:00 Pacific on 15 July.",
+    "notes": "The page lists Global among affected locations and the 11:07 update named the global region, but the Incident Report says queries in other regions including global were unaffected, so scope is regional. The Incident Report has no Incident End line; the Mini Incident Report line (11:00 PDT) is used, although the Incident Report gives 10:52 as the end of impact."
+  },
+  {
+    "corpus_no": 115,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-07-12T13:31Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones: the affected location is given as Global. End: Mini Incident Report: incident closed at 06:31 Pacific on 12 July.",
+    "notes": "Incident End line of the Mini Incident Report used; it matches the page header and the resolved update. 06:31 PDT converted to UTC."
+  },
+  {
+    "corpus_no": 116,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-06-28T19:22Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones: the US multi-region only; earlier updates say regions outside it saw no impact. End: Mini Incident Report: incident closed 12:22 Pacific on 28 June.",
+    "notes": "The page header lists Global and Multi-region us, but the report names only the US multi-region and says impact outside it was prevented, so multi_region; the us multi-region adds no region code. Incident End line used over the 12:16 update, which said mitigated as of 11:00. 12:22 PDT converted to UTC."
+  },
+  {
+    "corpus_no": 117,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-06-20T19:42Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones: every public region plus the asia, eu and us multi-regions is listed; all API calls failed. End: Mini Incident Report: incident closed 12:42 Pacific on 20 June.",
+    "notes": "The Mini Incident Report region list names every public Google Cloud region, so global. Incident End line used; it matches the header and the resolved update. 12:42 PDT converted to UTC."
+  },
+  {
+    "corpus_no": 118,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-06-14T06:24Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones: delays were confined to the US multi-region. End: Mini Incident Report: incident closed at 23:24 Pacific on 13 June.",
+    "notes": "The us multi-region adds no region code. Incident End line (23:24) used over the header ended-at time (23:36). 23:24 PDT on 2024-06-13 converted to UTC, which falls on 2024-06-14."
+  },
+  {
+    "corpus_no": 119,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-06-12T22:59Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report, Summary: errors hit eight named regions across the US, Europe, Asia and Canada. End: Mini Incident Report: incident closed at 15:59 Pacific on 12 June, when the fix finished rolling out.",
+    "notes": "The Incident Report has no Incident End line; the Mini Incident Report line is used. The 16:20 update called the issue only partly mitigated and the resolved update gives 17:21, but the Incident End line's date agrees with the dated updates and the Incident Report says the 15:59 rollout fully mitigated the issue. 15:59 PDT converted to UTC."
+  },
+  {
+    "corpus_no": 120,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-06-14T06:45Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report, Summary: latency hit the us and eu multi-regions, with API errors in the us multi-region. End: Incident Report, Summary: latency impact ran until 23:45 Pacific on 13 June.",
+    "notes": "The Mini Incident Report's Incident End (10 June 20:00) covers only the API-error sub-incident; the later dated Incident Report says latency impact went on until 13 June, so the dated report is used. The us and eu multi-regions add no region codes. 23:45 PDT on 2024-06-13 converted to UTC, which falls on 2024-06-14. The report also says the incident was fully mitigated at 21:00 that day."
+  },
+  {
+    "corpus_no": 121,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-06-07T17:17Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: page header, affected locations: Global is listed with eleven named regions; Mini report calls it multi-regional. End: Mini Incident Report: incident closed at 10:17 Pacific on 7 June.",
+    "notes": "Scope is global because the page lists the location Global; the Mini Incident Report itself says multi-regional and multiple regions, with nothing saying impact was limited to them. Incident End line used over the resolved update time (10:34). 10:17 PDT converted to UTC."
+  }
+]

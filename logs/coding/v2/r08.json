@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 71,
+    "provider": "azure",
+    "scope": "global",
+    "end_utc": "2022-02-02T22:06Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Summary of Impact says the Azure AD REST API saw availability impact across the globe, and calls the incident global in nature. End: Summary of Impact gives the failure window for service management operations as closing at 22:06 UTC on 2 Feb 2022.",
+    "notes": "Times are given in UTC. Mitigation section says the rollback mitigated the incident but gives no separate time; the impact window end in the summary is used."
+  },
+  {
+    "corpus_no": 72,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2022-01-14T20:00Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Summary of Impact lists seven regions, among them West US, North Europe and Southeast Asia, as affected, without saying all regions. End: Summary of Impact closes the delay and failure window at 20:00 UTC on 14 Jan 2022; Mitigation says the rollback finished then.",
+    "notes": "The region list is introduced as including but not limited to the named regions; the report does not say all regions or global, so multi_region. Times are given in UTC."
+  },
+  {
+    "corpus_no": 73,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2022-01-14T20:00Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: The title places the event at West Europe; Summary of Impact describes failing ARM service management operations, a region-wide management function. End: Summary of Impact says the issues window ran until 20:00 UTC on 14 Jan 2022.",
+    "notes": "The only region named is West Europe, in the title; the summary names no region. Mitigation says the rollback took hours to finish globally, which describes the fix, not where impact was felt. The title also labels the event Mitigated, but the summary states the impact window end. Times are given in UTC."
+  },
+  {
+    "corpus_no": 74,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2022-01-05T07:41Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Summary of Impact says one Cosmos DB cluster in East US went down, affecting accounts in that region; no zone is named. End: Summary of Impact gives 07:41 UTC on 5 Jan 2022 as the close of the errors window.",
+    "notes": "No zone is named, so the impact cannot be coded zonal; it is one region. The Mitigation section dates the completed recovery 07:41 UTC on 05 Dec 2022, which contradicts the summary and the report's 01/04/2022 date; the summary date of 5 Jan 2022 is used. Times are given in UTC."
+  },
+  {
+    "corpus_no": 75,
+    "provider": "azure",
+    "scope": "unclear",
+    "end_utc": "2021-12-16T02:25Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Summary of Impact describes Azure AD sign-in impact for Microsoft 365, Dynamics 365 and Azure users without naming any region or saying how widely. End: Summary of Impact closes every listed user group's window at 02:25 UTC on 16 Dec 2021; Mitigation says the backend came back then.",
+    "notes": "The report names no region and does not say global or worldwide, so scope is unclear. Mitigation also lists 05:44 UTC, when the incident was declared fully mitigated after traffic moved back from the backup service; no customer impact is stated after 02:25, so 02:25 is the impact end. Times are given in UTC."
+  },
+  {
+    "corpus_no": 76,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2021-12-13T12:30Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Summary of Impact limits the intermittent Data Factory errors to West Europe; no zone is named. End: Summary of Impact gives roughly 12:30 UTC on 13 Dec 2021 as the end of the error window.",
+    "notes": "The report marks both window times as approximate. Times are given in UTC."
+  },
+  {
+    "corpus_no": 77,
+    "provider": "azure",
+    "scope": "unclear",
+    "end_utc": "2021-12-10T00:23Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Summary of Impact describes SCM endpoint and web deploy problems for some App Service and Functions users but names no region or extent. End: Summary of Impact gives 00:23 UTC on 10 Dec 2021 as the close of the issue window.",
+    "notes": "No region is named and the report gives no word on how many, so scope is unclear. Mitigation notes most customers saw resolution 20 to 40 minutes after the fix, with times varying by DNS TTL, but does not state when the fix was applied or that impact lasted past 00:23. Times are given in UTC."
+  },
+  {
+    "corpus_no": 78,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2021-11-17T02:50Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Summary of Impact limits the B2C authentication failures to a single location it calls the Australia region. End: Summary of Impact, updated 28 Sep 2022, gives two windows, the later one closing at 02:50 UTC on 17 Nov 2021.",
+    "notes": "The report names one Australia region, which matches no single Azure programmatic region code; it does not say several or all Australian regions, so it is coded as one region. The end is the end of the later of the two stated windows. Times are given in UTC."
+  },
+  {
+    "corpus_no": 80,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Detailed Description of Impact says the power loss hit zone europe-west2-b but workloads in zones a and c and regional resource operations were also impaired, with nothing outside europe-west2. End: Preliminary Incident Report gives Incident End 05:10 PDT on 20 Oct 2026, yet later sections describe impaired services and customers well after it.",
+    "notes": "End left empty. The only Incident End line, in the 22 Oct 2026 preliminary report, is 20 Oct 2026 05:10 US/Pacific (12:10 UTC); the newer reports have no such line and describe 05:08 as majority workload recovery. The page says impact went on after that: GKE final resolution at 06:37, AlloyDB final instances at 08:28, Cloud SQL remaining instances at 11:00 US/Pacific, Memorystore repairs within 24 hours, and the 07:03 update still says a very small number of customers were affected. No later whole-event end is stated. Times are US/Pacific (PDT, UTC-7)."
+  },
+  {
+    "corpus_no": 81,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2026-10-09T16:46Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Summary and Description of Impact place the 8 Oct impact across us-central1 and the 9 Oct recurrence in zone us-central1-b, with other regions unaffected. End: The 14 Oct Incident Report lists Recurrence End at 09:46 PDT on 9 Oct 2026, the latest window.",
+    "notes": "The 14 Oct 2026 Incident Report gives two windows; the end of the later one, 9 Oct 2026 09:46 US/Pacific (PDT, UTC-7), is used and matches the page header. The 9 Oct 2026 09:44 preliminary report, posted before the recurrence ended, gives only the first window ending 8 Oct 16:30; it does not contradict the later date."
+  }
+]

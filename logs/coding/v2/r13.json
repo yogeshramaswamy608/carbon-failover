@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 122,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2024-06-06T13:00Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Description: Apigee Edge customers in the us-central1 region saw errors and traffic interruptions; no zone is named. End: Mini Incident Report, Incident End line: the incident closed at 06:00 Pacific on 6 June 2024.",
+    "notes": "Scope regional because impact covered the us-central1 region with no single zone named. Incident End 06:00 PDT converted to 13:00 UTC; the dated 06:47 update says resolved as of 06:30, but the rule takes the Incident End line and its date agrees with the updates."
+  },
+  {
+    "corpus_no": 123,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-06-04T21:15Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and page header location: Cloud Shell connectivity trouble listed under the location Global. End: Mini Incident Report, Incident End line: the incident closed at 14:15 Pacific on 4 June 2024.",
+    "notes": "The newer full Incident Report has no Incident End line, so the Mini Incident Report's line is used; 14:15 PDT converted to 21:15 UTC. The full report and the 14:33 update give 14:29 as full mitigation; its stated 3 hours 46 minutes from 10:29 matches 14:15."
+  },
+  {
+    "corpus_no": 124,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2024-06-04T08:27Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Description: Cloud Tasks and Cloud Scheduler had raised error rates across the us-central1 region, no zone named. End: Mini Incident Report, Incident End line: closed at 01:27 Pacific on 4 June 2024.",
+    "notes": "Scope regional because the region's Tasks API and job execution were impaired with no single zone named. Incident End 01:27 PDT converted to 08:27 UTC; the 01:29 update gives 01:28 as resolution."
+  },
+  {
+    "corpus_no": 125,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-05-24T16:30Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Description: cluster creation and upgrade failed worldwide, with the location given as Global. End: Mini Incident Report, Incident End line: closed at 09:30 Pacific on 24 May 2024.",
+    "notes": "The report says the failures were global and lists Global; the updates also say all regions of GDC connected. Incident End 09:30 PDT converted to 16:30 UTC; the 09:36 update gives 09:36 as resolution."
+  },
+  {
+    "corpus_no": 126,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Mini Incident Report Regions/Zones and Incident Report Root Cause: the VPC controller was shut down in all zones; the location is Global. End: Incident Report, Detailed Description of Impact: several products, such as Cloud SQL and Redis, stayed impaired well after 18:10.",
+    "notes": "The Mini Incident Report's Incident End line (16 May 2024 18:10 PDT) is not the end: the later Incident Report says impact went on after it (VPC and Firewall to 18:40, Dataflow to 18:52, AlloyDB and Cloud SQL to 19:00, Redis to 20:05, remaining Cloud SQL instances to 22:30, Apigee partial deployments to 01:00 on 17 May). No later whole-event end is stated; the report says only that the majority of impact lasted 2 hours 48 minutes, so end left empty."
+  },
+  {
+    "corpus_no": 127,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "",
+    "end_basis": "",
+    "evidence": "Scope: Mini Incident Report and Detailed Description of Impact: the fault was in zone a, but BigQuery jobs, Dialogflow and GKE clusters failed across australia-southeast1. End: Incident Report Remediation and Mini Report Additional details: services kept recovering after 21:40, and some disks needed manual repair.",
+    "notes": "Scope regional because region-level services (BigQuery, Dialogflow, GKE clusters) were impaired in australia-southeast1 beyond the one zone. The Incident End line (8 May 2024 21:40 PDT) is not the end: the reports state impact after it (Filestore to 21:43, Persistent Disk to 21:45, Dataflow to 21:55, BigQuery slowdowns to 22:25, and Persistent Disk impact continuing after closure). The only later statement, all services recovered by 21:55, excepts some Persistent Disk devices, so no whole-event end is stated and end left empty."
+  },
+  {
+    "corpus_no": 128,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2024-04-25T21:00Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Description: monitoring metrics for Bigtable and Spanner were affected only in US regions, not named one by one. End: Mini Incident Report, Incident End line: closed at 14:00 Pacific on 25 April 2024.",
+    "notes": "Scope multi_region because the report limits impact to unnamed US regions; the page header lists the location Global, but the report text states the impact was limited to US regions. Incident End 14:00 PDT converted to 21:00 UTC; the 15:50 update says the rollback mitigated all known issues as of 12:35, which differs in time but not in date, so the Incident End line stands."
+  },
+  {
+    "corpus_no": 129,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2024-04-23T05:18Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Customer Impact: nearly all new Batch jobs in us-central1 stayed queued; customers were told to use another region. End: Mini Incident Report, Incident End line: closed at 22:18 Pacific on 22 April 2024.",
+    "notes": "Scope regional because new Batch job scheduling failed across us-central1 with no single zone named. Incident End 22:18 PDT on 22 April converted to 05:18 UTC on 23 April; the 22:23 update gives the same time."
+  },
+  {
+    "corpus_no": 130,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-04-17T10:40Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones: the location is Global, and the header lists every Composer region affected. End: Mini Incident Report, Incident End line and Incident Report impact window: impact ran until 03:40 Pacific on 17 April 2024.",
+    "notes": "The newer Incident Report has no Incident End line, so the Mini Incident Report's line is used; it agrees with the Incident Report's impact window. 03:40 PDT converted to 10:40 UTC. The 04:41 update gives 04:09 as resolution; a few environments might still fail later upgrades but were said to keep serving normally."
+  },
+  {
+    "corpus_no": 131,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2024-04-12T14:41Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones and Description: Apigee portals were unavailable worldwide, location given as Global. End: Mini Incident Report, Incident End line: closed at 07:41 Pacific on 12 April 2024.",
+    "notes": "Incident End 07:41 PDT converted to 14:41 UTC; the 07:44 update gives 07:44 as resolution."
+  }
+]

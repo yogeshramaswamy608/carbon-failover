@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 21,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2025-12-08T18:00Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: What went wrong and why? - every region of the separate Azure in China cloud was hit because the policy store replicates across them all. End: How did we respond? - at 02:00 CST on 9 Dec the team confirmed all customer impact as mitigated.",
+    "notes": "All regions of the sovereign Azure in China cloud count as multi_region under rule 3. End converted from China Standard Time (UTC+8, no daylight saving): 02:00 CST 09 Dec 2025 = 18:00 UTC 08 Dec 2025."
+  },
+  {
+    "corpus_no": 22,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2025-11-06T02:25Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: What happened? - the fault sat in physical AZ01, but Databricks users across West Europe saw degraded compute launch and scaling, a region-level launch impairment. End: Timeline of events - at 02:25 UTC on 6 Nov all services were back online and customer impact was mitigated.",
+    "notes": "The thermal fault began in physical AZ01 only, and the report never says impact stayed inside that zone; it states impact for customers in the West Europe region, including degraded Databricks compute launches in the region, so coded regional under the region-wide launch clause of rule 3."
+  },
+  {
+    "corpus_no": 23,
+    "provider": "azure",
+    "scope": "global",
+    "end_utc": "2025-10-30T00:05Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: What went wrong and why? - data plane crashes spread to every edge site worldwide, which the report calls global impact on the AFD platform. End: Timeline of major incident milestones - at 00:05 UTC on 30 Oct AFD impact was confirmed mitigated, with availability and latency back to normal.",
+    "notes": "After the 00:05 UTC mitigation, AFD customer configuration changes stayed blocked at the ARM level until 5 Nov 2025; the report frames this as a post-mitigation safeguard, not continued customer impact, so the end stays at 00:05 UTC."
+  },
+  {
+    "corpus_no": 24,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2025-10-09T16:00Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: What happened? - latency and timeouts hit mainly Africa and Europe, plus Asia Pacific and the Middle East, not every geography. End: How did we respond? - at 16:00 UTC, once latency recovered, the incident was declared mitigated.",
+    "notes": "Impact is stated for several named geographies (Africa, Europe, Asia Pacific, Middle East) rather than all regions, so multi_region. Availability returned at 12:50 UTC but elevated latency continued until 16:00 UTC, so 12:50 is not the end."
+  },
+  {
+    "corpus_no": 25,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2025-09-27T21:59Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: What went wrong and why? - the bad certificate change reached several availability zones, impairing resources across Switzerland North. End: How did we respond? - at 21:59 UTC on 27 Sep residual recovery finished and all impacted services and customers were fully recovered.",
+    "notes": "04:00 UTC 27 Sep covers only the majority of services; residual impact continued, so it is not the end. The 21:59 UTC timeline entry states full recovery of all services and customers (impact_ended); the summary calls the same moment full mitigation."
+  },
+  {
+    "corpus_no": 26,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2025-09-10T19:30Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: What happened? - service management operations degraded in two physical zones, AZ02 and AZ03, of East US 2. End: How did we respond? - at 19:30 UTC the remaining downstream services recovered after backlogs drained and customer impact was confirmed mitigated.",
+    "notes": "18:50 UTC is the Allocator mitigation only; downstream services stayed impaired by backlog until 19:30 UTC, so the end is 19:30 UTC."
+  },
+  {
+    "corpus_no": 27,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2025-03-19T00:30Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: What happened? - the second window also caused some inter-zone traffic loss from AZ01 and AZ02, not only AZ03, in East US. End: How did we respond? - at 00:30 UTC on 19 Mar, isolating the wrongly added capacity mitigated impact fully for customers.",
+    "notes": "Two impact windows; the first ended 16:52 UTC 18 Mar and impact resumed at 23:20 UTC. The 06:50 UTC 19 Mar 'incident confirmed as mitigated' entry follows fiber restoration, and the report states all customer impact was mitigated by 00:30 UTC, so 00:30 UTC is the end of customer impact."
+  },
+  {
+    "corpus_no": 28,
+    "provider": "azure",
+    "scope": "unclear",
+    "end_utc": "2025-03-03T18:37Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: What happened? - customers routing through the Toronto edge point-of-presence had trouble reaching Microsoft services; no Azure region or region count is given. End: How did we respond? - at 18:37 UTC the faulty line card was isolated and connectivity was restored.",
+    "notes": "The Toronto edge point-of-presence is a network edge location, not an Azure region; the report names no region and gives no count of regions affected, so scope is unclear."
+  },
+  {
+    "corpus_no": 29,
+    "provider": "azure",
+    "scope": "unclear",
+    "end_utc": "2025-02-26T01:15Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: What happened? - Seamless SSO and Entra Connect Sync sign-ins failed through DNS errors; no region or region count is stated. End: What went wrong and why? - after the 01:05 UTC rollback, impact was fully mitigated at 01:15 UTC on 26 Feb.",
+    "notes": "No region is named and the report never states how widely impact spread; a repair item about studying non-global endpoints hints the endpoints are global, but the report does not say the impact was global, so scope is unclear. 18:35 UTC covers only 94% of customers, so it is not the end."
+  },
+  {
+    "corpus_no": 30,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2025-01-11T00:44Z",
+    "end_basis": "mitigated",
+    "evidence": "Scope: What happened? and What went wrong and why? - the fault began in physical AZ01, but VNet-integrated PaaS impact spread beyond that zone in East US 2. End: Timeline - at 00:44 UTC on 11 Jan every service confirmed mitigation.",
+    "notes": "19:18 UTC 10 Jan covers only most customers and services, so it is not the end. AZ01 went fully back into rotation at 04:30 UTC 11 Jan, when full mitigation was declared, but the report does not state customer impact after 00:44 UTC, and its impact window ends at 00:44 UTC."
+  }
+]

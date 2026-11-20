@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 61,
+    "provider": "azure",
+    "scope": "global",
+    "end_utc": "2022-08-19T02:22Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: What happened? - several dependent services saw resource provisioning failures worldwide, the report using the word globally. End: What happened? - the failure window closes at 02:22 UTC on 19 Aug 2022.",
+    "notes": "End taken from the stated impact window in What happened?; no later impact is described."
+  },
+  {
+    "corpus_no": 62,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2022-07-29T13:20Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: What happened? - fourteen named regions had the heaviest connectivity impact, with intermittent effects possible elsewhere across the WAN. End: How did we respond? - by 13:20 UTC traffic was normal and customers saw network health restored.",
+    "notes": "Not global: the report names 14 regions as most affected and says only that customers in other regions may have seen intermittent impact. Later monitoring and preventative work until 19:52 UTC is not described as customer impact."
+  },
+  {
+    "corpus_no": 63,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2022-07-21T13:30Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: What happened? - all new connections and management operations for SQL Database across the West Europe region failed. End: What happened? - failure rates were back to pre-incident levels by 13:30 UTC; no later failures came from this incident.",
+    "notes": "The report also calls 13:30 UTC the full mitigation time; mitigation was first declared at 18:45 UTC, but the report says impact analysis shows failures ended at 13:30 UTC. Coded impact_ended because the report states failure rates returned to normal then."
+  },
+  {
+    "corpus_no": 64,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2022-06-29T20:14Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: What happened? - packet loss hit part of the traffic to and from four regions: UK West, UK South, West Europe, North Europe. End: What happened? - the intermittent failures ran until 20:14 UTC on 29 June 2022.",
+    "notes": "How did we respond? adds that removing the faulty router shortly after 20:00 UTC fully resolved the issue, consistent with the 20:14 UTC window end. Early failures seen in 17 regions were attributed to the separate SLB incident."
+  },
+  {
+    "corpus_no": 65,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2022-07-01T04:00Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: What happened? and What went wrong - the bad code reached 14 of 60+ regions; scenarios hit 14 and three regions. End: What happened? - impact window closes 04:00 UTC on 1 July 2022.",
+    "notes": "No region names are given, only counts. End taken from the stated impact window."
+  },
+  {
+    "corpus_no": 66,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2022-06-07T14:30Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: What happened? - fault began in one East US 2 zone, but five services and App Service management saw region-wide impact. End: What happened? / How did we respond? - impact window ends 14:30 UTC, when full mitigation was declared.",
+    "notes": "The window statement gives 14:30 UTC as the end of customer difficulties; How did we respond? calls the same moment full mitigation. Coded impact_ended on the window statement."
+  },
+  {
+    "corpus_no": 67,
+    "provider": "azure",
+    "scope": "global",
+    "end_utc": "2022-06-01T09:54Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Root Cause - the change hit global endpoints, whose failure affects dependent services globally. End: Summary of impact - delays and failures ran until 09:54 UTC on 01 Jun 2022; the hotfix mitigated all impact.",
+    "notes": "No region is named; scope rests on the Root Cause statement that impact appeared when the change reached global endpoints, which have global impact on dependent services. Mitigation says the hotfix mitigated all customer impact, with no time beyond the window end."
+  },
+  {
+    "corpus_no": 68,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2022-03-03T08:08Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Summary of Impact - ARM management operation errors in the Azure Government cloud, with no single region named. End: Summary of Impact - errors ran until 03:08 EST on 03 Mar 2022.",
+    "notes": "The report states times in EST, not UTC; 03:08 EST (UTC-5, before the 13 Mar 2022 daylight-saving change) converts to 08:08 UTC. Scope coded multi_region because the impact is stated for the Azure Government cloud as a whole, a separate sovereign cloud; no region of it is named."
+  },
+  {
+    "corpus_no": 69,
+    "provider": "azure",
+    "scope": "multi_region",
+    "end_utc": "2022-02-15T11:43Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Summary of Impact - affected hardware hosted SQL and Cosmos DB resources in six regions. End: Summary of Impact - unavailability lasted until 11:43 UTC on 15 Feb 2022.",
+    "notes": "The six regions are not named. Most databases recovered earlier, but the stated window for the event runs to 11:43 UTC on 15 Feb 2022."
+  },
+  {
+    "corpus_no": 70,
+    "provider": "azure",
+    "scope": "regional",
+    "end_utc": "2022-02-12T06:30Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Impact Statement - VMs, SQL and Storage customers in West US saw connection failures to resources in the region; no zone named. End: Impact Statement - failures ran until 6:30 UTC on 12 Feb 2022.",
+    "notes": "No zone is named; impact is stated for the West US region. Mitigation restored storage network connectivity, with no separate time."
+  }
+]

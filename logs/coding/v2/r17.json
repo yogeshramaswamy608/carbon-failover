@@ -1,0 +1,92 @@
+[
+  {
+    "corpus_no": 162,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-09-11T19:25Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones line gives the location as Global and the description says the portal issues occurred globally. End: Mini Incident Report, Incident End line puts the end at 12:25 US/Pacific on 11 September 2023.",
+    "notes": "Newest report with an Incident End line is the Mini Incident Report (12:25 PDT); it matches the page header and the Incident Report's impact window of 04:00 to 12:25 PDT. Converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 163,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-08-17T22:08Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones line names Global for the Cloud SQL instance creation failures; title also tagged Global. End: Mini Incident Report, Incident End line gives 15:08 US/Pacific on 17 August 2023.",
+    "notes": "Incident End line (15:08 PDT) taken over the later resolved-for-all-users update (15:10 PDT); matches the page header. Converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 164,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2023-08-15T18:22Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report, Root Cause and Detailed Description: both Montreal interconnect availability domains (zone1 and zone2) lost connectivity; rest of northamerica-northeast1 unaffected. End: Mini Incident Report, yul-zone2 window ends 11:22 US/Pacific on 15 August, the later of two windows.",
+    "notes": "Impact was limited to Cloud Interconnect in Montreal but covered two Edge Availability Domains (yul-zone1-1944, yul-zone2-1944), so more than one zone of the region; other services in the region were unaffected. The Incident Report has no Incident End line; the Mini Incident Report gives two windows, and the later end (yul-zone2-1944, 11:22 PDT) is taken; it matches the header and the resolved update. Restoration of full redundancy on 16 August 14:55 PDT is not customer impact. Converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 165,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-08-12T05:27Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones line says Global and the description says the errors were seen globally. End: Mini Incident Report, Incident End line gives 22:27 US/Pacific on 11 August 2023.",
+    "notes": "5xx errors mostly ended around 18:00 PDT, but configuration-change failures lasted the full window to 22:27 PDT, so the Incident End line is the whole-event end. Taken over the later resolved update (22:29 PDT). Converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 166,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2023-08-09T08:56Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Description: image and snapshot API calls failed for us-central1-a disks and for regional disks and region snapshot calls across us-central1. End: Mini Incident Report, Incident End line gives 01:56 US/Pacific on 9 August 2023.",
+    "notes": "Impact went beyond zone us-central1-a to region-wide calls (regional disks, regionDisks.createSnapshot), so regional. Incident End line (01:56 PDT) taken over the resolved update (01:55 PDT); matches the header. Converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 167,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-08-04T00:03Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones line lists four US regions; Dataproc Metastore creations failed in several US regions. End: Mini Incident Report, Incident End line gives 17:03 US/Pacific on 3 August 2023.",
+    "notes": "Four regions named: us-central1, us-south1, us-east1, us-west3. Incident End line (17:03 PDT) is taken; dated updates at 17:06 and 17:07 PDT still describe mitigation underway and the resolved update says 17:27 PDT, but the line's date does not contradict the updates, so the rule keeps it. Converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 168,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-08-02T10:45Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones list names ten regions where Composer 2 operations failed. End: Mini Incident Report, Incident End line gives 03:45 US/Pacific on 2 August 2023.",
+    "notes": "Ten regions in the Mini Incident Report; earlier updates named up to thirteen; not all regions. Incident End line (03:45 PDT) taken; the 04:43 PDT update still called the issue mostly resolved and the resolved update says 04:49 PDT, but the line's date does not contradict the dated updates. Matches the header. Converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 169,
+    "provider": "gcp",
+    "scope": "global",
+    "end_utc": "2023-07-28T22:52Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Incident Report, Summary, and Mini Incident Report, Regions/Zones: only the Global location was affected. End: Mini Incident Report, Incident End line gives 15:52 US/Pacific on 28 July 2023; Incident Report says customer impact fully mitigated then.",
+    "notes": "Incident Report states only the Global location was affected; Mini Incident Report lists Global though it notes under 10% of regional-endpoint requests were affected. The newer Incident Report has no Incident End line, so the Mini Incident Report line (15:52 PDT) is used; it agrees with the Incident Report impact window and the header. Converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 170,
+    "provider": "gcp",
+    "scope": "regional",
+    "end_utc": "2023-07-27T17:40Z",
+    "end_basis": "resolved",
+    "evidence": "Scope: Mini Incident Report, Customer Impact: packet loss hit zone 1 and zone 2 interconnects in asia-south2. End: 27 Jul 2023 11:00 PDT update says resolved for all affected users as of 10:40 US/Pacific.",
+    "notes": "Two interconnect zones of asia-south2 were affected, so more than one zone. The Incident End line gives 27 June 2023 10:33, which contradicts the page's dated updates of 27 July 2023, so the dated updates are used: the resolved-for-all-users statement at 10:40 PDT on 27 July 2023 (header shows 11:00). Converted from PDT (UTC-7)."
+  },
+  {
+    "corpus_no": 171,
+    "provider": "gcp",
+    "scope": "multi_region",
+    "end_utc": "2023-07-29T15:03Z",
+    "end_basis": "impact_ended",
+    "evidence": "Scope: Mini Incident Report, Regions/Zones line names the us multi-region for Chronicle data staleness. End: Mini Incident Report, Incident End line gives 08:03 US/Pacific on 29 July 2023, when the last incident-window events were processed.",
+    "notes": "Location is the Google Cloud multi-region us; no region code added. New-event processing returned to normal on 27 July 13:45 PDT, but the report does not say customer impact ended then (missed detections for the impact window remained), so the backlog to 29 July 08:03 PDT is inside the event. Incident End line matches the header. Converted from PDT (UTC-7)."
+  }
+]
