@@ -26,4 +26,6 @@ Why: this is the revision section 3.1 itself provides. The author's blind check 
 
 Effect on the results: 95 of the 269 recoded rows changed (46 in scope, 34 in end; `dataset/recode_v2_changes.csv`); 34 fields where the script and the model differed take the script's value (`dataset/script_model_diffs_v2.csv`). Report 79 could not be recoded, since its Azure review was gone on Thu Nov 19, 2026, and keeps its version 1 codes. The author's codes stand for his 30 reports. The state counts are in `docs/counts.md`; the count is fixed only after the author's check of the fresh sample of 28 (`dataset/author_sample_2.csv`), whose agreement is reported whatever it shows.
 
+The fresh sample, Thu Nov 19, 2026 (`dataset/author_check_2.csv`): scope 28 of 28, end 27 of 28, so no second revision is needed; the author's end for P3 stands.
+
 A diagnostic, not the registered test: on the author's own 30 reports, the version 2 coding gives his scope for 30 of 30 and his end, within 15 minutes, for 28 of 30. These are the reports the revision was written from, so the figure shows only that version 2 states his reading; the fresh sample is the test.

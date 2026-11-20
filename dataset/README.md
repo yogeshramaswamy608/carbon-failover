@@ -14,6 +14,7 @@ Built on Mon Nov 16, 2026 from version 1.0.0 of the companion corpus (10.5281/ze
 | `ci_hourly.csv.gz` | Hourly production-based carbon intensity per grid zone, gCO2eq/kWh, each hour labelled by its start in UTC; no hour filled. |
 | `latency_check_azure.csv` | The latency model of section 3.3 against Microsoft's published Azure round-trip table (P50, 30 days to Jul 30, 2026). |
 | `author_sample.csv` | The 30 reports of the author's blind check, drawn by the "author-sample" stream. |
+| `author_check_2.csv` | The author's second check of Thu Nov 19, 2026: his scope and end beside the coded values for the 28 fresh reports, and agreement per field. |
 | `author_sample_2.csv` | The fresh sample of 28 reports for the author's second check (section 3.1), drawn Thu Nov 19, 2026 by the same stream. |
 | `recode_v2_changes.csv` | Every row whose scope, end or end basis changed in the recode under codebook version 2. |
 | `script_fields_v2.csv`, `script_model_diffs_v2.csv` | The script's scope and end under version 2, and each field where it differed from the recode; the script's value stands. |

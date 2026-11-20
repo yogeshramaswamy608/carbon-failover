@@ -15,7 +15,13 @@ The author coded the 30 reports of `dataset/author_sample.csv` from each report 
 
 Where the codes differ, the author's code stands; the 30 rows of `dataset/coded.csv` carry his codes (`coded_by` author). Scope and end are under 80 percent, so section 3.1 now requires one codebook revision for each, a full recode of each, and a fresh sample from the "author-sample" stream (10 Azure, 10 Google Cloud and the 8 AWS reports left), whose agreement is reported whatever it shows. Of the 7 scope differences, 4 are AWS reports the model coded zonal and the author regional (one zone failed and region-wide calls failed with it); of the 10 end differences, 7 are AWS reports where the author found no single end of customer impact and left it empty.
 
-## State after the codebook revision and recode, Thu Nov 19, 2026 (not fixed: the author's check of the fresh sample comes first)
+## The author's second check, Thu Nov 19, 2026 (section 3.1)
+
+The author coded scope and end of the 28 fresh reports (`dataset/author_sample_2.csv`) from each report alone on the private page "Paper 2 Second Check", saved Thu Nov 19, 2026, 8:57pm to 9:01pm Pacific (`dataset/author_check_2.csv`). Agreement with the coded rows of codebook version 2: scope 28 of 28 (100 percent, exact), end 27 of 28 (96.4 percent, within 15 minutes, both empty counting as agreement). Both fields are now at or above 80 percent, so section 3.1 asks for no further revision.
+
+The one difference: AWS report P3 (SimpleDB, Jun 13, 2014), where the author gave 2014-06-14T08:30Z and the coding left the end empty because the page prints no year. His code stands (section 3.1). The counts below do not change with it: P3 has no start, so it stays out at an earlier rule.
+
+## State after the codebook revision, the recode and the author's second check, Thu Nov 19, 2026 (not fixed: the Fable 5.2 verdict on the data and the revision comes first)
 
 Codebook version 2 and the recode of scope and end (`docs/deviations.md`, deviation 3), with the author's codes standing for his 30 reports. Report 79 keeps its version 1 codes (its Azure review was gone that day); P9 stays uncoded.
 
