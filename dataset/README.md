@@ -13,7 +13,8 @@ Built on Mon Nov 16, 2026 from version 1.0.0 of the companion corpus (10.5281/ze
 | `region_table.csv` | The 58 general-purpose regions of the three providers in the United States and Europe: location from the provider's documentation, general-availability date with the page read, grid zone with its source. |
 | `ci_hourly.csv.gz` | Hourly production-based carbon intensity per grid zone, gCO2eq/kWh, each hour labelled by its start in UTC; no hour filled. |
 | `latency_check_azure.csv` | The latency model of section 3.3 against Microsoft's published Azure round-trip table (P50, 30 days to Jul 30, 2026). |
-| `author_sample.csv` | The 30 reports of the author's blind check, drawn by the "author-sample" stream. His codes are added after his check. |
+| `author_sample.csv` | The 30 reports of the author's blind check, drawn by the "author-sample" stream. |
+| `author_check.csv` | His codes for the 30 (Thu Nov 19, 2026), the coded rows they were checked against, and agreement per field; his codes stand in `coded.csv`. |
 
 Readings recorded here, for review:
 - Azure links: `aka.ms/AzPIR/ID` opens Microsoft's feedback form, so the coding read `https://azure.status.microsoft/en-us/status/history/?trackingId=ID`, and that link is released.

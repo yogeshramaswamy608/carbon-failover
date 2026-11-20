@@ -177,7 +177,20 @@ def _write(path: str, rows: list[dict], fields: list[str] | None = None) -> None
 
 
 def main(argv: list[str] | None = None) -> int:
-    corpus, script_csv, model_dir, out = (argv or sys.argv[1:])[:4]
+    a = argv or sys.argv[1:]
+    if a[0] == "--from-coded":
+        # rebuild events and instances from a coded.csv that already carries the author's codes
+        coded, out = a[1], a[2]
+        os.makedirs(out, exist_ok=True)
+        rows = list(csv.DictReader(open(coded, newline="")))
+        events, merges = build_events(rows)
+        inst = instances(events)
+        _write(os.path.join(out, "events.csv"), events)
+        _write(os.path.join(out, "merges.csv"), merges, ["event_id", "corpus_nos", "regions", "start_utc", "end_utc"])
+        _write(os.path.join(out, "instances.csv"), inst)
+        print(f"coded rows {len(rows)}; events {len(events)}; merges {len(merges)}; instances {len(inst)}")
+        return 0
+    corpus, script_csv, model_dir, out = a[:4]
     os.makedirs(out, exist_ok=True)
     rows, diffs = coded_rows(corpus, script_csv, model_dir)
     events, merges = build_events(rows)
